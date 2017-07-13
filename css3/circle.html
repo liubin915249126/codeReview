@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .wrap{
+      width:400px;
+      height:400px;
+      border:1px solid #000;
+      position: relative;
+    }
+    .wrap .btn{
+      width:80%;
+      padding:10px;
+      background:#007aff;
+      color:#fff;
+      box-sizing: border-box;
+      position: relative;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .wrap .btn::after,.wrap .btn::before{
+      content: "";
+      background:#007aff;
+      position:absolute;
+      height:100%;
+      width:50%;
+    }
+    .wrap .btn::after{
+      left:0;
+    }
+    .wrap .btn::before{
+      right:0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="btn">确认</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>myheart</title>
+		<style  type="text/css">
+			#myheart{
+				position: relative;
+				width: 150px;
+				height: 220px;
+			}
+			#myheart:before,
+			#myheart:after{
+				position: absolute;
+				left: 100px;
+				background: red;
+				height: 160px;
+				width: 100px;
+				content: "";
+				-webkit-border-radius: 50px 50px 0 0;
+				-moz-border-radius: 50px 50px 0 0;
+				-ms-border-radius: 50px 50px 0 0;
+				-o-border-radius: 50px 50px 0 0;
+				border-radius: 50px 50px 0 0;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-transform-origin: 0 100%;
+				-moz-transform-origin: 0 100%;
+				-ms-transform-origin: 0 100%;
+				-o-transform-origin: 0 100%;
+				transform-origin: 0 100%;
+			}
+			#myheart:after{
+				left: 0;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-transform-origin: 100% 100%;
+				-moz-transform-origin: 100% 100%;
+				-ms-transform-origin: 100% 100%;
+				-o-transform-origin: 100% 100%;
+				transform-origin: 100% 100%;
+			}
+
+                            @-webkit-keyframes heart{
+	                       0%{-webkit-transform: scale(1);}
+	                       50%{-webkit-transform: scale(0.8);}
+	                       100%{-webkit-transform: scale(1);}
+                      }
+                            @-moz-keyframes heart{
+	                        0%{-moz-transform: scale(1);}
+	                        50%{-moz-transform: scale(0.8);}
+	                        100%{-moz-transform: scale(1);}
+                      }
+                            @-ms-keyframes heart{
+	                        0%{-ms-transform: scale(1);}
+	                        50%{-ms-transform: scale(0.8);}
+	                        100%{-ms-transform: scale(1);}
+                      }
+                            @-o-keyframes heart{
+	                        0%{-o-transform: scale(1);}
+	                        50%{-o-transform: scale(0.8);}
+	                        100%{-o-transform: scale(1);}
+                     }
+                            @keyframes heart{
+	                        0%{transform: scale(1);}
+	                        50%{transform: scale(0.8);}
+	                        100%{transform: scale(1);}
+                     }
+                      .myheart{
+                              position: absolute;
+                              top: 40%;
+                              left: 40%;
+                             -webkit-animation:heart 1.5s linear infinite;
+	                     -moz-animation:heart 1.5s linear infinite;
+	                     -ms-animation:heart 1.5s linear infinite;
+	                     -o-animation:heart 1.5s linear infinite;
+	                     animation:heart 1.5s linear infinite;
+                      }
+		</style>
+	</head>
+
+	<body>
+                <div class="myheart">
+		                 <div id="myheart"></div>
+               </div>
+	</body>
+
+</html>

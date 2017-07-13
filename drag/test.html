@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>drag测试</title>
+</head>
+<body>
+   <div class="move">1135463135</div>
+   <script type="text/javascript" src="../jquery.js"></script>
+   <script type="text/javascript">
+   //检测鼠标拖动
+      function checkMove(select) {
+          var  clickFlag;
+          var obj = $(select);
+          var x1, y1, x2, y2, _x, _y;
+          $(document).on('mousedown', obj, function (e) {
+              x1 = e.pageX;
+              y1 = e.pageY;
+              clickFlag = true;
+              console.log('clickFlag',clickFlag)
+          })
+          $(document).on('mouseup', obj, function (e) {
+              x2 = e.pageX;
+              y2 = e.pageY;
+              _x = Math.abs(x1 - x2);
+              _y = Math.abs(y1 - y2);
+              if (_x < 7 && _y < 7) {
+                  clickFlag = true;
+                  console.log('clickFlag',clickFlag)
+              } else {
+                  clickFlag = false;
+                  console.log('clickFlag',clickFlag)
+              }
+          })
+          console.log('inner',clickFlag)
+          return clickFlag;
+       }
+       var flag = checkMove('.move')
+       drag('.move')
+       console.log('ffff',flag)
+      /*网页拖拽*/
+      function drag(obj) {
+           var dragEle = $(obj);
+           var _move = false;//移动标记
+           var _x, _y;//鼠标离控件左上角的相对位置
+           dragEle.click(function () {
+               //alert("click");//点击（松开后触发）
+           })
+           $(document).on('mousedown',dragEle,function (e) {
+               _move = true;
+               _x = e.pageX - parseInt(dragEle.css("left"));
+               _y = e.pageY - parseInt(dragEle.css("top"));
+               // dragEle.fadeTo(20, 0.9);//点击后开始拖动并透明显示
+           });
+           $(document).mousemove(function (e) {
+               if (_move) {
+                   var x = e.pageX - _x;//移动时根据鼠标位置计算控件左上角的绝对位置
+                   var y = e.pageY - _y;
+                   dragEle.css({ top: y, left: x });//控件新位置
+               }
+           })
+           $(document).on('mouseup',dragEle,function () {
+               _move = false;
+               //dragEle.fadeTo("fast", 1);//松开鼠标后停止移动并恢复成不透明
+           });
+       }//拖拽函数结束
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿
+<html>
+<head>
+   <meta charset="utf-8" />
+</head>
+<body>
+    <input type="button" value="提交" onclick="c1()">
+
+    <script>
+        var c1 = function () {
+            var root = {};
+            root.Code = "1";
+            root.Children = [];
+            var root11 = {};
+            root11.Code = "11";
+            root11.Children = [];
+            var root111 = {};
+            root111.Code = "111";
+            root111.Children = [];
+            root11.Children.push(root111);
+            var root12 = {};
+            root12.Code = "12";
+            root12.Children = [];
+            var root121 = {};
+            root121.Code = "121";
+            root121.Children = [];
+            root12.Children.push(root121);
+
+            root.Children.push(root11);
+            root.Children.push(root12);
+
+            PreorderTree(null, root, TreeParse.nodeVisit);
+            console.log(TreeParse.newRoot);
+        };
+
+        var PreorderTree = function (parent, node, visitFn) {
+            if (node == null)
+                return;
+            var isReturn = false;
+            isReturn = visitFn(parent, node);//访问当前节点
+            if (isReturn)
+                return;
+            if (!node.Children)
+                return;
+            for (var i = 0; i < node.Children.length; i++) {
+                var child = node.Children[i];
+                PreorderTree(node, child, visitFn);
+            }
+
+        }
+        var TreeParse = {
+            dic: {},
+            depth :2,
+            newRoot: {},
+            nodeParse: function (node) {
+                var newNode = {};
+                newNode.Code = node.Code;
+                newNode.level = 1;
+                newNode.data = {};
+                newNode.Children = [];
+                return newNode;
+            },
+            nodeVisit: function (parent, node) {
+                //转化节点
+                var newNode = TreeParse.nodeParse(node);
+                TreeParse.dic[node.Code] = newNode;
+                if (parent != null) {//有父亲节点
+                    var pNode = TreeParse.dic[parent.Code];//取新的父亲节点
+                    newNode.level = pNode.level + 1;
+                    if (newNode.level > TreeParse.depth)
+                        return true;//操作长度直接返回
+
+                    pNode.Children.push(newNode);//添加到父节点
+                    pNode.data.childCount+=1;//子节点数量+1
+                }
+                if (parent == null) {
+                    TreeParse.newRoot = newNode;
+                }
+                return false;
+            }
+        };
+
+
+    </script>
+</body>
+</html>

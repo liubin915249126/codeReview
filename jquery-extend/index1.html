@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap">
+    <p>liubin</p>
+    <p>liubin</p>
+    <p>liubin</p>
+    <p>liubin</p>
+  </div>
+  <script type="text/javascript" src="../jquery.js"></script>
+  <script type="text/javascript">
+    (function($,window,document,undefined){
+      $.fn.myPlugin = function(options){
+        var defaults = {
+          'color': 'red',
+          'fontSize': '12px'
+      };
+      var settings = $.extend({}, defaults, options);
+      return this.css({//支持链式调用，this值得选择的jquery对象
+          'color': settings.color,
+          'fontSize': settings.fontSize
+      });
+      }
+    })(jQuery,window,document)
+
+  </script>
+  <script type="text/javascript">
+    $(function(){
+       $('.wrap p').myPlugin({
+         'color': '#000',
+         'fontSize': '20px'
+     });
+    })
+  </script>
+</body>
+</html>

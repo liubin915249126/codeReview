@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <div class="wrap">
+     <div class="inner"></div>
+   </div>
+   <script type="text/javascript" src="../jquery.js"></script>
+   <script type="text/javascript">
+     $(function(){
+      //产生[0,10)随机数
+       var arr =[2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+       var result =''
+       for(var i=0;i<7;i++){
+         var ra = parseInt(Math.random()*arr.length)
+         result+=arr[ra]
+       }
+       console.log(ra);
+       console.log(result);
+     })
+   </script>
+</body>
+</html>

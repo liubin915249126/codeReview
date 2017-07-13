@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>空数组空对象</title>
+</head>
+<body>
+  <script type="text/javascript">
+    let arr = [];
+    let obj = {};
+    let obj1 = {1:'1'}
+    let str = '';
+    //判断对象是否为空
+    function isEmptyObject(obj) {
+      for (var key in obj) {
+        return false;
+      }
+      return true;
+    }
+
+    if(arr.length){
+      console.log('arr');
+    }
+    if(isEmptyObject(obj1)){
+      console.log('obj');
+    }
+    if(str){
+      console.log('str');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ellipsis</title>
+    <style type="text/css">
+        .test{
+            width:50px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .test1{
+            margin-top:20px;
+            width:200px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="test">测试文字测试文字测试文字测试文字测试文字测试文字</div>
+<div class="test1">测试文字测试文字测试文字测试文字测试文字测
+                   试文字测试文字测试文字测试文字测试文字测试文字
+                   测试文字测试文字测试
+                   文字测试文字测试文字测试文字测试文字测试文字测试文
+                   字测试文字测试文字测试文字测试文字</div>
+</body>
+</html>

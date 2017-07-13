@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="text">
+
+  </div>
+  <input type="button" name="" value="stop" id="stop">
+  <input type="button" name="" value="start" id="start">
+  <script type="text/javascript" src="../jquery.js"></script>
+  <script type="text/javascript">
+  // var  t= null;
+  var ti = null;
+    $(function(){
+        $('#start').on('click',function(){
+          var t = 0
+          function timer(){
+            t++;
+            $('#text').text(t)
+          }
+          ti = setInterval(timer,1000)
+        })
+       $('#stop').on('click',function(){
+         clearInterval(ti);
+       })
+    })
+  </script>
+</body>
+</html>

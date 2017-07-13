@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/icon.css">
+    <!--js-->
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<body>
+<input class="easyui-searchbox" id="test" data-options="prompt:'Please Input Value',searcher:doSearch" style="width:300px">
+
+<button type="button" id="click">click</button>
+
+<script type="text/javascript">
+
+    function doSearch(value){
+
+
+    }
+
+    $(document).on('click','#click',function(){
+       var value = $('.searchbox-text')[0].value;
+        console.log(value);
+
+    })
+
+    $(document).on('click','#test+.searchbox .searchbox-button',function(){
+        var value = $(this).closest('.searchbox').find('.searchbox-text')[0].value;
+        console.log(value);
+    })
+
+    $(document).on('change','#test+.searchbox .searchbox-text',function(){
+        console.log($(this)[0].value);
+
+    })
+    </script>
+</body>
+</html>

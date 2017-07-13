@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jquery插件</title>
+</head>
+<body>
+  <div class="wrap">
+    <p>刘宾</p>
+  </div>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript">
+    //sample:扩展jquery对象的方法，bold()用于加粗字体。
+    (function ($) {
+     $.fn.extend({
+         "bold": function (option) {
+             ///<summary>
+             /// 加粗字体
+             ///</summary>
+             console.log(option)
+             console.log(this)
+             return this.css({ fontWeight: "bold" });
+         }
+     });
+    })(jQuery);
+    $(function(){
+      $('p').bold(1)
+    })
+</script>
+<script type="text/javascript">
+//扩展jQuery对象本身
+      jQuery.extend({
+          "minValue": function (a, b) {
+              ///<summary>
+              /// 比较两个值，返回最小值
+              ///</summary>
+              return a < b ? a : b;
+          },
+          "maxValue": function (a, b) {
+              ///<summary>
+              /// 比较两个值，返回最大值
+              ///</summary>
+              return a > b ? a : b;
+          }
+      });
+      //调用
+      var i = 100; j = 101;
+      var min_v = $.minValue(i, j); // min_v 等于 100
+      var max_v = $.maxValue(i, j); // max_v 等于 101
+</script>
+</body>
+</html>

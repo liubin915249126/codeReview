@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .wrap{
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+    }
+    .wrap::after{
+      content:'';
+      display: table-cell;
+      overflow: hidden;
+      clear: both;
+      height: 0;
+    }
+    .wrap .len-col-4{
+        float: left;
+        width: 33.33%;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+        height: 100%;
+        overflow: auto;
+    }
+    .wrap .len-col-4 .contentWrap{
+       /*height: 100%;*/
+    }
+    .wrap .len-col-4 .content{
+      height: 800px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="len-col-4">
+      <div class="contentWrap">
+        <div class="content">111</div>
+      </div>
+    </div>
+    <div class="len-col-4">
+      <div class="contentWrap">
+        <div class="content">222</div>
+      </div>
+    </div>
+    <div class="len-col-4">
+      <div class="contentWrap">
+        <div class="content">333</div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../jquery.js"></script>
+  <script type="text/javascript">
+     $(function(){
+
+       $('.wrap .len-col-4').on('scroll',function(e){
+         var scrollTop = $(this).scrollTop();
+        //  console.log(e);
+        //  console.log(scrollTop);
+         //$(this).css({height:'100%'});
+         var $siblingsWrap = $(this).siblings();
+         var $siblings =$(this).siblings().find('.contentWrap');
+
+         $siblings.css({height:'100%',overflow:'auto'})
+         function scrollTopFun(){
+           $siblings.animate({scrollTop:scrollTop},1,function(e){
+                    })
+         };
+         function setAuto(){
+           //$siblings.css({height:'auto'})
+
+         }
+         setTimeout(scrollTopFun,100);
+         setTimeout(setAuto,1100);
+
+
+         //debugger;
+       })
+
+     })
+  </script>
+</body>
+</html>

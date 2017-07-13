@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>时间输出</title>
+</head>
+<body>
+  <div class="output"></div>
+  <script type="text/javascript">
+    var date = new Date();
+    var year = date.getFullYear()
+    var month = date.getMonth()+1;
+    var day = date.getDate()
+    function checktime(num){
+      if(num<10){
+        return '0'+num;
+      }else{
+        return num;
+      }
+    }
+    console.log(year+'-'+checktime(month)+'-'+checktime(day));
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css3翻转动画</title>
+  <style type="text/css">
+     .wrap{
+       perspective: 800px;
+     }
+     .stage{
+       width:400px;
+       height:200px;
+       border: 1px solid #888;
+       margin: 100px auto 0;
+       transition: all 0.5s ease;
+       transform-style: preserve-3d;
+     }
+     .wrap .rotate{
+       transform: rotateY(180deg);
+     }
+     .stage>div:nth-child(2){
+       transform: rotateY(180deg);
+     }
+     .stage>div{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       background: #fff;
+     }
+  </style>
+</head>
+<body>
+   <div class="wrap">
+     <div class="stage">
+       <div>
+         1334364634634364343436436436463463
+       </div>
+       <div>
+         asasascsacsacsacsacscsacsassscscsc
+       </div>
+     </div>
+     <input type="button" value="开始翻转" class="click"/>
+   </div>
+   <script type="text/javascript">
+     let btn = document.querySelector('.click');
+     let stage = document.querySelector('.stage');
+
+     btn.addEventListener('click',function(e){
+          stage.classList.add('rotate');
+     },false)
+     console.log(btn);
+   </script>
+</body>
+</html>

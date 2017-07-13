@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <div class="wrap">
+     <div class="item">item</div>
+     <div class="item">item</div>
+     <div class="item">item</div>
+     <div class="item">item</div>
+     <div class="item">item</div>
+   </div>
+   <script type="text/javascript" src="../jquery.js"></script>
+   <script type="text/javascript">
+     $(function(){
+      // 以下三种方法获取的是DOM数组
+       var items = $('.wrap').find('.item')
+       var items2 = document.querySelectorAll('.item')
+       var items3 = document.getElementsByClassName('item')
+       console.log(1,items)
+       console.log(2,items2)
+       console.log(3,items3)
+       Array.prototype.forEach.call(items,function(item){
+         console.log(item)
+       })
+
+     })
+   </script>
+</body>
+</html>

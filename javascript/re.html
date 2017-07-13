@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>正则测试</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function getTime(str){
+      //var pattern = /(\d|-|\s|:)+/i
+      var pattern = /(\d|-){10}\s(\d|:|-){11}/i
+      var matches = pattern.exec(str)
+      console.log(matches)
+      arrstr =  str.split('')
+      shortStr = arrstr.splice(matches.index,matches[0].length)
+      arrstr.splice(-5,1)
+      console.log(arrstr.join(''))
+      console.log(shortStr.join(''))
+    }
+    var str = '温兴唐申请了一条温兴唐的2017-02-23 18:00-20:30的加班流程'
+    var str2 ='BanksWei 魏冰申请了一条Banks Wei 魏冰的2017-02-04 10:00-18:30的加班流程'
+    getTime(str2)
+  </script>
+</body>
+</html>

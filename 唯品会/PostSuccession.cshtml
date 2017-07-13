@@ -1,0 +1,730 @@
+﻿@using Penseesoft.TalentManagement;
+@using Penseesoft.Core.Web;
+@using Penseesoft.TalentManagement.Web.Areas.TalentManagement.Models;
+@using Penseesoft.TalentManagement.BLL;
+@{
+    //增加部门判断
+    var deptCode = Request["dept"] == null ? "" : Request["dept"].ToString();
+    var deptDesc = Request["deptDesc"] == null ? "" : Request["deptDesc"].ToString(); 
+    if (!string.IsNullOrEmpty(deptCode))
+    {
+        DptInfoVerifyService.VerifyDpt(deptCode);
+    }
+}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--媒体查询-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+
+    <title>Spacetree - Tree Animation</title>
+    @Html.AjaxAntiForgeryToken()
+    @Styles.Render("~/Css/TalentEasyui")
+    <!-- CSS Files -->
+    <link href="~/Content/TalentTwo/css/animate.css" rel="stylesheet" />
+    <link href="~/Content/TalentTwo/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/TalentTwo/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/TalentTwo/css/len-spacetree.css" rel="stylesheet" />
+    <link href="~/Content/TalentTwo/css/skins/default.css" rel="stylesheet" />
+    <!--[if IE]><script language="javascript" type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+    <!-- JIT Library File -->
+    <script type="text/javascript" src="~/Scripts/TalentTwo/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/TalentTwo/js/jit.js"></script>
+    @Scripts.Render("~/Js/TalentEasyui")
+    <!-- Example File -->
+    <script src="~/Scripts/TalentTwo/js/bootstrap.min.js"></script>
+    <script src="/Scripts/ECharts/layer/layer.min.js"></script>
+    <script src="~/Scripts/TalentTwo/js/plugins/layer/laydate/laydate.js"></script>
+    <script src="~/Scripts/TalentTwo/js/spacetree2.js"></script>
+    <script src="~/Scripts/TalentTwo/js/artDialog.js"></script>
+    <script src="~/Scripts/TalentTwo/js/iframeTools.js"></script>
+    <script src="~/Scripts/TalentTwo/js/common.js"></script>
+    <script src="~/Scripts/TalentTwo/js/contabs.js"></script>
+    <style type="text/css">
+        .import {
+            background: #fff;
+            border: 1px solid #737373;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body id="spacetree2">
+    <div class="wrap-top staff">
+        <span class="left">人才管理<span>>>继任计划</span></span>
+        <div class="right">
+            <div class="btn-group">
+                <button id="import" onclick="importExl()">关键岗位及继任者导入</button>
+                <button id="export" onclick="downLoadXls()">关键岗位继任导出</button>
+                <div id="jump" style="display: none;">
+                    <a class="J_menuItem about" href="" name="个人详情"></a>
+                </div>
+            </div>
+            <div class="btn-group">
+                <input id="deptTree" class="tree-input" value="请选择部门">
+            </div>
+        </div>
+        <div class="con-top"><span><span id="deptName" class="staffNo" data-node="">&nbsp;</span>关键岗位继任</span></div>
+    </div>
+    <div id="container">
+        <div id="center-container">
+            <div id="infovis"></div>
+        </div>
+    </div>
+
+    @*<div class="con-bottom">当前<span class="successor">2</span>个岗位无继任者</div>*@
+    <div class="select-wrap">
+        <div class="refreshWrap">
+            <span class="refresh">刷新继任图<i class="fa fa-refresh"></i></span>
+            <span class="checkLog">查看变更<i class="fa fa-search"></i></span>
+        </div>
+
+        <h5>关键岗位设置</h5>
+        <div class="search">
+            <input id="empName" class="easyui-searchbox" data-options="prompt:'关键岗位员工搜索',searcher:doSearch" />
+        </div>
+        <div class="selectWrap">
+            <div class=" select empReportLineList"></div>
+            <div id="pagination">
+                <span class="prev"><i class="fa fa-angle-double-left">&nbsp;</i></span>
+                <span class="num">1</span>
+                <span class="next"><i class="fa fa-angle-double-right">&nbsp;</i></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        var _width = parseInt($(document).width());
+        console.log(_width);
+        //$('#infovis').css('width', $(window).width());
+        //$('#infovis').css('height', $(window).height());
+
+        //if (_width < 1458) {
+        //    $('.len3-wrap').find('.successor').css('margin-top', '5px');
+        //}
+
+
+        $(document).ajaxError(function (event, jqXHR, request, settings) {
+            var text = jqXHR.statusText + "(" + jqXHR.status + ")";
+            if (jqXHR.responseJSON)
+                text = jqXHR.responseJSON.message;
+            alert('操作错误' + '：' + text);
+        });
+        //检测关键岗位
+        //加载部门GetSuccessor
+        positionTree();
+        //检测拖动事件禁止点击
+        //跳转到个人详情页面
+        var clickFlag = true; //拖动时变为false,
+        var userUrl = "/TalentManagement/Demeanour/UserInfo?StaffNo="; //个人详情url;
+        checkMove('.len3-wrap');
+        function checkMove(select) {
+            var obj = $(select);
+            var x1, y1, x2, y2, _x, _y;
+
+            $(document).on('mousedown', obj, function (e) {
+                x1 = e.pageX;
+                y1 = e.pageY;
+                clickFlag = true;
+            })
+
+            $(document).on('mouseup', obj, function (e) {
+                x2 = e.pageX;
+                y2 = e.pageY;
+                _x = Math.abs(x1 - x2);
+                _y = Math.abs(y1 - y2);
+                if (_x < 7 && _y < 7) {
+                    clickFlag = true;
+                } else {
+                    clickFlag = false;
+                }
+            })
+        }
+
+
+        $(document).on('click', '.len3-wrap .img', function () {
+
+            if (clickFlag) {
+                var staffno = $(this).closest('.len3-wrap').find('.deptName').attr('data-deptCode')
+                $('#jump').find('a').attr('href', userUrl + staffno);
+                $('#jump').find('a')[0].click();
+            }
+
+
+        });
+
+
+
+        //继任者弹窗
+        $(document).on('click', '.len3-wrap:not(.normalPosition) .successor', function () {
+
+            var deptName = $(this).parents('.len3-wrap').find('.deptName').text();
+            var title = '关键岗位继任者信息';
+            var _id = $(this).parents('.len3-wrap').find('.deptName').attr('data-deptCode');
+            if (clickFlag) {
+                art.dialog.open('/TalentManagement/Successor/Successor?staffno=' + _id, {
+                    title: title,
+                    width: '1097px',
+                    height: '80%',
+                    lock: 'false',
+                    close: function () {
+                        reFreshNode(_id);
+                    }
+                });
+            }
+
+        });
+
+        //获取继任者列表
+        function reFreshNode(id) {
+            $.ajax({
+                type: "GET",
+                url: '/TalentManagement/KeyPosition/GetSuccessor',
+                traditional: true,
+                dataType: "json",
+                cache: false,
+                data: {
+                    ancester: id,
+                },
+                success: function (data) {
+
+                    reFreshsuccessor(data, id);
+                },
+                error: function (data) {
+
+                }
+            });
+        }/*reFreshNode()结束*/
+
+        /*刷新继任者信息*/
+        function reFreshsuccessor(data, id) {
+            var successor0, successor1, successor2, successor3;
+            successor0 = checkSuccessorNum(data, 0);
+            successor1 = checkSuccessorNum(data, 1);
+            successor2 = checkSuccessorNum(data, 2);
+            successor3 = checkSuccessorNum(data, 3);
+
+            $('#' + id).find('.len3-wrap').find('.successor0').text(successor0);
+            $('#' + id).find('.len3-wrap').find('.successor1').text(successor1);
+            $('#' + id).find('.len3-wrap').find('.successor2').text(successor2);
+            $('#' + id).find('.len3-wrap').find('.successor3').text(successor3);
+        }
+
+        /*检测继任者数量*/
+        function checkSuccessorNum(data, num) {
+            if (!data[num]) {
+                return '无信息';
+            } else if (data[num].num == 1) {
+
+                return data[num].name + '1人'
+            } else {
+                return data[num].name + '等' + data[num].num + '人'
+
+            }
+
+        }
+
+        var addFlag = true;  //动画完成后变成真
+
+        //获取子节点
+        $(document).on('click', '#addNode', function () {
+            var loading;
+
+            if (clickFlag) {
+                if (addFlag) {
+                    addflag = false;
+                    var toggleFlag = $(this).attr('data-click');
+                    var level = $(this).parents('.len3-wrap').attr('data-level');
+                    if (toggleFlag == 'true') {
+                        loading = layer.load();	 //loading遮罩层
+                        var _id = $(this).parents('.node').attr('id');
+                        $.ajax({
+                            type: "GET",
+                            url: '/TalentManagement/KeyPosition/GetKeyPositionTreeNode',
+                            traditional: true,
+                            dataType: "json",
+                            cache: false,
+                            data: {
+                                dptCode: $('#deptName').attr("data-node"),
+                                ancester: _id,
+                                depth: 2
+                            },
+                            success: function (data) {
+                                layer.close(loading);	  //关闭loading
+                                console.log('successor');
+                                console.log(data);
+                                addSubtree(data, _id, level);
+                                // $(".staff").attr(data.st);
+                            },
+                            error: function (data) {
+                                alert('数据请求失误')
+                                layer.close(loading);	  //关闭loading
+                            }
+                        });
+
+                    } else {//清除子节点
+
+                        layer.close(loading);
+                        var _id = $(this).parents('.node').attr('id');
+                        st.removeSubtree(_id, false, 'animate', {
+                            hideLabels: false,
+                            onComplete: function () {
+                                addFlag = true;
+                                $('#' + _id).find('#addNode').attr('data-click', 'true');
+                                $('#' + _id).find('#addNode').find('i.fa').removeClass('arrowRotate');
+                            }
+                        })
+                    }
+
+                }
+            }
+
+
+        });
+        /*spacetree添加子节点*/
+        function addSubtree(subtree, _id, level) {
+
+
+            //$(this).find('i.fa').toggleClass('toggle');
+            subtree.id = _id;
+            st.addSubtree(subtree, 'animate', {
+                hideLabels: false,
+                onComplete: function () {
+                    addFlag = true;
+                    $('#infovis').find('[data-level="'+level+'"]').find('[data-click]').each(function () {//其他变成可点击状态
+                        $(this).attr('data-click', 'true');
+                    });
+                    $('#' + _id).find('#addNode').attr('data-click', 'false'); //当前不可点击
+                    $(document).find('[data-level="' + level + '"]').find('i.arrowRotate').removeClass('arrowRotate');
+                    $('#' + _id).find('i.fa').addClass('arrowRotate');
+                    st.onClick(_id);
+                }
+            });
+
+
+
+        }
+
+    });/*$function结束*/
+
+
+    //获取部门tree信息
+    function getSpaceTree2(deptCode) {
+        $.ajax({
+            type: "GET",
+            url: '/TalentManagement/KeyPosition/GetKeyPositionTree',
+            traditional: true,
+            dataType: "json",
+            cache: false,
+            data: {
+                dptCode: deptCode,
+                depth: "2"
+            },
+            success: function (data) {
+                console.log('init');
+                console.log(data)
+                //画树前先清空页面
+                $('#infovis').empty();
+                if (data != null) {
+                    if (data.hasOwnProperty("data")) {
+                        init(data);
+                        $('.staffno').attr("data-staff", data.data.staff.code);
+                    }
+                }
+            },
+            error: function (data) {
+                
+            }
+        });
+    }
+    var currentDpt = '@deptCode';
+    var deptDesc = '@deptDesc';
+    var flag = 0;
+    function positionTree() {
+        var url = '@Url.Action("GetAnsyEsayUITreeNode", "DptAPI")';
+            $('#deptTree').combotree({
+                url: url,
+                method: 'get',
+                animate: true,
+                lines: true,
+                delay: 600,
+                editable:true,
+                onBeforeExpand: function (node, param) {
+                    if (node.children.length >= 1) {
+                        node.status = "open";
+                        return;
+                    } else {
+                        node.status = "close";
+                    }
+                    return true;
+                },
+                //输入进行异步搜索事件，后台数据返回未处理
+                keyHandler: {
+                    query: function (e) {
+                        openAnsy = true;
+                        var q = $('#deptTree').combotree('getText');
+                        if (q.trim() == '') {
+                            $.getJSON('@Url.Action("GetAnsyEsayUITreeNode", "DptAPI")?', function (json) {
+                                $('#deptTree').combotree('loadData', json);
+                                $('#deptTree').combotree('setText', ' ');
+                            });
+                        } else {
+                            $.getJSON('@Url.Action("GetAnsyEsayUITreeNode", "DptAPI")?q=' + q.trim(), function (json) {
+                                $('#deptTree').combotree('loadData', json);
+                                $('#deptTree').combotree('setText', q);
+                            });
+                        }
+                    },
+                },
+                onChange: function (sItem) {
+                    debugger;                  
+                    if (sItem.trim() == "请选择部门" || sItem.trim() == "" || sItem.trim() == "0") {
+                        parent.layer.msg("请选择有效部门");
+                        return;
+                    }
+                    var t = $("#deptTree").combotree('tree'); // 得到树对象
+                    var n = t.tree('getSelected'); // 得到选择的节点
+                    if (flag == 1) {
+                        var text = deptDesc;
+                    } else {
+                        var text = n.text;
+                    }                    
+                    currentDpt = sItem;//当前部门code
+                    $('#deptName').attr("data-node", sItem)
+                    $('#deptName').text(text);
+                    /*关岗位按钮开关*/
+                    keyPositionSwitch(1);
+                    getSpaceTree2(sItem);
+                                 
+                },
+                onLoadSuccess: function (node, data) {               
+                    debugger;
+                    var values = currentDpt;
+                    var text = deptDesc;
+                    //debugger;
+                    var t = $("#deptTree").combotree('tree');//获取tree
+                    var nodes = t.tree('getChildren');
+                    
+                    for (var i = 0; i < nodes.length; i++) {
+                        var node = nodes[i];
+                        if (node.id == values) {
+                            flag = 0;
+                            break;//判断加载过的数据中是否存在界面带入的部门
+                        } else {
+                            flag = 1;
+                        }
+                    }
+                    if (values == "" || values == null || values == undefined) {
+                        //选择默认值
+                        //debugger;
+                        var tt = $("#deptTree").combotree('tree');//获取tree
+                        for (var i = 0; i < data.length ; i++) {
+                            node = tt.tree("find", data[i].id);
+                            if (data[i].hasOwnProperty('children')) {
+                                values = node.children[0].id;
+
+                            } else {
+                                values = data[i].id;
+                            }
+                            break;
+                        }
+                    }
+
+                    currentDpt = values;
+                    if (flag == 1) {
+                        $('#deptTree').combotree('setValue', values);
+                        $('#deptTree').combotree('setText', text);
+                    } else {
+                        $('#deptTree').combotree('setValue', values);
+                    }
+                }
+            });
+        }
+    
+        //刷新汇报树
+        $('.refresh').click(function () {
+            var stafNo = $('#deptName').attr("data-node");
+            getSpaceTree2(stafNo);
+        })
+
+        // 关键岗位分页
+        //上一页
+        $('#pagination').find('.prev').click(function () {
+            var index = $('#pagination').find('.num').text();
+            if (index > 1) {
+                index--;
+                keyPositionSwitch(index);
+            } else {
+
+
+            }
+        })
+        //下一页
+        $('#pagination').find('.next').click(function () {
+            var len = $('.select').find('.clearfix').length;
+            if (len == 10) {
+                var index = $('#pagination').find('.num').text();
+                index++;
+                keyPositionSwitch(index);
+
+            }
+        })
+        //关键词查询
+        var searchValue = '';
+        //$(document).on('click', '#empName+.searchbox .searchbox-button', function () {
+        //    var value = $(this).closest('.searchbox').find('.searchbox-text')[0].value;
+        //    if (value == '关键岗位员工搜索') {
+        //        searchValue = '';
+        //    } else {
+        //          searchValue = value;
+        //    }
+
+        //})
+
+        $(document).on('change', '#empName+.searchbox .searchbox-text', function () {
+
+            var value = $(this)[0].value;
+            console.log(value);
+            if (value = '') {
+                searchValue = value;
+            }
+
+
+
+        })
+        //按姓名筛选查询
+        function doSearch(value) {
+            if (value == '关键岗位员工搜索') {
+                searchValue = '';
+            } else {
+                searchValue = value;
+            }
+            var deptCode = $('#deptName').attr("data-node");
+            keyPositionSwitch(1);
+            return value;
+        }
+
+        //点击加载分页里的关键岗位
+        function keyPositionSwitch(len) {
+            var deptCode = $('#deptName').attr("data-node");
+            $.ajax({
+                type: "GET",
+                url: '/TalentManagement/KeyPosition/GetEmpList',
+                traditional: true,
+                dataType: "json",
+                cache: false,
+                data: {
+                    dptCode: deptCode,
+                    keyWord: searchValue,
+                    page: len,
+                    rows: 10
+                },
+                success: function (data) {
+                    $('.select-wrap .select').empty();
+                    var items = [];
+                    var item;
+                    var index = 1;
+                    funMethod(data);
+                    $('#pagination').find('.num').text(len);
+                },
+                error: function (data) {
+                }
+            });
+
+        }
+        //关键岗位查询公用方法
+        function funMethod(data) {
+            var index = 1;
+            $.each(data, function (key, value) {
+                if (value.isKeyPosition) {
+                    item = '<div class="clearfix item">' +
+                    '<span class="name" data-toggle="tooltip" data-placement="right" title="">&nbsp;</span>' + '<span class="position" data-toggle="tooltip" data-placement="right" title=""></span>' +
+                    '<div class="switch" data-keyPoition="" data-node=""><div class="onoffswitch">' +
+                    '<input type="checkbox" checked="true" class="onoffswitch-checkbox" id="">' +
+                    '<label class="onoffswitch-label" for="">' +
+                    '<span class="onoffswitch-inner"></span><span class="onoffswitch-switch"></span>' +
+                    '</label></div></div></div>';
+
+                    var $templete = $(item);
+                    $templete.addClass(index);
+                    $templete.find('.name').text(value.staffName);
+                    $templete.find('.name').attr('title', value.staffName);
+                    $templete.find('.position').text(value.position);
+                    $templete.find('.position').attr('title', value.position);
+                    $templete.find('.switch').attr('data-keyPoition', value.isKeyPosition);
+                    $templete.find('.switch').attr('data-node', value.staffNo);
+                    $templete.find('.onoffswitch-checkbox').attr('id', 'example' + index);
+                    $templete.find('.onoffswitch-label').attr('for', 'example' + index);
+                    $('.select-wrap .select').append($templete);
+                } else {
+                    item = '<div class="clearfix">' +
+                      '<span class="name" data-toggle="tooltip" data-placement="right" title="">&nbsp;</span>' + '<span class="position" data-toggle="tooltip" data-placement="right" title=""></span>' +
+                      '<div class="switch" data-keyPoition="" data-node=""><div class="onoffswitch">' +
+                      '<input type="checkbox"  class="onoffswitch-checkbox" id="">' +
+                      '<label class="onoffswitch-label" for="">' +
+                      '<span class="onoffswitch-inner"></span><span class="onoffswitch-switch"></span>' +
+                      '</label></div></div></div>';
+                    var $templete1 = $(item);
+                    $templete1.addClass(index);
+                    $templete1.find('.name').text(value.staffName);
+                    $templete1.find('.name').attr('title', value.staffName);
+                    $templete1.find('.position').text(value.position);
+                    $templete1.find('.position').attr('title', value.position);
+                    $templete1.find('.switch').attr('data-keyPoition', value.isKeyPosition);
+                    $templete1.find('.switch').attr('data-node', value.staffNo);
+                    $templete1.find('.onoffswitch-checkbox').attr('id', 'example' + index);
+                    $templete1.find('.onoffswitch-label').attr('for', 'example' + index);
+                    $('.select-wrap .select').append($templete1);
+                }
+                index++;
+            })
+        }
+        /*关键岗位按钮开关*/
+
+        /*按钮开关点击事件   增加与删除*/
+        $(".empReportLineList").on('click', ".switch input", function () {
+            var keyPosition = $(this).prop('checked');
+            $(this).parents('.switch').attr('data-keypoition', keyPosition)
+            var _id = $(this).parents('.switch').attr('data-node');
+            var name = $(this).parents('.clearfix').find('.name').text();
+            var params = { StaffNo: _id, StaffName: name }
+
+            if (keyPosition) {
+                $.ajax({
+                    type: "POST",
+                    url: '/TalentManagement/KeyPosition/SaveAncester',
+                    dataType: "json",
+                    cache: false,
+                    data: {
+                        ancesterInfo: JSON.stringify(params),
+                    },
+                    success: function (data) {
+                        //alert("添加成功");
+                    },
+                    error: function (data) {
+
+                    }
+                });
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "/TalentManagement/KeyPosition/DeleteAncester",
+                    dataType: "json",
+                    cache: false,
+                    data: {
+                        staffNo: _id
+                    },
+                    success: function (data) {
+                        //alert("删除成功");
+                    }
+                });
+            }
+        })
+
+        //查看变更日志
+
+        $('.refreshWrap').on('click', '.checkLog', function () {
+            var title = '查看变更日志';
+            var _id = $('#deptName').attr('data-node');
+            art.dialog.open('/TalentManagement/KeyPosition/CheckLog?staffNo=' + _id, {
+                title: title,
+                width: '1097px',
+                height: '82%',
+                button: [
+                        {
+                            name: '关闭',
+                            focus: true
+                        }
+                ],
+                lock: 'false',
+                init: function () {
+                    var i
+                    //var iframe = this.iframe.contentWindow;
+                    //iframe.$.fn.EditEmpExtend.loadPage(extendData);
+                },
+                close: function () {
+                    //关闭弹窗时执行函数
+                }
+            });
+
+        })
+
+        function downLoadXls() {
+            dptCode = $("#deptTree").combotree("getValue");
+            if (!dptCode) {
+                parent.layer.msg('部门选项为空，请刷新页面重试！', { icon: 0 });
+                return;
+            }
+            window.location.href = 'Export?dptCode=' + dptCode;
+        };
+
+        //继任者导入页面
+        function importExl(data) {
+            parent.layer.open({
+                type: 2,
+                title: '详情',
+                shadeClose: false,
+                shade: 0.8,
+                area: ['400px', '400px'],
+                content: '/TalentManagement/Successor/UploadSuccessor', //iframe的url
+                end: function (index) {
+                    var stafNo = $('#deptName').attr("data-node");
+                    getSpaceTree2(stafNo);
+                    keyPositionSwitch(1)
+                }
+            });
+        }
+</script>
+<!--tree的多选搜索功能-->
+<script type="text/javascript">
+    /**  * combobox和combotree模糊查询  */
+    (function () {
+        //combobox可编辑，自定义模糊查询
+        $.fn.combobox.defaults.editable = true;
+        $.fn.combobox.defaults.filter = function (q, row) {
+            var opts = $(this).combobox('options');
+            return row[opts.textField].indexOf(q) >= 0;
+        };
+        //combotree可编辑，自定义模糊查询
+        $.fn.combotree.defaults.editable = true;
+        $.extend($.fn.combotree.defaults.keyHandler, {
+            up: function () {
+                console.log('up');
+            },
+            down: function () {
+                console.log('down');
+            },
+            enter: function () {
+                console.log('enter');
+            },
+            query: function (q) {
+                var t = $(this).combotree('tree');
+                var nodes = t.tree('getChildren');
+                for (var i = 0; i < nodes.length; i++) {
+                    var node = nodes[i];
+                    if (node.text.toLowerCase().indexOf(q.toLowerCase())
+>= 0) {
+                        $(node.target).show();
+                    } else {
+                        $(node.target).hide();
+                    }
+                }
+                var opts = $(this).combotree('options');
+                if (!opts.hasSetEvents) {
+                    opts.hasSetEvents = true;
+                    var onShowPanel = opts.onShowPanel;
+                    opts.onShowPanel = function () {
+                        var nodes = t.tree('getChildren');
+                        for (var i = 0; i < nodes.length; i++) {
+                            $(nodes[i].target).show();
+                        }
+                        onShowPanel.call(this);
+                    };
+                    $(this).combo('options').onShowPanel = opts.onShowPanel;
+                }
+            }
+        });
+    })(jQuery);
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+       .login{
+         height:100px;
+         border:1px solid #000;
+       }
+       .happy{
+         display:none;
+       }
+  </style>
+  <!-- <script type="text/javascript" src="jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+    $(function(){
+        $('.login').css({'display':'none'});
+        $('.happy').css({'display':'block'});
+
+    }) -->
+ <script type="text/javascript">
+    window.onload=function(){
+       var login = document.querySelector('.login');
+       var happy = document.querySelector('.happy');
+       login.style.display='none';
+       happy.style.display='block';
+    }
+  </script>
+</head>
+<body>
+  <div class="login">登录页面</div>
+  <div class="happy">已登录页面</div>
+</body>
+</html>

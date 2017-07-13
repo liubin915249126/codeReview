@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组去重</title>
+</head>
+<body>
+
+   <script type="text/javascript">
+   //数组去重
+function uniqueArr(initial){
+let result = []
+initial.forEach((item,index,arr)=>{
+      let current=-1
+      result.forEach((item1,index1,arr1)=>{
+        if(item1==item){current=index1}
+      })
+   if(current==-1){
+     result.push(item)
+   }
+})
+return result
+}
+console.log(uniqueArr([1,1,1,2,2,2,3,3,4]))
+//console.log([1,1,1,2,2,2,3,3,4].findIndex((item,index,arr)=>{item==4}))
+   </script>
+</body>
+</html>

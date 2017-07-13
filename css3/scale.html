@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .stage{
+      perspective: 600px;
+      width:200px;
+      height:200px;
+      margin: 0 auto;
+      margin-top: 50vh;
+    }
+    .wrap{
+      height:100%;
+      transform-style: preserve-3d;
+    }
+    .wrap .inner{
+      height:100%;
+      border: 1px solid #000;
+      transform: translateZ(100px);
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="wrap">
+       <div class="inner">
+         测试文字测试文字
+         测试文字测试文字
+         测试文字测试文字
+         测试文字测试文字
+       </div>
+    </div>
+  </div>
+
+</body>
+</html>

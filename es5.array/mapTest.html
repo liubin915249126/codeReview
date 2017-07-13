@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--map-->
+<script type="text/javascript">
+   // ['l','i','u','b','i','n'].map(alert);
+    //['l','i','u','b','i','n'].map(console.log);
+   var arr=['l','i','u','b','i','n'];
+   var arr1=[1,2,3,4,5]
+   var newArr=arr1.map(function(value,index,arr){
+      return value*value;   //必须有返回值，返回新数组
+   });
+
+</script>
+
+<!--forEach-->
+<script type="text/javascript">
+    //传统for循环
+    var array = [1, 2, 3, 4,5];
+    for (var k = 0, length = array.length; k < length; k++) {
+       console.log(array[k]);
+    }
+
+    array.forEach(function(value,index,arr){
+
+    })
+
+    var database = {
+        users: ["张含韵", "江一燕", "李小璐"],
+        sendEmail: function (user) {
+            if (this.isValidUser(user)) {
+                console.log("你好，" + user);
+            } else {
+                console.log("抱歉，"+ user +"，你不是本家人");
+            }
+        },
+        isValidUser: function (user) {
+            return /^张/.test(user);
+        }
+    };
+
+    // 给每个人法邮件
+    database.users.forEach(  // database.users中人遍历
+            database.sendEmail,    // 发送邮件
+            database               // 使用database代替上面标红的this
+    );
+</script>
+
+<!---->
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+   <script type="text/javascript">
+   //filter
+   let arr = [1,2,3,4,5,6];
+   const filterArr = arr.filter(function(value,index,arr){
+       return value>=3;
+   })
+   //console.log(filterArr);
+   </script>
+
+   <script type="text/javascript">
+    //some,every
+    //let arr = [1,2,3,4,5,6];
+    let boolen = arr.every(function(value,index,arr){
+      //  console.log(value);
+      //  console.log(index);
+      //  console.log(arr);
+      return 4<value;
+    })
+    console.log(boolen);
+   </script>
+</body>
+</html>

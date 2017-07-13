@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+      input[type=text]:focus:valid,
+      input[type=email]:focus:valid,
+      input[type=number]:focus:in-range { outline: 2px green solid; }
+
+      input[type=text]:focus:invalid,
+      input[type=email]:focus:invalid,
+      input[type=number]:focus:out-of-range { outline: 2px red solid; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+  <form action="">
+    <label for="test1">123</label>
+    <input type="text" name="test1">
+    <textarea rows="3" cols="20">
+     在w3school，你可以找到你所需要的所有的网站建设教程。
+    </textarea>
+    <input type="email" value="test"/>
+    <input type="url" placeholder="test" autocomplete="on"/>
+    <input type="number" max="100" min="10" step="2" value="10"/>
+    <input type="range"  max="100" min="10" step="2" value="10"/>
+    <input type="date" value="2011-01-04"/>
+    <input type="search" />
+    <input type="color" value="#0a0a0a" />
+
+     <!-- datalist -->
+     Webpage: <input type="url" list="url_list" name="link" />
+    <datalist id="url_list">
+        <option label="W3School" value="http://www.w3school.com.cn" />
+        <option label="Google" value="http://www.google.com" />
+        <option label="Microsoft" value="http://www.microsoft.com" />
+    </datalist>
+
+
+    <input type="submit">
+  </form>
+
+
+
+  </div>
+  <script type="text/javascript">
+  window.onload=function(){
+    var inputs = document.querySelectorAll('input');
+    var color = document.querySelector('[type="color"]');
+     color.addEventListener('change',function(){
+       console.log(this.value);
+     },false);
+
+     inputs.forEach(function(value,index,arr){
+        value.addEventListener('change',function(){
+            console.log(this.value);
+        },false)
+
+
+     })
+
+  }
+
+  </script>
+</body>
+</html>

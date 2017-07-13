@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+     const data = [
+  {
+    "key": "23",
+    "Name": "测试模板-23",
+    "Code": "T001DF023"
+  },
+  {
+    "key": "24",
+    "Name": "测试模板-24",
+    "Code": "T001DF024"
+  },
+  {
+    "key": "28",
+    "Name": "测试模板-28",
+    "Code": "T001DF028"
+  },
+  {
+    "key": "29",
+    "Name": "测试模板-29",
+    "Code": "T001DF029"
+  },
+  {
+    "key": "30",
+    "Name": "测试模板-30",
+    "Code": "T001DF030"
+  }
+]
+let newData = [];
+
+function filter() {
+  debugger;
+  for(let i=0;i++;i<data.length){
+    if(data[i].Name.includes('23')){
+      newData.push(data[i])
+      console.log(newData);
+    }
+
+  }
+}
+filter()
+  </script>
+</body>
+</html>

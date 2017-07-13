@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/demo/demo.css">
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+
+
+</head>
+<body>
+<input class="easyui-combobox"
+       id="tt"        >
+
+
+<script type="text/javascript">
+
+    $(function(){
+        var tt =$('#tt');
+
+        $('#tt').combobox({
+            mode: 'remote',
+            url: 'combobox_data1.json',
+           /* data:'combobox_data1.json',*/
+            valueField: 'id',
+            textField: 'text',
+            formatter: randerItem,
+            onSelect: function (json) {
+              console.log(json);
+
+                //staffNo = $('#selName').combobox('getValue');
+
+
+
+
+            }
+        });
+        function randerItem (row){
+            var item = '<span class="name">' + row.text + '</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="deptName">' + row.otherdata + '</span>';
+
+            return item;
+
+        }
+
+
+
+    })
+
+</script>
+</body>
+</html>

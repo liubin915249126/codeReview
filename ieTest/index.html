@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+  .onoffswitch {
+          position: relative;
+          width: 54px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+      }
+
+      .onoffswitch-checkbox {
+          display: none;
+      }
+
+      .onoffswitch-label {
+          display: block;
+          overflow: hidden;
+          cursor: pointer;
+          border: 2px solid #1AB394;
+          border-radius: 3px;
+      }
+
+      .onoffswitch-inner {
+          display: block;
+          width: 200%;
+          margin-left: -100%;
+          -webkit-transition: margin 0.3s ease-in 0s;
+          transition: margin 0.3s ease-in 0s;
+      }
+
+      .onoffswitch-inner:before,
+      .onoffswitch-inner:after {
+          display: block;
+          float: left;
+          width: 50%;
+          height: 16px;
+          padding: 0;
+          line-height: 16px;
+          font-size: 10px;
+          color: white;
+          font-family: Trebuchet, Arial, sans-serif;
+          font-weight: bold;
+          box-sizing: border-box;
+      }
+
+      .onoffswitch-inner:before {
+          content: "是";
+          padding-left: 7px;
+          background-color: #1AB394;
+          color: #FFFFFF;
+      }
+
+      .onoffswitch-inner:after {
+          content: "否";
+          padding-right: 7px;
+          background-color: #FFFFFF;
+          color: #919191;
+          text-align: right;
+      }
+
+      .onoffswitch-switch {
+          display: block;
+          width: 18px;
+          margin: 0px;
+          background: #FFFFFF;
+          border: 2px solid #1AB394;
+          border-radius: 3px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 36px;
+          -webkit-transition: all 0.3s ease-in 0s;
+          transition: all 0.3s ease-in 0s;
+      }
+
+      .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+          margin-left: 0;
+      }
+
+      .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+          right: 0px;
+      }
+  </style>
+</head>
+<body>
+    <div class="out">
+
+      <div class='inner'></div>
+    <div>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript">
+       $(function(){
+          var arr = [{"isKeyPosition":true,"staffNo":"00000001","staffName":"沈亚","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00000001","position":"首席执行官"},{"isKeyPosition":false,"staffNo":"00045584","staffName":"张晓刚","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00045584","position":"BI副总监"},{"isKeyPosition":true,"staffNo":"00059581","staffName":"宋涛","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00059581","position":"商业分析顾问"},{"isKeyPosition":true,"staffNo":"00010723","staffName":"邹文建","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00010723","position":"商业分析专家"},{"isKeyPosition":false,"staffNo":"00057243","staffName":"汤鹏飞","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00057243","position":"高级商业分析师"},{"isKeyPosition":false,"staffNo":"00002376","staffName":"何康伦","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00002376","position":"资深商业分析师"},{"isKeyPosition":true,"staffNo":"00024359","staffName":"潘金荣","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00024359","position":"高级商业分析师"},{"isKeyPosition":true,"staffNo":"00029267","staffName":"黎晴岚","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00029267","position":"资深商业分析师"},{"isKeyPosition":true,"staffNo":"00026296","staffName":"廖秋菊","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00026296","position":"高级商业分析师"},{"isKeyPosition":true,"staffNo":"00015148","staffName":"吴祥光","pic":"/TalentManagement/EmpInfo/GetPortrait?staffNo=00015148","position":"高级商业分析师"}]
+          console.log(arr.length);
+          var  index = 1;
+          $.each(arr,function(index,value){
+            debugger;
+            var item = '<div class="clearfix item">' +
+                '<span class="name" data-toggle="tooltip" data-placement="right" title="">&nbsp;</span>' + '<span class="position" data-toggle="tooltip" data-placement="right" title=""></span>' +
+                '<div class="switch" data-keyPoition="" data-node=""><div class="onoffswitch">' +
+                '<input type="checkbox" checked="true" class="onoffswitch-checkbox" id="">' +
+                '<label class="onoffswitch-label" for="">' +
+                '<span class="onoffswitch-inner"></span><span class="onoffswitch-switch"></span>' +
+                '</label></div></div></div>';
+
+                var $templete = $(item);
+                $templete.addClass(index+'');
+                $templete.find('.name').text(value.staffName);
+                $templete.find('.name').attr('title', value.staffName);
+                $templete.find('.position').text(value.position);
+                $templete.find('.position').attr('title', value.position);
+                $templete.find('.switch').attr('data-keyPoition', value.isKeyPosition);
+                $templete.find('.switch').attr('data-node', value.staffNo);
+                $templete.find('.onoffswitch-checkbox').attr('id', 'example' + index);
+                $templete.find('.onoffswitch-label').attr('for', 'example' + index);
+                $templete.find('.onoffswitch-checkbox').attr('checked', value.isKeyPosition);
+
+
+               index++;
+              $('.out .inner').append($templete);
+          })
+
+
+       })
+    </script>
+</body>
+</html>

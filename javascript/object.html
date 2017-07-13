@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>判断对象是否为空</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var obj = {}
+    if(JSON.stringify(obj)=='{}'){
+      console.log('1');
+    }
+    // ES6语法
+    console.log(Object.keys(obj).length==0)
+    //jQuery
+    function isEmptyObject(obj){
+      for(var i in obj){
+        return false; //不为空对象
+      }
+      return true; //空对象
+    }
+    console.log(isEmptyObject(obj))
+    // getOwnPropertyNames
+    function bool(obj){
+      if(Object.getOwnPropertyNames(obj).length==0){
+        return false
+      }else {
+        return true
+      }
+    }
+    console.log('bool '+bool(obj))
+    // hasOwnProperty
+    function isOwnEmpty(obj){
+      for(var name in obj){
+        if(obj.hasOwnProperty(name)){
+          return false; //不为空对象
+        }
+      }
+        return true
+    }
+    console.log('isOwnEmpty  '+isOwnEmpty(obj));
+  </script>
+</body>
+</html>

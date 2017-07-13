@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>判断两个对象是否相等</title>
+</head>
+<body>
+   <script type="text/javascript">
+     function isObjectValueEqual(a, b) {
+      if(typeof a == 'number' && typeof b == 'number'){
+          return a == b
+      }
+      var aProps = Object.getOwnPropertyNames(a);
+      var bProps = Object.getOwnPropertyNames(b);
+
+      if (aProps.length != bProps.length) {
+          return false;
+      }
+
+      for (var i = 0; i < aProps.length; i++) {
+          var propName = aProps[i];
+          if(Object.prototype.toString(a[propName]) == '[Object Object]'||Object.prototype.toString(b[propName]) == '[Object Object]'){
+              isObjectValueEqual(a[propName],b[propName])
+          }
+          if (a[propName] !== b[propName]) {
+              return false;
+          }
+      }
+      return true;
+  }
+   </script>
+</body>
+</html>

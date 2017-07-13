@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .wrap:after{
+            content: '';
+            display: table-cell;
+            height: 0;
+            clear: both;
+        }
+        .left,.right{
+            min-width: 200px;
+            border:1px solid #000000 ;
+            float: left;
+        } 
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="left"><div class="inner">inner</div></div>
+    <div class="right">right</div>
+</div>
+</body>
+</html>

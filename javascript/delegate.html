@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件代理</title>
+</head>
+<div class="wrap">
+  <div class="inner">inner</div>
+<div>
+<body>
+   <script type="text/javascript">
+   //事件绑定
+   function addEvent (type,elem,fun){
+     if(document.addEventListener){
+       elem.addEventListener(type,fun,false)
+     }else{
+       elem.attachEvent(type,fun)
+     }
+   };
+  //事件委托
+  var delegate = function(target,event,fn){
+     addEvent(event,document,function(e){
+       console.log(e.target,target.toUpperCase())
+       if(e.target.nodeName == target.toUpperCase()){
+         fn.call(e.target)
+       }
+     })
+  }
+
+  var wrap = document.getElementsByClassName('wrap')[0];
+  var inner = document.getElementsByClassName('inner')[0];
+  console.log(inner)
+  delegate('div','click',function(){
+    alert(1)
+  })
+   </script>
+</body>
+</html>

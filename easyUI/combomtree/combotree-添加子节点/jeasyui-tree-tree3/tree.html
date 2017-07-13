@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery EasyUI</title>
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/icon.css">
+	<script type="text/javascript" src="../../jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="http://www.jeasyui.net/Public/js/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		function appendnodes(){
+			var node = $('#tt').tree('getSelected');
+			if (node){
+				var nodes = [{
+					"id":13,
+					"text":"Raspberry"
+				},{
+					"id":14,
+					"text":"Cantaloupe"
+				}];
+				$('#tt').tree('append', {
+					parent:node.target,
+					data:nodes
+				});
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Tree</h1>
+	<!--<div style="margin-bottom:10px;">
+		<a href="#" onclick="appendnodes()">append nodes</a>
+	</div>-->
+	<!--<div style="width:200px;height:auto;">-->
+		<!--<ul id="tt" class="easyui-tree" url="tree_data.json"></ul>-->
+	<!--</div>-->
+    <div >
+        <input id="deptTree" class="tree-input" value="请选择部门">
+        <div id="deptName" data-node=""></div>
+    </div>
+<script type="text/javascript">
+    $(function(){
+        var url="tree_data.json";
+       $('#deptTree').combotree({
+           url: url,
+           method: 'get',
+           animate: true,
+           lines: true,
+           onChange: function (node) {
+               console.log(node);
+               if (node.trim() == "请选择部门" || node.trim() == "" || node.trim() == "0") {
+                   return;
+               }
+               var t = $("#deptTree").combotree('tree'); // 得到树对象
+               var n = t.tree('getSelected'); // 得到选择的节点
+               var text = n.text;
+               if (text == "我的部门" || text == "其他部门") {
+                   return;
+               }
+               $('#deptName').attr("data-node",node);
+               $('#deptName').text(text);
+           },
+           onLoadSuccess: function (node, data) {
+               // 设置值，并选中
+               var tt = $("#deptTree").combotree('tree');//得到tree对象
+
+               for (var i = 0; i < data.length ; i++) {
+                   node = tt.tree("find", data[i].id);
+                   if (data[i].hasOwnProperty('children')) {
+                       values = node.children[0].id;
+                   } else {
+                       values = data[i].id;
+                   }
+                   break;
+               }
+               $('#deptTree').combotree('setValue', code);//tree设置值
+           }
+
+       })
+
+    })
+</script>
+</body>
+</html>

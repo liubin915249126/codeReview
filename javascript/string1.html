@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var str = '2017-02-23 18:00-20:30'
+    var arr = str.split('');
+    console.log(arr)
+    function checkNum(str){
+      var arr = str.split('')
+      var num =0
+      arr.forEach(function(item,index,arr){
+            if(item=='-'){
+              num+=1
+            }
+      })
+      return num
+    }
+    console.log(checkNum(str));
+  </script>
+</body>
+</html>

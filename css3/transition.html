@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transition测试</title>
+  <style type="text/css">
+  body,div{
+    margin:0;
+    padding: 0;
+  }
+  .wrap>div{
+      height: 100px;
+      border: 1px solid #000;
+      transition: 3s all ease-in 1s;
+      background:#f00;
+      opacity:1;
+  }
+  .wrapHidden .test1{
+    visibility: hidden;
+    opacity: 0;
+  }
+  .wrapHidden .test2{
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="test1">visibility</div>
+    <div class="test2">display</div>
+    <input type="button" value="变形"/>
+  </div>
+  <script type="text/javascript" src="../jquery.js"></script>
+  <script type="text/javascript">
+    $(function(){
+        $('input').on('click',function(){
+           $('.wrap').toggleClass('wrapHidden');
+        })
+    })
+  </script>
+</body>
+</html>

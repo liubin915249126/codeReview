@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap">
+    <input type="text" id="text" placeholder=""/>
+    <input type="button" id="btn" value="确定">
+    <ul class="todolists">
+
+    </ul>
+  </div>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+     var todoarr=[]
+     $(function(){
+       $("#btn").on('click',function(){
+         var todo = $('#text').val()
+         if(todo){
+           todoarr.push(todo)
+           renderLists(todo)
+         }else{
+           alert('请输入内容')
+         }
+       })
+       $('.todolists').find('li').each((index,item,arr)=>{
+
+       })
+       function renderLists(){
+         var liarr = []
+         todoarr.forEach((item,index,arr)=>{
+            item = '<li>'+item+'</li>'
+            liarr.push(item)
+         })
+         $('.todolists').html(liarr.join(''))
+       }
+     })
+  </script>
+</body>
+</html>

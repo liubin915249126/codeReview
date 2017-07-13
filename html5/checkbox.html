@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div class="wrap">
+      <input type="checkbox" class="check"/>
+      <input type="text" disabled="true" class="text"/>
+  </div>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.check').on('change',function () {
+            debugger;
+            var checked = !$(this).prop('checked');
+            $('.text').attr('disabled',checked);
+        })
+
+
+    })
+
+</script>
+</body>
+</html>

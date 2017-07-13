@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .compareModal .workcontent .workitem{
+      list-style: none;
+      position: relative;
+      padding-top: 25px;
+    }
+    .compareModal .workcontent .workitem::after{
+      content: '';
+      display: block;
+      overflow: hidden;
+      height: 0;
+      clear: both;
+    }
+    .compareModal .workcontent .workitem .itemleft,.compareModal .workcontent .workitem .itemright{
+          float: left;
+          width: calc(50% - 15px);
+          box-sizing: border-box;
+    }
+    .compareModal .workcontent .workitem .itemleft{
+      text-align: right;
+      margin-right: 15px;
+    }
+    .compareModal .workcontent .workitem .itemright{
+      text-align:left;
+      margin-left: 15px;
+    }
+    .compareModal .workcontent .workitem .dot{
+       width:11px;
+       height:11px;
+       border-radius:50%;
+       border: 1px solid #5D9CEC;
+       position: absolute;
+       left: 50%;top:50%;
+       transform: translate(-50%,-50%);
+       -webkit-transform: translate(-50%,-50%);
+    }
+    /*线条*/
+    .compareModal .workcontent .workitem::before{
+      content: '';
+      display: block;
+      height:calc(100% - 11px);
+      border-left: 2px solid #aaa;
+      position: absolute;
+      left: 50%;top:calc(50% + 5px);
+      transform: translate(-50%,0);
+      -webkit-transform: translate(-50%,0);
+    }
+  </style>
+</head>
+<body class="compareModal">
+   <div class="workcontent">
+     <li class="workitem">
+       <div class="itemleft">
+         2017/5/10
+       </div>
+       <div class="itemright">
+         <div>公司：<span>本公司</span></div>
+         <div>岗位：<span>总经办主任</span></div>
+       </div>
+       <div class="dot"></div>
+     </li>
+     <li class="workitem">
+       <div class="itemleft">
+         2017/5/10
+       </div>
+       <div class="itemright">
+         <div>公司：<span>本公司</span></div>
+         <div>岗位：<span>总经办主任</span></div>
+       </div>
+       <div class="dot"></div>
+     </li>
+   </div>
+</body>
+</html>

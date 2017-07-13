@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<!-- saved from url=(0019)https://maxiang.io/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器</title>
+        <link rel="icon" href="https://maxiang.io/favicon.ico">	
+        <link rel="bookmark" href="https://maxiang.io/favicon.ico">
+        <link rel="shortcut icon" sizes="16x16" href="https://maxiang.io/ico/icon16.png" type="image/png">
+        <link rel="shortcut icon" sizes="32x32" href="https://maxiang.io/ico/icon32.png" type="image/png">
+        <link rel="shortcut icon" sizes="48x48" href="https://maxiang.io/ico/icon48.png" type="image/png">
+        <link rel="shortcut icon" sizes="128x128" href="https://maxiang.io/ico/icon128.png" type="image/png">
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop">
+        <meta name="description" content="专为印象笔记打造的 Markdown 编辑器">
+        <meta name="author" content="gock">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <script async="" src="./欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器_files/analytics.js.下载"></script><script async="" src="./欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器_files/analytics.js.下载"></script><script>
+
+        
+            window.CDN = "//dn-maxiang.qbox.me"
+        
+
+        window.MX_VERSION = 20160307
+        </script>
+
+
+        <style>
+        #loading{position:fixed;top:0;left:0;bottom:0;right:0;z-index:10000000;background:white;color:#74b936;text-align:center}#loading .loading-container{position:absolute;margin:auto;left:0;right:0;top:30%;bottom:0}#loading b{color:white;background:#74b936;font-weight:normal;padding:5px 5px;margin:10px;font-size:50px}#loading h1,#loading h2,#loading h3,#loading h4{font-family:"Helvetica Neue",Arial,"Hiragino Sans GB","STHeiti","Microsoft YaHei","WenQuanYi Micro Hei",SimSun,sans-serif;text-align:center}#loading .reverse{color:white !important;background:#74b936 !important;padding:4px;border-radius:4px}#loading #loading-app-name{text-align:center;font-size:54px;margin-top:0;margin-bottom:.8em}#loading #loading-slogan{font-weight:normal}#loading #loading-text{margin:80px auto;text-align:center;margin-bottom:40px}#loading #loading-view-doc{font-size:16px;margin:10px auto}#loading #loading-view-doc a{padding:10px;border-radius:6px;border:1px solid #74b936}#loading #loading-view-doc a:link,#loading #loading-view-doc a:hover,#loading #loading-view-doc a:active,#loading #loading-view-doc a:visited{color:#74b936;text-decoration:none}.slim-scroll ::-webkit-scrollbar{height:10px;width:7px;background:transparent}.slim-scroll ::-webkit-scrollbar:hover{background:rgba(128,128,128,0.1)}.slim-scroll ::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.3);-webkit-border-radius:6px}.slim-scroll ::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,0.6)}.slim-scroll ::-webkit-scrollbar-corner{background:#000}.slim-scroll .ace_dark .ace_scrollbar::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.3);-webkit-border-radius:6px}.slim-scroll .ace_dark .ace_scrollbar::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.6)}.slim-scroll .ace_scroller{right:4px !important}.slim-scroll .ace_scrollbar-v{right:4px !important}.slim-scroll #preview{right:2px}
+        </style>
+        <script>
+        (function(){
+        		var url = window.location.href
+                if (/guid/.test(location.hash)){
+                    if (/\bfast_redirect=1/.test(document.cookie) || localStorage.getItem('client_installed') == 1){
+                        window.location.href = window.location.href.replace(/^\w*:/, "mxdown:");
+                        return;
+                    } else {
+                        if (window.chrome){
+                        
+                            /*
+                            if (window.confirm('{%= REDIRECT %}')){
+                            
+                                document.cookie = "fast_redirect=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; " + "domain=" + (/^[\d\.]*$/.test(window.location.host) ? "" : ".") + window.location.host.replace(/^app/, '')
+                                window.location.href = window.location.href.replace(/^\w*:/, "mxdown:");
+                            }
+                            */
+                            //setTimeout('window.location.href=window.location.href.replace(/^\\w*:\\/\\//, "mxdown://")', 500)
+                        } else {
+                            //window.open(window.location.href.replace(/^\w*:/, "mxdown:"));
+                        }
+                    }
+                }
+        		if (/guid/.test(location.hash) && !/note/.test(location.pathname) && window.chrome){
+        			window.location.pathname = '/note/'
+        		}
+        
+        	}())
+        console.debug = function(){};
+        window.BACKEND = ""
+        window.BACKEND_YINXIANG = ""
+        window.ENV = {    
+        	web: true,
+        	ua: navigator.userAgent,
+        	version : "2015-12-07"
+        }
+        </script>
+        
+        <script>
+            // Use ?debug to serve original JavaScript files instead of minified
+            
+                window.baseDir = ''
+            
+
+            
+        </script>
+
+        <link href="./欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器_files/marxico.css" rel="stylesheet">
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-43559825-2', 'maxiang.io');
+        ga('send', 'pageview');
+        </script>
+        
+    <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mathjax" src="./欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器_files/MathJax.js.下载"></script><style id="ace_editor.css">.ace_editor {
+    position: relative;
+    overflow: hidden;
+    font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    direction: ltr;
+}
+
+.ace_scroller {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    background-color: inherit;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: text;
+}
+
+.ace_content {
+    position: absolute;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 100%;
+}
+
+.ace_dragging .ace_scroller:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: rgba(250, 250, 250, 0.01);
+    z-index: 1000;
+}
+.ace_dragging.ace_dark .ace_scroller:before{
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.ace_selecting, .ace_selecting * {
+    cursor: text !important;
+}
+
+.ace_gutter {
+    position: absolute;
+    overflow : hidden;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    cursor: default;
+    z-index: 4;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.ace_gutter-active-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.ace_scroller.ace_scroll-left {
+    box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;
+}
+
+.ace_gutter-cell {
+    padding-left: 19px;
+    padding-right: 6px;
+    background-repeat: no-repeat;
+}
+
+.ace_gutter-cell.ace_error {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.ace_gutter-cell.ace_warning {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");
+    background-position: 2px center;
+}
+
+.ace_gutter-cell.ace_info {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");
+    background-position: 2px center;
+}
+.ace_dark .ace_gutter-cell.ace_info {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");
+}
+
+.ace_scrollbar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+}
+
+.ace_scrollbar-inner {
+    position: absolute;
+    cursor: text;
+    left: 0;
+    top: 0;
+}
+
+.ace_scrollbar-v{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 0;
+}
+
+.ace_scrollbar-h {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    left: 0;
+}
+
+.ace_print-margin {
+    position: absolute;
+    height: 100%;
+}
+
+.ace_text-input {
+    position: absolute;
+    z-index: 0;
+    width: 0.5em;
+    height: 1em;
+    opacity: 0;
+    background: transparent;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    font: inherit;
+    padding: 0 1px;
+    margin: 0 -1px;
+    text-indent: -1em;
+    -ms-user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.ace_text-input.ace_composition {
+    background: inherit;
+    color: inherit;
+    z-index: 1000;
+    opacity: 1;
+    text-indent: 0;
+}
+
+.ace_layer {
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    /* workaround for chrome bug https://github.com/ajaxorg/ace/issues/2312*/
+    word-wrap: normal;
+    white-space: pre;
+    height: 100%;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* setting pointer-events: auto; on node under the mouse, which changes
+        during scroll, will break mouse wheel scrolling in Safari */
+    pointer-events: none;
+}
+
+.ace_gutter-layer {
+    position: relative;
+    width: auto;
+    text-align: right;
+    pointer-events: auto;
+}
+
+.ace_text-layer {
+    font: inherit !important;
+}
+
+.ace_cjk {
+    display: inline-block;
+    text-align: center;
+}
+
+.ace_cursor-layer {
+    z-index: 4;
+}
+
+.ace_cursor {
+    z-index: 4;
+    position: absolute;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 2px solid
+}
+
+.ace_slim-cursors .ace_cursor {
+    border-left-width: 1px;
+}
+
+.ace_overwrite-cursors .ace_cursor {
+    border-left-width: 0;
+    border-bottom: 1px solid;
+}
+
+.ace_hidden-cursors .ace_cursor {
+    opacity: 0.2;
+}
+
+.ace_smooth-blinking .ace_cursor {
+    -webkit-transition: opacity 0.18s;
+            transition: opacity 0.18s;
+}
+
+.ace_editor.ace_multiselect .ace_cursor {
+    border-left-width: 1px;
+}
+
+.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {
+    position: absolute;
+    z-index: 3;
+}
+
+.ace_marker-layer .ace_selection {
+    position: absolute;
+    z-index: 5;
+}
+
+.ace_marker-layer .ace_bracket {
+    position: absolute;
+    z-index: 6;
+}
+
+.ace_marker-layer .ace_active-line {
+    position: absolute;
+    z-index: 2;
+}
+
+.ace_marker-layer .ace_selected-word {
+    position: absolute;
+    z-index: 4;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ace_line .ace_fold {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    display: inline-block;
+    height: 11px;
+    margin-top: -2px;
+    vertical-align: middle;
+
+    background-image:
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");
+    background-repeat: no-repeat, repeat-x;
+    background-position: center center, top left;
+    color: transparent;
+
+    border: 1px solid black;
+    border-radius: 2px;
+
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.ace_dark .ace_fold {
+}
+
+.ace_fold:hover{
+    background-image:
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");
+}
+
+.ace_tooltip {
+    background-color: #FFF;
+    background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+    border: 1px solid gray;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: black;
+    max-width: 100%;
+    padding: 3px 4px;
+    position: fixed;
+    z-index: 999999;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: default;
+    white-space: pre;
+    word-wrap: break-word;
+    line-height: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    pointer-events: none;
+}
+
+.ace_folding-enabled > .ace_gutter-cell {
+    padding-right: 13px;
+}
+
+.ace_fold-widget {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin: 0 -12px 0 1px;
+    display: none;
+    width: 11px;
+    vertical-align: top;
+
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 3px;
+    
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.ace_folding-enabled .ace_fold-widget {
+    display: inline-block;   
+}
+
+.ace_fold-widget.ace_end {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");
+}
+
+.ace_fold-widget.ace_closed {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");
+}
+
+.ace_fold-widget:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.ace_fold-widget:active {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+/**
+ * Dark version for fold widgets
+ */
+.ace_dark .ace_fold-widget {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");
+}
+.ace_dark .ace_fold-widget.ace_end {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");
+}
+.ace_dark .ace_fold-widget.ace_closed {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");
+}
+.ace_dark .ace_fold-widget:hover {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.ace_dark .ace_fold-widget:active {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.ace_fold-widget.ace_invalid {
+    background-color: #FFB4B4;
+    border-color: #DE5555;
+}
+
+.ace_fade-fold-widgets .ace_fold-widget {
+    -webkit-transition: opacity 0.4s ease 0.05s;
+            transition: opacity 0.4s ease 0.05s;
+    opacity: 0;
+}
+
+.ace_fade-fold-widgets:hover .ace_fold-widget {
+    -webkit-transition: opacity 0.05s ease 0.05s;
+            transition: opacity 0.05s ease 0.05s;
+    opacity:1;
+}
+
+.ace_underline {
+    text-decoration: underline;
+}
+
+.ace_bold {
+    font-weight: bold;
+}
+
+.ace_nobold .ace_bold {
+    font-weight: normal;
+}
+
+.ace_italic {
+    font-style: italic;
+}
+
+
+.ace_error-marker {
+    background-color: rgba(255, 0, 0,0.2);
+    position: absolute;
+    z-index: 9;
+}
+
+.ace_highlight-marker {
+    background-color: rgba(255, 255, 0,0.2);
+    position: absolute;
+    z-index: 8;
+}
+</style><style id="ace-tm">.ace-tm .ace_gutter {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.ace-tm .ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace-tm .ace_fold {
+    background-color: #6B72E6;
+}
+
+.ace-tm {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.ace-tm .ace_cursor {
+  color: black;
+}
+        
+.ace-tm .ace_invisible {
+  color: rgb(191, 191, 191);
+}
+
+.ace-tm .ace_storage,
+.ace-tm .ace_keyword {
+  color: blue;
+}
+
+.ace-tm .ace_constant {
+  color: rgb(197, 6, 11);
+}
+
+.ace-tm .ace_constant.ace_buildin {
+  color: rgb(88, 72, 246);
+}
+
+.ace-tm .ace_constant.ace_language {
+  color: rgb(88, 92, 246);
+}
+
+.ace-tm .ace_constant.ace_library {
+  color: rgb(6, 150, 14);
+}
+
+.ace-tm .ace_invalid {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+.ace-tm .ace_support.ace_function {
+  color: rgb(60, 76, 114);
+}
+
+.ace-tm .ace_support.ace_constant {
+  color: rgb(6, 150, 14);
+}
+
+.ace-tm .ace_support.ace_type,
+.ace-tm .ace_support.ace_class {
+  color: rgb(109, 121, 222);
+}
+
+.ace-tm .ace_keyword.ace_operator {
+  color: rgb(104, 118, 135);
+}
+
+.ace-tm .ace_string {
+  color: rgb(3, 106, 7);
+}
+
+.ace-tm .ace_comment {
+  color: rgb(76, 136, 107);
+}
+
+.ace-tm .ace_comment.ace_doc {
+  color: rgb(0, 102, 255);
+}
+
+.ace-tm .ace_comment.ace_doc.ace_tag {
+  color: rgb(128, 159, 191);
+}
+
+.ace-tm .ace_constant.ace_numeric {
+  color: rgb(0, 0, 205);
+}
+
+.ace-tm .ace_variable {
+  color: rgb(49, 132, 149);
+}
+
+.ace-tm .ace_xml-pe {
+  color: rgb(104, 104, 91);
+}
+
+.ace-tm .ace_entity.ace_name.ace_function {
+  color: #0000A2;
+}
+
+
+.ace-tm .ace_heading {
+  color: rgb(12, 7, 255);
+}
+
+.ace-tm .ace_list {
+  color:rgb(185, 6, 144);
+}
+
+.ace-tm .ace_meta.ace_tag {
+  color:rgb(0, 22, 142);
+}
+
+.ace-tm .ace_string.ace_regex {
+  color: rgb(255, 0, 0)
+}
+
+.ace-tm .ace_marker-layer .ace_selection {
+  background: rgb(181, 213, 255);
+}
+.ace-tm.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px white;
+  border-radius: 2px;
+}
+.ace-tm .ace_marker-layer .ace_step {
+  background: rgb(252, 255, 0);
+}
+
+.ace-tm .ace_marker-layer .ace_stack {
+  background: rgb(164, 229, 101);
+}
+
+.ace-tm .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.ace-tm .ace_marker-layer .ace_active-line {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.ace-tm .ace_gutter-active-line {
+    background-color : #dcdcdc;
+}
+
+.ace-tm .ace_marker-layer .ace_selected-word {
+  background: rgb(250, 250, 255);
+  border: 1px solid rgb(200, 200, 250);
+}
+
+.ace-tm .ace_indent-guide {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
+}
+</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="vimMode">.normal-mode .ace_cursor{  border: 0!important;  background-color: red;  opacity: 0.5;}.ace_dialog {  position: absolute;  left: 0; right: 0;  background: white;  z-index: 15;  padding: .1em .8em;  overflow: hidden;  color: #333;}.ace_dialog-top {  border-bottom: 1px solid #eee;  top: 0;}.ace_dialog-bottom {  border-top: 1px solid #eee;  bottom: 0;}.ace_dialog input {  border: none;  outline: none;  background: transparent;  width: 20em;  color: inherit;  font-family: monospace;}</style><style id="incremental-occur-highlighting">.ace_occur-highlight {
+    border-radius: 4px;
+    background-color: rgba(87, 255, 8, 0.25);
+    position: absolute;
+    z-index: 4;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 0 4px rgb(91, 255, 50);
+}
+.ace_dark .ace_occur-highlight {
+    background-color: rgb(80, 140, 85);
+    box-shadow: 0 0 4px rgb(60, 120, 70);
+}
+</style><style id="incremental-search-highlighting">.ace_marker-layer .ace_isearch-result {  position: absolute;  z-index: 6;  -moz-box-sizing: border-box;  -webkit-box-sizing: border-box;  box-sizing: border-box;}div.ace_isearch-result {  border-radius: 4px;  background-color: rgba(255, 200, 0, 0.5);  box-shadow: 0 0 4px rgb(255, 200, 0);}.ace_dark div.ace_isearch-result {  background-color: rgb(100, 110, 160);  box-shadow: 0 0 4px rgb(80, 90, 140);}</style><style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}</style><style>.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);}.ace_editor.ace_autocomplete .ace_line-hover {    position: absolute;    z-index: 2;}.ace_editor.ace_autocomplete .ace_scroller {   background: none;   border: none;   box-shadow: none;}.ace_rightAlignedText {    color: gray;    display: inline-block;    position: absolute;    right: 4px;    text-align: right;    z-index: -1;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #000;    text-shadow: 0 0 0.01em;}.ace_editor.ace_autocomplete {    width: 280px;    z-index: 200000;    background: #fbfbfb;    color: #444;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;}</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style id="ace-earthsong">/* THIS THEME WAS AUTOGENERATED BY Theme.tmpl.css (UUID: def18d1f-ce25-72b7-34a3-565c0bcbc74e) */.ace-earthsong .ace_gutter {background: #e8e8e8;color: #333;}.ace-earthsong .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-earthsong {background-color: #36312C;color: #EBD1B7;}.ace-earthsong .ace_cursor {color: #f8f8f0;}.ace-earthsong .ace_marker-layer .ace_selection {background: #DB784D;}.ace-earthsong.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #36312C;border-radius: 2px;}.ace-earthsong .ace_marker-layer .ace_step {background: rgb(198, 219, 174);}.ace-earthsong .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #3b3a32;}.ace-earthsong .ace_marker-layer .ace_active-line {background: #45403B;}.ace-earthsong .ace_gutter-active-line {background-color: #45403B;}.ace-earthsong .ace_marker-layer .ace_selected-word {border: 1px solid #DB784D;}.ace-earthsong .ace_fold {background-color: #60A365;border-color: #EBD1B7;}.ace-earthsong .ace_keyword{color:#DB784D;}.ace-earthsong .ace_keyword.ace_other.ace_unit{color:#95CC5E;}.ace-earthsong .ace_constant.ace_language{color:#DB784D;}.ace-earthsong .ace_constant.ace_numeric{color:#F8BB39;}.ace-earthsong .ace_constant.ace_character{color:#DB784D;}.ace-earthsong .ace_constant.ace_other{color:#DB784D;}.ace-earthsong .ace_support.ace_function{color:#95CC5E;}.ace-earthsong .ace_support.ace_constant{color:#DB784D;}.ace-earthsong .ace_support.ace_constant.ace_property-value{color:#F8BB39;}.ace-earthsong .ace_support.ace_class{font-style:italic;color:#DB784D;}.ace-earthsong .ace_support.ace_type{font-style:italic;color:#DB784D;}.ace-earthsong .ace_storage{color:#DB784D;}.ace-earthsong .ace_storage.ace_type{color:#95CC5E;}.ace-earthsong .ace_invalid{color:#f8f8f0;background-color:#00a8c6;}.ace-earthsong .ace_invalid.ace_deprecated{color:#f8f8f0;background-color:#00a8c6;}.ace-earthsong .ace_string{color:#F8BB39;}.ace-earthsong .ace_comment{color:#7A7267;}.ace-earthsong .ace_variable{color:#60A365;}.ace-earthsong .ace_variable.ace_parameter{font-style:italic;}.ace-earthsong .ace_entity.ace_other.ace_attribute-name{color:#DB784D;}.ace-earthsong .ace_entity.ace_name.ace_function{color:#60A365;}.ace-earthsong .ace_entity.ace_name.ace_tag{color:#95CC5E;}</style><style type="text/css">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+#MathJax_SVG_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_Processing {visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; display: block!important}
+.MathJax_SVG_Processed {display: none!important}
+.MathJax_SVG_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0}
+.MathJax_SVG .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+    <body class="slim-scroll ltr"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"><path id="STIXWEBMAIN-393" stroke-width="10" d="M577 494h-25c-10 99 -39 130 -140 130h-175c-28 0 -36 -8 -36 -40v-471c0 -78 13 -90 91 -94v-19h-281v19c76 5 88 17 88 105v427c0 73 -10 86 -87 92v19h560Z"></path><path id="STIXWEBMAIN-28" stroke-width="10" d="M304 -161l-12 -16c-158 90 -244 259 -244 429c0 185 87 329 247 424l9 -16c-139 -119 -170 -212 -170 -405c0 -186 30 -299 170 -416Z"></path><path id="STIXWEBMAINI-6E" stroke-width="10" d="M460 117l14 -13c-68 -93 -93 -113 -140 -113c-25 0 -47 16 -47 54c0 10 2 23 16 75l44 162c8 31 14 67 14 79c0 18 -9 29 -24 29c-40 0 -85 -49 -148 -142c-45 -67 -53 -90 -100 -248h-75l96 350c1 5 2 11 2 17c0 20 -14 26 -65 27v16c81 16 109 20 162 31l4 -2l-67 -218 c100 160 167 220 231 220c43 0 65 -25 65 -61c0 -18 -4 -39 -10 -60l-56 -203c-10 -36 -14 -53 -14 -61c0 -9 4 -18 16 -18c14 0 32 16 61 53c7 8 14 17 21 26Z"></path><path id="STIXWEBMAIN-29" stroke-width="10" d="M29 660l12 16c153 -92 244 -259 244 -429c0 -185 -88 -327 -247 -424l-9 16c142 117 170 211 170 405c0 187 -25 302 -170 416Z"></path><path id="STIXWEBMAIN-3D" stroke-width="10" d="M637 320h-589v66h589v-66zM637 120h-589v66h589v-66Z"></path><path id="STIXWEBMAIN-2212" stroke-width="10" d="M621 220h-557v66h557v-66Z"></path><path id="STIXWEBMAIN-31" stroke-width="10" d="M394 0h-276v15c74 4 95 25 95 80v449c0 34 -9 49 -30 49c-10 0 -27 -5 -45 -12l-27 -10v14l179 91l9 -3v-597c0 -43 20 -61 95 -61v-15Z"></path><path id="STIXWEBMAIN-21" stroke-width="10" d="M175 176l-42 381c-2 20 -3 32 -3 43c0 43 15 76 53 76c34 0 53 -32 53 -81c0 -12 -1 -27 -2 -38l-45 -381h-14zM236 42c0 -29 -23 -51 -54 -51c-30 0 -52 22 -52 52s23 54 53 54c29 0 53 -25 53 -55Z"></path><path id="STIXWEBMAIN-2200" stroke-width="10" d="M558 662l-245 -662h-66l-245 662h71l74 -199h266l74 199h71zM391 403h-222l111 -300Z"></path><path id="STIXWEBMAIN-2208" stroke-width="10" d="M625 -27h-291c-160 0 -274 131 -274 279s112 279 271 279h294v-66h-290c-103 0 -189 -85 -206 -180h496v-66h-497c17 -95 103 -180 206 -180h291v-66Z"></path><path id="STIXWEBDOUBLESTRUCK-2115" stroke-width="10" d="M628 0h-134l-378 504h-2v-504h-22h-22v662h135l32 -45l346 -461h1v506h44v-662zM584 44v39l-402 535h-68v-40l401 -534h69Z"></path><path id="STIXWEBMAINI-78" stroke-width="10" d="M243 355l12 -57c70 107 107 143 151 143c24 0 41 -15 41 -37c0 -21 -14 -36 -34 -36c-19 0 -28 17 -52 17c-18 0 -54 -44 -98 -121c0 -7 2 -21 8 -45l32 -134c7 -28 16 -41 30 -41c13 0 24 10 47 40c9 12 13 18 21 28l15 -9c-58 -90 -84 -114 -122 -114 c-32 0 -47 18 -59 68l-29 119l-88 -119c-44 -59 -64 -68 -95 -68s-50 16 -50 42c0 20 14 36 34 36c9 0 19 -4 32 -11c10 -6 20 -9 26 -9c11 0 30 19 51 49l82 116l-28 124c-14 60 -21 68 -46 68c-8 0 -20 -2 -39 -7l-18 -5l-3 16l11 4c61 22 94 29 117 29 c25 0 37 -18 51 -86Z"></path><path id="STIXWEBMAINI-62" stroke-width="10" d="M163 290h1c68 113 123 151 193 151c67 0 116 -43 116 -120c0 -158 -165 -332 -320 -332c-57 0 -130 23 -130 53v6l142 523c6 24 9 38 9 47c0 22 -5 23 -64 25v17c67 8 103 14 153 23l5 -5l-21 -82zM388 306c0 61 -26 86 -70 86c-48 0 -94 -42 -137 -115 c-44 -74 -72 -171 -72 -231c0 -23 15 -34 46 -34c43 0 86 21 123 59c60 62 110 161 110 235Z"></path><path id="STIXWEBMAIN-B1" stroke-width="10" d="M637 242h-262v-209h-66v209h-261v66h261v194h66v-194h262v-66zM637 -87h-589v66h589v-66Z"></path><path id="STIXWEBMAIN-32" stroke-width="10" d="M474 137l-54 -137h-391v12l178 189c94 99 130 175 130 260c0 91 -54 141 -139 141c-72 0 -107 -32 -147 -130l-21 5c21 117 85 199 208 199c113 0 185 -77 185 -176c0 -79 -39 -154 -128 -248l-165 -176h234c42 0 63 11 96 67Z"></path><path id="STIXWEBMAIN-34" stroke-width="10" d="M473 167h-103v-167h-78v167h-280v64l314 445h44v-445h103v-64zM292 231v343l-240 -343h240Z"></path><path id="STIXWEBMAINI-61" stroke-width="10" d="M463 111l13 -11c-75 -91 -99 -110 -139 -110c-28 0 -40 12 -40 41c0 25 2 33 23 115c-75 -113 -133 -157 -203 -157c-56 0 -100 40 -100 116c0 155 153 336 286 336c43 0 72 -21 80 -58l11 48l3 3l61 7l7 -3c-2 -9 -3 -11 -6 -21c-47 -171 -89 -343 -89 -363 c0 -7 6 -13 14 -13c9 0 22 8 52 41zM365 361c0 35 -21 58 -56 58c-45 0 -89 -31 -131 -92c-42 -63 -77 -152 -77 -215c0 -55 24 -74 60 -74c50 0 97 55 127 98c47 68 77 154 77 225Z"></path><path id="STIXWEBMAINI-63" stroke-width="10" d="M350 107l16 -10c-61 -77 -114 -108 -189 -108c-93 0 -147 52 -147 154c0 93 52 180 123 237c49 39 106 61 167 61s105 -34 105 -81c0 -27 -22 -48 -48 -48c-28 0 -39 20 -39 40c0 18 15 29 15 48c0 12 -14 20 -37 20c-40 0 -80 -18 -109 -48c-56 -59 -91 -144 -91 -233 c0 -72 32 -114 89 -114c53 0 91 25 145 82Z"></path><path id="STIXWEBMAIN-221A" stroke-width="10" d="M963 973l-478 -1232h-32l-202 530c-17 45 -37 59 -62 59c-17 0 -43 -11 -65 -31l-12 20l156 124h19l204 -536h4l414 1066h54Z"></path></defs></svg></div><div id="MathJax_Message" style="display: none;"></div>
+
+
+    
+<div id="readme" platform-related=""># 欢迎使用马克飞象
+
+@(示例笔记本)[马克飞象|帮助|Markdown]
+
+**马克飞象**是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。特点概述：
+ 
+- **功能丰富** ：支持高亮代码块、*LaTeX* 公式、流程图，本地图片以及附件上传，甚至截图粘贴，工作学习好帮手；
+- **得心应手** ：简洁高效的编辑器，提供[桌面客户端][1]以及[离线Chrome App][2]，支持移动端 Web；
+- **深度整合** ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。
+
+-------------------
+
+[TOC]
+
+## Markdown简介
+
+&gt; Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— [维基百科](https://zh.wikipedia.org/wiki/Markdown)
+
+正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为**粗体**或者*斜体*，创建一个[链接](http://www.example.com)或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按`Ctrl + /`查看帮助。 
+
+### 代码块
+``` python
+@requires_authorization
+def somefunc(param1='', param2=0):
+    '''A docstring'''
+    if param1 &gt; param2: # interesting
+        print 'Greater'
+    return (param2 - param1 + 1) or None
+class SomeClass:
+    pass
+&gt;&gt;&gt; message = '''interpreter
+... prompt'''
+```
+### LaTeX 公式
+
+可以创建行内公式，例如 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$。或者块级公式：
+
+$$	x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+### 表格
+| Item      |    Value | Qty  |
+| :-------- | --------:| :--: |
+| Computer  | 1600 USD |  5   |
+| Phone     |   12 USD |  12  |
+| Pipe      |    1 USD | 234  |
+
+### 流程图
+```flow
+st=&gt;start: Start
+e=&gt;end
+op=&gt;operation: My Operation
+cond=&gt;condition: Yes or No?
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+```
+
+以及时序图:
+
+```sequence
+Alice-&gt;Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob--&gt;Alice: I am good thanks!
+```
+
+&gt; **提示：**想了解更多，请查看**流程图**[语法][3]以及**时序图**[语法][4]。
+
+### 复选框
+
+使用 `- [ ]` 和 `- [x]` 语法可以创建复选框，实现 todo-list 等功能。例如：
+
+- [x] 已完成事项
+- [ ] 待办事项1
+- [ ] 待办事项2
+
+&gt; **注意：**目前支持尚不完全，在印象笔记中勾选复选框是无效、不能同步的，所以必须在**马克飞象**中修改 Markdown 原文才可生效。下个版本将会全面支持。
+
+
+## 印象笔记相关
+
+### 笔记本和标签
+**马克飞象**增加了`@(笔记本)[标签A|标签B]`语法, 以选择笔记本和添加标签。 **绑定账号后**， 输入`(`自动会出现笔记本列表，请从中选择。
+
+### 笔记标题
+**马克飞象**会自动使用文档内出现的第一个标题作为笔记标题。例如本文，就是第一行的 `欢迎使用马克飞象`。
+
+### 快捷编辑
+保存在印象笔记中的笔记，右上角会有一个红色的编辑按钮，点击后会回到**马克飞象**中打开并编辑该笔记。
+&gt;**注意：**目前用户在印象笔记中单方面做的任何修改，马克飞象是无法自动感知和更新的。所以请务必回到马克飞象编辑。
+
+### 数据同步
+**马克飞象**通过**将Markdown原文以隐藏内容保存在笔记中**的精妙设计，实现了对Markdown的存储和再次编辑。既解决了其他产品只是单向导出HTML的单薄，又规避了服务端存储Markdown带来的隐私安全问题。这样，服务端仅作为对印象笔记 API调用和数据转换之用。
+
+ &gt;**隐私声明：用户所有的笔记数据，均保存在印象笔记中。马克飞象不存储用户的任何笔记数据。**
+
+### 离线存储
+**马克飞象**使用浏览器离线存储将内容实时保存在本地，不必担心网络断掉或浏览器崩溃。为了节省空间和避免冲突，已同步至印象笔记并且不再修改的笔记将删除部分本地缓存，不过依然可以随时通过`文档管理`打开。
+
+&gt; **注意：**虽然浏览器存储大部分时候都比较可靠，但印象笔记作为专业云存储，更值得信赖。以防万一，**请务必经常及时同步到印象笔记**。
+
+## 编辑器相关
+### 设置
+右侧系统菜单（快捷键`Ctrl + M`）的`设置`中，提供了界面字体、字号、自定义CSS、vim/emacs 键盘模式等高级选项。
+
+### 快捷键
+
+帮助    `Ctrl + /`
+同步文档    `Ctrl + S`
+创建文档    `Ctrl + Alt + N`
+最大化编辑器    `Ctrl + Enter`
+预览文档 `Ctrl + Alt + Enter`
+文档管理    `Ctrl + O`
+系统菜单    `Ctrl + M` 
+
+加粗    `Ctrl + B`
+插入图片    `Ctrl + G`
+插入链接    `Ctrl + L`
+提升标题    `Ctrl + H`
+
+## 关于收费
+
+**马克飞象**为新用户提供 10 天的试用期，试用期过后需要[续费](maxiang.info/vip.html)才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。
+
+
+## 反馈与建议
+- 微博：[@马克飞象](http://weibo.com/u/2788354117)，[@GGock](http://weibo.com/ggock "开发者个人账号")
+- 邮箱：&lt;hustgock@gmail.com&gt;
+
+---------
+感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。
+
+
+
+
+[^demo]: 这是一个示例脚注。请查阅 [MultiMarkdown 文档](https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide#footnotes) 关于脚注的说明。 **限制：** 印象笔记的笔记内容使用 [ENML][5] 格式，基于 HTML，但是不支持某些标签和属性，例如id，这就导致`脚注`和`TOC`无法正常点击。
+
+
+  [1]: http://maxiang.info/client_zh
+  [2]: https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop
+  [3]: http://adrai.github.io/flowchart.js/
+  [4]: http://bramp.github.io/js-sequence-diagrams/
+  [5]: https://dev.yinxiang.com/doc/articles/enml.php
+
+</div>
+<div id="images_area"></div>
+<div class="layout-wrapper-l1" style="transform: translate(-385px, 0px); width: 1985px; height: 721px;">
+    <div class="layout-wrapper-l2" id="app_wrap" style="left: 385px; width: 1600px; height: 721px;">
+        <div class="navbar navbar-default" style="display:none">
+            <div class="navbar-inner">
+                <div class="nav left-space"></div>
+                <div class="nav right-space pull-right"></div>
+                <div class="buttons-dropdown dropdown hide">
+                    <div class="nav">
+                        <button class="btn btn-success" data-toggle="dropdown" title="Show buttons">
+                            <i class="icon-th-large"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                <ul class="nav pull-right right-buttons">
+                    <li class="offline-status hide">
+                    <div class="text-danger">
+                        <i class="icon-attention-circled"></i>offline
+                    </div>
+                    </li>
+                    <li class="extension-buttons"></li>
+                </ul><ul class="nav left-buttons">
+                    <li class="wmd-button-group1 btn-group"><li class="wmd-button btn btn-success" id="wmd-bold-button" title="Strong &lt;strong&gt; Ctrl/Cmd+B" style="left: 0px;"><span style="background-position: 0px 0px; display: none;"></span><i class="icon-bold"></i></li></li>
+                </ul><ul class="nav left-buttons">
+                    <li class="wmd-button-group2 btn-group"><li class="wmd-button btn btn-success" id="wmd-link-button" title="Hyperlink &lt;a&gt; Ctrl/Cmd+L" style="left: 0px;"><span style="background-position: -40px 0px; display: none;"></span><i class="icon-globe"></i></li><li class="wmd-button btn btn-success" id="wmd-quote-button" title="Blockquote &lt;blockquote&gt;" style="left: 0px;"><span style="background-position: -60px 0px; display: none;"></span><i class="icon-indent-right"></i></li><li class="wmd-button btn btn-success" id="wmd-code-button" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl/Cmd+K" style="left: 0px;"><span style="background-position: -80px 0px; display: none;"></span><i class="icon-code"></i></li></li>
+                </ul><ul class="nav left-buttons">
+                    <li class="wmd-button-group3 btn-group"><li class="wmd-button btn btn-success" id="wmd-heading-button" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl/Cmd+H" style="left: 0px;"><span style="background-position: -160px 0px; display: none;"></span><i class="icon-text-height"></i></li><li class="wmd-button btn btn-success" id="wmd-hr-button" title="Horizontal Rule &lt;hr&gt; Ctrl/Cmd+R" style="left: 0px;"><span style="background-position: -180px 0px; display: none;"></span><i class="icon-ellipsis"></i></li></li>
+                </ul><ul class="nav left-buttons">
+                    <li class="wmd-button-group5 btn-group"></li>
+                </ul><ul class="nav left-buttons">
+                    <li class="wmd-button-group4 btn-group">
+                    <a class="btn btn-success button-open-discussion" title="Comments Ctrl/Cmd+M"><i class="icon-comment-alt"></i></a>
+                    </li>
+                </ul><ul class="nav pull-right title-container">
+                    <li><div class="working-indicator"></div></li>
+                    <li><a class="btn btn-success file-title-navbar" href="https://maxiang.io/#" title="Rename document" style="max-width: 718px;"> </a></li>
+                    <li><div class="input-file-title-container"><input type="text" class="col-sm-4 form-control hide input-file-title" placeholder="Document title" style="max-width: 718px;"></div></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sync-ace-theme ace-earthsong">
+            <div class="ace_string ace_constant ace_numeric">
+                <button class="btn open-folder-btn" title="" data-original-title="文档管理">
+                    <i class="icon-book"></i>
+                </button>
+            </div>
+        </div>
+        <div class="editor-navbar sync-ace-theme ace-earthsong">
+            <div class="editor-navbar-bg sync-ace-theme ace-earthsong"></div>
+            <div class="navbar-inner ace_string ace_constant ace_numeric ">
+    
+                <div class="editor-navbar-buttons">
+                    <span class="toolbar-group">
+                        <div class="wmd-buttons-group">
+                            <ul class="nav wmd-button-group1 wmd-button-group3  wmd-button-group2 wmd-button-group4 btn-group"><li class="wmd-button btn btn-success" id="wmd-bold-button" title="" style="left: 0px;" data-original-title="Strong &lt;strong&gt; Ctrl/Cmd+B"><span style="background-position: 0px 0px; display: none;"></span><i class="icon-bold"></i></li><li class="wmd-button btn btn-success" id="wmd-link-button" title="" style="left: 0px;" data-original-title="Hyperlink &lt;a&gt; Ctrl/Cmd+L"><span style="background-position: -40px 0px; display: none;"></span><i class="icon-globe"></i></li><li class="wmd-button btn btn-success" id="wmd-quote-button" title="" style="left: 0px;" data-original-title="Blockquote &lt;blockquote&gt;"><span style="background-position: -60px 0px; display: none;"></span><i class="icon-indent-right"></i></li><li class="wmd-button btn btn-success" id="wmd-code-button" title="" style="left: 0px;" data-original-title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl/Cmd+K"><span style="background-position: -80px 0px; display: none;"></span><i class="icon-code"></i></li><li class="wmd-button btn btn-success" id="wmd-heading-button" title="" style="left: 0px;" data-original-title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl/Cmd+H"><span style="background-position: -160px 0px; display: none;"></span><i class="icon-text-height"></i></li><li class="wmd-button btn btn-success" id="wmd-hr-button" title="" style="left: 0px;" data-original-title="Horizontal Rule &lt;hr&gt; Ctrl/Cmd+R"><span style="background-position: -180px 0px; display: none;"></span><i class="icon-ellipsis"></i></li></ul>
+                            <ul class="nav image-button-group btn-group"><li class="wmd-button btn btn-success" id="wmd-image-button" title="" style="left: 0px;" data-original-title="Image &lt;img&gt; Ctrl/Cmd+G"><span style="background-position: -100px 0px; display: none;"></span><i class="icon-picture"></i></li></ul>
+                        </div>
+                        <div class="editor-hosted-buttons"><!--<button
+                    class="btn btn-success action-create-file" title='Markdown 语法' vine-click='SHOW_HELP'>
+                    <i class="icon-help-circled"></i>
+                </button>-->
+                            <button class="btn btn-success dropdown-toggle" title="" id="theme-button" data-toggle="dropdown" data-original-title="编辑器主题">
+                                <i class="icon-magic"></i>
+                            </button>
+                            <ul id="theme-list" class="dropdown-menu ui" role="menu" aria-labelledby="drop6">
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/default">Default</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/active4d">Active4d</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/all_hallows_eve">All Hallows Eve</a></li>
+                                <!-- <li><a tabindex="-1" href="#" data-value="ace/theme/ambiance">Ambiance</a></li> -->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/amy">Amy</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/arstotzka">Arstotzka</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/azure">Azure</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/blackboard">Blackboard</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/bold">Bold</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/boxuk">Boxuk</a></li>
+                                <!-- <li><a tabindex="-1" href="#" data-value="ace/theme/brilliance_black">Brilliance Black</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/brilliance_dull">Brilliance Dull</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/carbonight">Carbonight</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/carbonight_contrast">Carbonight Contrast</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/chaos">Chaos</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/chocolate">Chocolate</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/chrome">Chrome</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/chrome_devtools">Chrome Devtools</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/clouds">Clouds</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/clouds_midnight">Clouds Midnight</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/cobalt">Cobalt</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/crimson_editor">Crimson Editor</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/crisp">Crisp</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/darkside">Darkside</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/darkside_contrast">Darkside Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/dawn">Dawn</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/dreamweaver">Dreamweaver</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/earthsong" class="selected">Earthsong</a></li>
+                                <!-- <li><a tabindex="-1" href="#" data-value="ace/theme/earthsong_contrast">Earthsong Contrast</a></li>-->
+                                <!-- <li><a tabindex="-1" href="#" data-value="ace/theme/earthsong_light">Earthsong Light</a></li>-->
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/eclipse">Eclipse</a></li>-->
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/eiffel">Eiffel</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/espresso_libre">Espresso Libre</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/freshcut">Freshcut</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/freshcut_contrast">Freshcut Contrast</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/frontier">Frontier</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/frontier_contrast">Frontier Contrast</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/github">Github</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/gloom">Gloom</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/gloom_contrast">Gloom Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/glowfish">Glowfish</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/glowfish_contrast">Glowfish Contrast</a></li>-->
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/goldfish">Goldfish</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/goldfish_contrast">Goldfish Contrast</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/grunge">Grunge</a></li>-->
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/grunge_contrast">Grunge Contrast</a></li>-->
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/halflife">Halflife</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/halflife_contrast">Halflife Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/heroku">Heroku</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/hyrule">Hyrule</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/hyrule_contrast">Hyrule Contrast</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/iceberg">Iceberg</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/iceberg_contrast">Iceberg Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/idle">Idle</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/idle_fingers">Idle Fingers</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/idlefingers">Idlefingers</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/iplastic">Iplastic</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/juicy">Juicy</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/juicy_contrast">Juicy Contrast</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/katzenmilch">Katzenmilch</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/keen">Keen</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/keen_contrast">Keen Contrast</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/kiwi">Kiwi</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/kr_theme">Kr Theme</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/krtheme">Krtheme</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/kuroir">Kuroir</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/laravel">Laravel</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/laravel_contrast">Laravel Contrast</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/lavender">Lavender</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/lavender_contrast">Lavender Contrast</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/lazy">Lazy</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/legacy">Legacy</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/magicwb_(amiga)">Magicwb (Amiga)</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/mellow">Mellow</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/mellow_contrast">Mellow Contrast</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/merbivore">Merbivore</a></li>-->
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/merbivore_soft">Merbivore Soft</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/mintchoc">Mintchoc</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/mono_industrial">Mono Industrial</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/monoindustrial">Monoindustrial</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/monokai">Monokai</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/mud">Mud</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/mud_contrast">Mud Contrast</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/otakon">Otakon</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/pastel">Pastel</a></li>
+                                <!--
+ <li><a tabindex="-1" href="#" data-value="ace/theme/pastel_on_dark">Pastel On Dark</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/pastels_on_dark">Pastels On Dark</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/patriot">Patriot</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/patriot_contrast">Patriot Contrast</a></li>
+ -->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/peacock">Peacock</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/peacock_contrast">Peacock Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/peacocks_in_space">Peacocks In Space</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/peel">Peel</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/piggy">Piggy</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/potpourri">Potpourri</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/potpourri_contrast">Potpourri Contrast</a></li>
+ -->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/rainbow">Rainbow</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/revelation">Revelation</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/revelation_contrast">Revelation Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/shrek">Shrek</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/slate">Slate</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/slime">Slime</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/slime_contrast">Slime Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/slush_and_poppies">Slush And Poppies</a></li>
+                                <!--
+ <li><a tabindex="-1" href="#" data-value="ace/theme/snappy">Snappy</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/snappy_contrast">Snappy Contrast</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/snappy_light">Snappy Light</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/solarflare">Solarflare</a></li>
+ -->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/solarflare_contrast">Solarflare Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/solarized_dark">Solarized Dark</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/solarized_light">Solarized Light</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/sourlick">Sourlick</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/sourlick_contrast">Sourlick Contrast</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/spacecadet">Spacecadet</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/spearmint">Spearmint</a></li>
+                                <!--
+ <li><a tabindex="-1" href="#" data-value="ace/theme/stark">Stark</a></li>
+ <li><a tabindex="-1" href="#" data-value="ace/theme/stark_contrast">Stark Contrast</a></li>
+ -->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/sunburst">Sunburst</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/super">Super</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/terminal">Terminal</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/textmate">Textmate</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/textmate_(mac_classic)">Textmate (Mac Classic)</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tomorrow">Tomorrow</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tomorrow_night">Tomorrow Night</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tomorrow_night_blue">Tomorrow Night Blue</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tomorrow_night_bright">Tomorrow Night Bright</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tomorrow_night_eighties">Tomorrow Night Eighties</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/tonic">Tonic</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tribal">Tribal</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tron">Tron</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/tron_contrast">Tron Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/turnip">Turnip</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/turnip_contrast">Turnip Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/twilight">Twilight</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/userscape">Userscape</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/vibrant_ink">Vibrant Ink</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/xcode">Xcode</a></li>
+                                <!--<li><a tabindex="-1" href="#" data-value="ace/theme/xcode_default">Xcode Default</a></li>-->
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/yule">Yule</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/zacks">Zacks</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/zacks_contrast">Zacks Contrast</a></li>
+                                <li><a tabindex="-1" href="https://maxiang.io/#" data-value="ace/theme/zenburnesque">Zenburnesque</a></li>
+
+                            </ul>
+                            <button class="btn btn-success full-editor-btn open" title="" vine-click="TOGGLE_RESIZE" data-original-title="切换全屏">
+                                <i class="icon-resize-full"></i>
+                                <i class="icon-resize-small-1"></i>
+                            </button>
+                        </div>
+                    </span>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="preview-buttons-container">
+            <div class="preview-buttons">
+                <button class="btn btn-success dropdown-toggle save-file" data-toggle="dropdown" id="indicator-file-status" vine-switch-on="FILE_STATUS_CHANGED" vine-click="SYNC_FILE" data-original-title="" title="">
+                    <i class="icon-flash" tooltip-title="本地缓存，点击同步&quot;" switch-when="created" style="display: inline-block;"></i>
+                    <i class="icon-asterisk " tooltip-title="有改动，点击同步" switch-when="modified" style="display: none;"></i>
+                    <i class="icon-spin6 animate-spin" tooltip-title="正在同步" switch-when="syncing" style="display: none;"></i>
+                    <i class="icon-ok" tooltip-title="已同步" switch-when="synced" style="display: none;"></i>
+                </button>
+
+                <button class="btn btn-success dropdown-toggle file-status-lock disabled" title="" data-original-title="只读模式">
+                    <i class="icon-lock"></i>
+                </button>
+                <button class="btn btn-success action-create-file" title="" vine-click="CREATE_FILE" data-original-title="新建文档">
+                    <i class="icon-doc"></i>
+                </button>
+
+                <custom vine-switch-on="IS_USER_AUTHED">
+                <button class="btn profile-btn btn-success" title="" switch-when="true" style="display: none;" data-original-title="账号">
+                    <i class="icon-user"></i>
+                </button>
+                <button class="btn profile-btn" title="" switch-when="false" style="display: inline-block;" data-original-title="账号">
+                    <i class="icon-evernote"></i>
+                </button>
+                </custom>
+            </div>
+        </div>
+
+
+        <div class="layout-wrapper-l3" style="top: 0px; width: 1600px; height: 721px;">
+            <pre id="wmd-input" class="form-control editor font-rich ace-earthsong ace_dark" style="width: 800px; height: 721px;"><div class="editor-content" contenteditable="true" style="padding: 40px 35px 661px;"><span id="wmd-input-section-1" class="wmd-input-section"></span><span id="wmd-input-section-2" class="wmd-input-section"><span class="token h1 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">#</span> 欢迎使用马克飞象</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token notebook md img">@(示例笔记本)[马克飞象|帮助|Markdown]</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p"><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。特点概述：</span><span class="token lf">
+</span><span class="token p"> </span><span class="token lf">
+</span><span class="token li"><span class="token md md-li">- </span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>功能丰富<span class="token md md-strong">**</span></span> ：支持高亮代码块、<span class="token em"><span class="token md md-em md-start">*</span>LaTeX<span class="token md md-em md-close">*</span></span> 公式、流程图，本地图片以及附件上传，甚至截图粘贴，工作学习好帮手；<span class="token lf">
+</span></span><span class="token li"><span class="token md md-li">- </span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>得心应手<span class="token md md-strong">**</span></span> ：简洁高效的编辑器，提供<span class="token linkref"><span class="token ref-start"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text">桌面客户端</span><span class="token md md-bracket-end">]</span></span><span class="token ref-end"><span class="token md md-bracket-start">[</span><span class="token md md-href">1</span><span class="token md md-bracket-end">]</span></span></span>以及<span class="token linkref"><span class="token ref-start"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text">离线Chrome App</span><span class="token md md-bracket-end">]</span></span><span class="token ref-end"><span class="token md md-bracket-start">[</span><span class="token md md-href">2</span><span class="token md md-bracket-end">]</span></span></span>，支持移动端 Web；<span class="token lf">
+</span></span><span class="token li"><span class="token md md-li">- </span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>深度整合<span class="token md md-strong">**</span></span> ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。<span class="token lf">
+</span><span class="token lf">
+</span></span><span class="token hr">-------------------</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p"><span class="token md md-toc">[TOC]</span></span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-3" class="wmd-input-section"><span class="token h2 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">##</span> Markdown简介</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token blockquote ace_string ace_constant ace_other"><span class="token md md-gt">&gt; </span>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <span class="token link"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text ace_string">维基百科</span><span class="token md md-bracket-end">](</span><span class="token md md-href">https://zh.wikipedia.org/wiki/Markdown</span><span class="token md md-paren-end">)</span></span></span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>粗体<span class="token md md-strong">**</span></span>或者<span class="token em"><span class="token md md-em md-start">*</span>斜体<span class="token md md-em md-close">*</span></span>，创建一个<span class="token link"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text ace_string">链接</span><span class="token md md-bracket-end">](</span><span class="token md md-href">http://www.example.com</span><span class="token md md-paren-end">)</span></span>或一个脚注<span class="token fn"><span class="token ref"><span class="token md md-bracket-start">[</span><span class="token md md-ref">^demo</span><span class="token md md-bracket-end">]</span></span></span>。下面列举了几个高级功能，更多语法请按<span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + /<span class="token md md-code">`</span></span>查看帮助。 </span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-4" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 代码块</span><span class="token lf">
+</span></span><span id="wmd-input-section-5" class="wmd-input-section"><span class="token pre gfm ace_support ace_function"><span class="token md md-pre">```</span> python<span class="token lf">
+</span>@requires_authorization<span class="token lf">
+</span>def somefunc(param1='', param2=0):<span class="token lf">
+</span>    '''A docstring'''<span class="token lf">
+</span>    if param1 &gt; param2: # interesting<span class="token lf">
+</span>        print 'Greater'<span class="token lf">
+</span>    return (param2 - param1 + 1) or None<span class="token lf">
+</span>class SomeClass:<span class="token lf">
+</span>    pass<span class="token lf">
+</span>&gt;&gt;&gt; message = '''interpreter<span class="token lf">
+</span>... prompt'''<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span></span><span id="wmd-input-section-6" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> LaTeX 公式</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">可以创建行内公式，例如 <span class="token math"><span class="token md md-bracket-start">$</span><span class="token keyword">\Gamma</span><span class="token lparen">(</span>n<span class="token rparen">)</span> = <span class="token lparen">(</span>n-1<span class="token rparen">)</span>!<span class="token keyword">\quad</span><span class="token keyword">\forall</span> n<span class="token keyword">\in</span><span class="token keyword">\mathbb</span> N<span class="token md md-bracket-end">$</span></span>。或者块级公式：</span><span class="token lf">
+</span></span><span id="wmd-input-section-7" class="wmd-input-section"><span class="token lf">
+</span><span class="token math block"><span class="token md md-bracket-start">$$</span>	x = <span class="token keyword">\dfrac</span><span class="token lparen">{</span>-b <span class="token keyword">\pm</span> <span class="token keyword">\sqrt</span><span class="token lparen">{</span>b^2 - 4ac<span class="token rparen">}</span><span class="token rparen">}</span><span class="token lparen">{</span>2a<span class="token rparen">}</span> <span class="token md md-bracket-end">$$</span></span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-8" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 表格</span><span class="token lf">
+</span><span class="token table">| Item      |    Value | Qty  |<span class="token lf">
+</span>| :-------- | --------:| :--: |<span class="token lf">
+</span>| Computer  | 1600 USD |  5   |<span class="token lf">
+</span>| Phone     |   12 USD |  12  |<span class="token lf">
+</span>| Pipe      |    1 USD | 234  |<span class="token lf">
+</span><span class="token lf">
+</span></span></span><span id="wmd-input-section-9" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 流程图</span><span class="token lf">
+</span></span><span id="wmd-input-section-10" class="wmd-input-section"><span class="token pre gfm ace_support ace_function"><span class="token md md-pre">```</span>flow<span class="token lf">
+</span>st=&gt;start: Start<span class="token lf">
+</span>e=&gt;end<span class="token lf">
+</span>op=&gt;operation: My Operation<span class="token lf">
+</span>cond=&gt;condition: Yes or No?<span class="token lf">
+</span><span class="token lf">
+</span>st-&gt;op-&gt;cond<span class="token lf">
+</span>cond(yes)-&gt;e<span class="token lf">
+</span>cond(no)-&gt;op<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">以及时序图:</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-11" class="wmd-input-section"><span class="token pre gfm ace_support ace_function"><span class="token md md-pre">```</span>sequence<span class="token lf">
+</span>Alice-&gt;Bob: Hello Bob, how are you?<span class="token lf">
+</span>Note right of Bob: Bob thinks<span class="token lf">
+</span>Bob--&gt;Alice: I am good thanks!<span class="token lf">
+</span><span class="token md md-pre">```</span></span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token blockquote ace_string ace_constant ace_other"><span class="token md md-gt">&gt; </span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>提示：<span class="token md md-strong">**</span></span>想了解更多，请查看<span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>流程图<span class="token md md-strong">**</span></span><span class="token linkref"><span class="token ref-start"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text">语法</span><span class="token md md-bracket-end">]</span></span><span class="token ref-end"><span class="token md md-bracket-start">[</span><span class="token md md-href">3</span><span class="token md md-bracket-end">]</span></span></span>以及<span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>时序图<span class="token md md-strong">**</span></span><span class="token linkref"><span class="token ref-start"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text">语法</span><span class="token md md-bracket-end">]</span></span><span class="token ref-end"><span class="token md md-bracket-start">[</span><span class="token md md-href">4</span><span class="token md md-bracket-end">]</span></span></span>。</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-12" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 复选框</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">使用 <span class="token code ace_support ace_function"><span class="token md md-code">`</span>- [ ]<span class="token md md-code">`</span></span> 和 <span class="token code ace_support ace_function"><span class="token md md-code">`</span>- [x]<span class="token md md-code">`</span></span> 语法可以创建复选框，实现 todo-list 等功能。例如：</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token li checklist"><span class="token md md-checkbox checked">- [x]</span> <span class="token md-checkbox-content">已完成事项</span><span class="token lf">
+</span></span><span class="token li checklist"><span class="token md md-checkbox">- [ ]</span> <span class="token md-checkbox-content">待办事项1</span><span class="token lf">
+</span></span><span class="token li checklist"><span class="token md md-checkbox">- [ ]</span> <span class="token md-checkbox-content">待办事项2</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span class="token blockquote ace_string ace_constant ace_other"><span class="token md md-gt">&gt; </span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>注意：<span class="token md md-strong">**</span></span>目前支持尚不完全，在印象笔记中勾选复选框是无效、不能同步的，所以必须在<span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>中修改 Markdown 原文才可生效。下个版本将会全面支持。</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-13" class="wmd-input-section"><span class="token h2 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">##</span> 印象笔记相关</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-14" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 笔记本和标签</span><span class="token lf">
+</span><span class="token p"><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>增加了<span class="token code ace_support ace_function"><span class="token md md-code">`</span>@(笔记本)[标签A|标签B]<span class="token md md-code">`</span></span>语法, 以选择笔记本和添加标签。 <span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>绑定账号后<span class="token md md-strong">**</span></span>， 输入<span class="token code ace_support ace_function"><span class="token md md-code">`</span>(<span class="token md md-code">`</span></span>自动会出现笔记本列表，请从中选择。</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-15" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 笔记标题</span><span class="token lf">
+</span><span class="token p"><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>会自动使用文档内出现的第一个标题作为笔记标题。例如本文，就是第一行的 <span class="token code ace_support ace_function"><span class="token md md-code">`</span>欢迎使用马克飞象<span class="token md md-code">`</span></span>。</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-16" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 快捷编辑</span><span class="token lf">
+</span><span class="token p">保存在印象笔记中的笔记，右上角会有一个红色的编辑按钮，点击后会回到<span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>中打开并编辑该笔记。</span><span class="token lf">
+</span><span class="token blockquote ace_string ace_constant ace_other"><span class="token md md-gt">&gt;</span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>注意：<span class="token md md-strong">**</span></span>目前用户在印象笔记中单方面做的任何修改，马克飞象是无法自动感知和更新的。所以请务必回到马克飞象编辑。</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-17" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 数据同步</span><span class="token lf">
+</span><span class="token p"><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>通过<span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>将Markdown原文以隐藏内容保存在笔记中<span class="token md md-strong">**</span></span>的精妙设计，实现了对Markdown的存储和再次编辑。既解决了其他产品只是单向导出HTML的单薄，又规避了服务端存储Markdown带来的隐私安全问题。这样，服务端仅作为对印象笔记 API调用和数据转换之用。</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token blockquote ace_string ace_constant ace_other"><span class="token md md-gt"> &gt;</span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>隐私声明：用户所有的笔记数据，均保存在印象笔记中。马克飞象不存储用户的任何笔记数据。<span class="token md md-strong">**</span></span></span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-18" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 离线存储</span><span class="token lf">
+</span><span class="token p"><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>使用浏览器离线存储将内容实时保存在本地，不必担心网络断掉或浏览器崩溃。为了节省空间和避免冲突，已同步至印象笔记并且不再修改的笔记将删除部分本地缓存，不过依然可以随时通过<span class="token code ace_support ace_function"><span class="token md md-code">`</span>文档管理<span class="token md md-code">`</span></span>打开。</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token blockquote ace_string ace_constant ace_other"><span class="token md md-gt">&gt; </span><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>注意：<span class="token md md-strong">**</span></span>虽然浏览器存储大部分时候都比较可靠，但印象笔记作为专业云存储，更值得信赖。以防万一，<span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>请务必经常及时同步到印象笔记<span class="token md md-strong">**</span></span>。</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-19" class="wmd-input-section"><span class="token h2 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">##</span> 编辑器相关</span><span class="token lf">
+</span></span><span id="wmd-input-section-20" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 设置</span><span class="token lf">
+</span><span class="token p">右侧系统菜单（快捷键<span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + M<span class="token md md-code">`</span></span>）的<span class="token code ace_support ace_function"><span class="token md md-code">`</span>设置<span class="token md md-code">`</span></span>中，提供了界面字体、字号、自定义CSS、vim/emacs 键盘模式等高级选项。</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-21" class="wmd-input-section"><span class="token h3 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">###</span> 快捷键</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">帮助    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + /<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">同步文档    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + S<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">创建文档    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + Alt + N<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">最大化编辑器    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + Enter<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">预览文档 <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + Alt + Enter<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">文档管理    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + O<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">系统菜单    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + M<span class="token md md-code">`</span></span> </span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p">加粗    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + B<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">插入图片    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + G<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">插入链接    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + L<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token p">提升标题    <span class="token code ace_support ace_function"><span class="token md md-code">`</span>Ctrl + H<span class="token md md-code">`</span></span></span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-22" class="wmd-input-section"><span class="token h2 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">##</span> 关于收费</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token p"><span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>马克飞象<span class="token md md-strong">**</span></span>为新用户提供 10 天的试用期，试用期过后需要<span class="token link"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text ace_string">续费</span><span class="token md md-bracket-end">](</span><span class="token md md-href">maxiang.info/vip.html</span><span class="token md md-paren-end">)</span></span>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token lf">
+</span></span><span id="wmd-input-section-23" class="wmd-input-section"><span class="token h2 ace_markup ace_heading ace_constant ace_numeric"><span class="token md md-hash">##</span> 反馈与建议</span><span class="token lf">
+</span><span class="token li"><span class="token md md-li">- </span>微博：<span class="token link"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text ace_string">@马克飞象</span><span class="token md md-bracket-end">](</span><span class="token md md-href">http://weibo.com/u/2788354117</span><span class="token md md-paren-end">)</span></span>，<span class="token link"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text ace_string">@GGock</span><span class="token md md-bracket-end">](</span><span class="token md md-href">http://weibo.com/ggock "开发者个人账号"</span><span class="token md md-paren-end">)</span></span><span class="token lf">
+</span></span><span class="token li"><span class="token md md-li">- </span>邮箱：&lt;<span class="token email">hustgock@gmail.com</span>&gt;<span class="token lf">
+</span><span class="token lf">
+</span></span><span class="token hr">---------</span><span class="token lf">
+</span><span class="token p">感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token fndef"><span class="token ref-id"><span class="token md md-bracket-start">[</span>^demo<span class="token md md-bracket-end">]</span></span>: 这是一个示例脚注。请查阅 <span class="token link"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text ace_string">MultiMarkdown 文档</span><span class="token md md-bracket-end">](</span><span class="token md md-href">https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide#footnotes</span><span class="token md md-paren-end">)</span></span> 关于脚注的说明。 <span class="token strong ace_keyword ace_strong"><span class="token md md-strong">**</span>限制：<span class="token md md-strong">**</span></span> 印象笔记的笔记内容使用 <span class="token linkref"><span class="token ref-start"><span class="token md md-bracket-start">[</span><span class="token md md-underlined-text">ENML</span><span class="token md md-bracket-end">]</span></span><span class="token ref-end"><span class="token md md-bracket-start">[</span><span class="token md md-href">5</span><span class="token md md-bracket-end">]</span></span></span> 格式，基于 HTML，但是不支持某些标签和属性，例如id，这就导致<span class="token code ace_support ace_function"><span class="token md md-code">`</span>脚注<span class="token md md-code">`</span></span>和<span class="token code ace_support ace_function"><span class="token md md-code">`</span>TOC<span class="token md md-code">`</span></span>无法正常点击。</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token lf">
+</span><span class="token linkdef">  <span class="token link-id"><span class="token md md-bracket-start">[</span>1<span class="token md md-bracket-end">]</span></span>: <span class="token url">http://maxiang.info/client_zh</span></span><span class="token lf">
+</span><span class="token linkdef">  <span class="token link-id"><span class="token md md-bracket-start">[</span>2<span class="token md md-bracket-end">]</span></span>: <span class="token url">https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop</span></span><span class="token lf">
+</span><span class="token linkdef">  <span class="token link-id"><span class="token md md-bracket-start">[</span>3<span class="token md md-bracket-end">]</span></span>: <span class="token url">http://adrai.github.io/flowchart.js/</span></span><span class="token lf">
+</span><span class="token linkdef">  <span class="token link-id"><span class="token md md-bracket-start">[</span>4<span class="token md md-bracket-end">]</span></span>: <span class="token url">http://bramp.github.io/js-sequence-diagrams/</span></span><span class="token lf">
+</span><span class="token linkdef">  <span class="token link-id"><span class="token md md-bracket-start">[</span>5<span class="token md md-bracket-end">]</span></span>: <span class="token url">https://dev.yinxiang.com/doc/articles/enml.php</span></span><span class="token lf">
+</span><span class="token lf">
+</span></span><span class="token lf">
+</span></div><div class="editor-margin" style="width: 35px;"></div></pre>
+            <pre id="ace-input" class="form-control"><div class="editor-content" contenteditable="true"></div><div class="editor-margin"></div></pre>
+            <div class="preview-panel" style="transform: translate(800px, 0px); width: 800px; height: 721px;">
+                <div class="layout-resizer layout-resizer-preview open" style="user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: pan-y; height: 721px;"></div>
+                <div class="layout-toggler layout-toggler-navbar btn btn-info open" title="Toggle navigation bar" style="height: 60px;"><i class="icon-th"></i></div>
+                <div class="layout-toggler layout-toggler-preview btn btn-info" title="Toggle preview"><i class="icon-none"></i></div>
+                <div class="preview-container" style="left: 0px; width: 800px; height: 721px;">
+                    <div id="preview-contents" class="note-content" style="padding-left: 35px; padding-right: 35px; padding-bottom: 661px;">
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-1" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-2" class="wmd-preview-section preview-content">
+
+<h1 id="欢迎使用马克飞象">欢迎使用马克飞象</h1>
+
+<p><p class="note-tags "><code class="notebook">示例笔记本</code> <code>马克飞象</code> <code>帮助</code> <code>Markdown</code> </p></p>
+
+<p><strong>马克飞象</strong>是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。特点概述：</p>
+
+<ul><li><strong>功能丰富</strong> ：支持高亮代码块、<em>LaTeX</em> 公式、流程图，本地图片以及附件上传，甚至截图粘贴，工作学习好帮手；</li>
+<li><strong>得心应手</strong> ：简洁高效的编辑器，提供<a href="http://maxiang.info/client_zh" target="_blank">桌面客户端</a>以及<a href="https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop" target="_blank">离线Chrome App</a>，支持移动端 Web；</li>
+<li><strong>深度整合</strong> ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。</li>
+</ul>
+
+<hr>
+
+<p><div class="toc">
+<ul>
+<li><a href="https://maxiang.io/#欢迎使用马克飞象">欢迎使用马克飞象</a><ul>
+<li><a href="https://maxiang.io/#markdown简介">Markdown简介</a><ul>
+<li><a href="https://maxiang.io/#代码块">代码块</a></li>
+<li><a href="https://maxiang.io/#latex-公式">LaTeX 公式</a></li>
+<li><a href="https://maxiang.io/#表格">表格</a></li>
+<li><a href="https://maxiang.io/#流程图">流程图</a></li>
+<li><a href="https://maxiang.io/#复选框">复选框</a></li>
+</ul>
+</li>
+<li><a href="https://maxiang.io/#印象笔记相关">印象笔记相关</a><ul>
+<li><a href="https://maxiang.io/#笔记本和标签">笔记本和标签</a></li>
+<li><a href="https://maxiang.io/#笔记标题">笔记标题</a></li>
+<li><a href="https://maxiang.io/#快捷编辑">快捷编辑</a></li>
+<li><a href="https://maxiang.io/#数据同步">数据同步</a></li>
+<li><a href="https://maxiang.io/#离线存储">离线存储</a></li>
+</ul>
+</li>
+<li><a href="https://maxiang.io/#编辑器相关">编辑器相关</a><ul>
+<li><a href="https://maxiang.io/#设置">设置</a></li>
+<li><a href="https://maxiang.io/#快捷键">快捷键</a></li>
+</ul>
+</li>
+<li><a href="https://maxiang.io/#关于收费">关于收费</a></li>
+<li><a href="https://maxiang.io/#反馈与建议">反馈与建议</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+</div><div id="wmd-preview-section-3" class="wmd-preview-section preview-content">
+
+<h2 id="markdown简介">Markdown简介</h2>
+
+<blockquote>
+  <p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank">维基百科</a></p>
+</blockquote>
+
+<p>正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<strong>粗体</strong>或者<em>斜体</em>，创建一个<a href="http://www.example.com/" target="_blank">链接</a>或一个脚注<a href="https://maxiang.io/#fn:demo" id="fnref:demo" title="See footnote" class="footnote">1</a>。下面列举了几个高级功能，更多语法请按<code>Ctrl + /</code>查看帮助。 </p>
+
+</div><div id="wmd-preview-section-4" class="wmd-preview-section preview-content">
+
+<h3 id="代码块">代码块</h3>
+
+</div><div id="wmd-preview-section-5" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-python hljs"><span class="hljs-comment line-number">1.</span><span class="hljs-meta">@requires_authorization</span><br><span class="hljs-comment line-number">2.</span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">somefunc</span><span class="hljs-params">(param1=<span class="hljs-string">''</span>, param2=<span class="hljs-number">0</span>)</span>:</span><br><span class="hljs-comment line-number">3.</span>    <span class="hljs-string">'''A docstring'''</span><br><span class="hljs-comment line-number">4.</span>    <span class="hljs-keyword">if</span> param1 &gt; param2: <span class="hljs-comment"># interesting</span><br><span class="hljs-comment line-number">5.</span>        <span class="hljs-keyword">print</span> <span class="hljs-string">'Greater'</span><br><span class="hljs-comment line-number">6.</span>    <span class="hljs-keyword">return</span> (param2 - param1 + <span class="hljs-number">1</span>) <span class="hljs-keyword">or</span> <span class="hljs-keyword">None</span><br><span class="hljs-comment line-number">7.</span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeClass</span>:</span><br><span class="hljs-comment line-number">8.</span>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment line-number">9.</span><span class="hljs-meta">&gt;&gt;&gt; </span>message = <span class="hljs-string">'''interpreter<br><span class="hljs-comment line-number">10.</span><span class="hljs-meta">... </span>prompt'''</span><br></code></pre>
+
+</div><div id="wmd-preview-section-6" class="wmd-preview-section preview-content">
+
+<h3 id="latex-公式">LaTeX 公式</h3>
+
+<p>可以创建行内公式，例如 <span class="" rel="a5b96bf2d8bd9059bb958841ba3f2beb"><span class="MathJax_SVG" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -705.277489002541 10195.555555555555 911.5549780050818" style="width: 23.735ex; height: 2.169ex; vertical-align: -0.602ex; margin: 1px 0px;" width="196.922px" height="17.9844px"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use href="#STIXWEBMAIN-393"></use><use href="#STIXWEBMAIN-28" x="592" y="0"></use><use href="#STIXWEBMAINI-6E" x="930" y="0"></use><use href="#STIXWEBMAIN-29" x="1435" y="0"></use><use href="#STIXWEBMAIN-3D" x="2050" y="0"></use><use href="#STIXWEBMAIN-28" x="3018" y="0"></use><use href="#STIXWEBMAINI-6E" x="3356" y="0"></use><use href="#STIXWEBMAIN-2212" x="4083" y="0"></use><use href="#STIXWEBMAIN-31" x="4996" y="0"></use><use href="#STIXWEBMAIN-29" x="5501" y="0"></use><use href="#STIXWEBMAIN-21" x="5839" y="0"></use><use href="#STIXWEBMAIN-2200" x="7177" y="0"></use><use href="#STIXWEBMAINI-6E" x="7742" y="0"></use><use href="#STIXWEBMAIN-2208" x="8524" y="0"></use><use href="#STIXWEBDOUBLESTRUCK-2115" x="9492" y="0"></use></g></svg></span></span>。或者块级公式：</p>
+
+</div><div id="wmd-preview-section-7" class="wmd-preview-section preview-content">
+
+<p></p><div class="" rel="b6e1e70c16ba5facfebcbc80ff514174"><div class="MathJax_SVG_Display" role="textbox" aria-readonly="true" style="text-align: center;"><span class="MathJax_SVG" id="MathJax-Element-2-Frame" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-22 -1800.9624287615773 8898.533368943652 2527.1909177641182" style="width: 20.723ex; height: 5.904ex; vertical-align: -1.807ex; margin: 1px 0px;" width="171.922px" height="48.9844px"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use href="#STIXWEBMAINI-78"></use><use href="#STIXWEBMAIN-3D" x="729" y="0"></use><g transform="translate(1697,0)"><g transform="translate(120,0)"><rect stroke="none" width="6938" height="60" x="0" y="220"></rect><g transform="translate(60,698)"><use href="#STIXWEBMAIN-2212"></use><use href="#STIXWEBMAINI-62" x="690" y="0"></use><use href="#STIXWEBMAIN-B1" x="1417" y="0"></use><g transform="translate(2329,0)"><use href="#STIXWEBMAIN-221A" x="0" y="40"></use><rect stroke="none" width="3556" height="60" x="933" y="963"></rect><g transform="translate(933,0)"><use href="#STIXWEBMAINI-62"></use><use transform="scale(0.7071067811865476)" href="#STIXWEBMAIN-32" x="714" y="408"></use><use href="#STIXWEBMAIN-2212" x="1184" y="0"></use><use href="#STIXWEBMAIN-34" x="2096" y="0"></use><use href="#STIXWEBMAINI-61" x="2601" y="0"></use><use href="#STIXWEBMAINI-63" x="3107" y="0"></use></g></g></g><g transform="translate(2963,-686)"><use href="#STIXWEBMAIN-32"></use><use href="#STIXWEBMAINI-61" x="505" y="0"></use></g></g></g></g></svg></span></div></div><p></p>
+
+</div><div id="wmd-preview-section-8" class="wmd-preview-section preview-content">
+
+<h3 id="表格">表格</h3>
+
+<table>
+<thead>
+<tr>
+  <th align="left">Item</th>
+  <th align="right">Value</th>
+  <th align="center">Qty</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="left">Computer</td>
+  <td align="right">1600 USD</td>
+  <td align="center">5</td>
+</tr>
+<tr>
+  <td align="left">Phone</td>
+  <td align="right">12 USD</td>
+  <td align="center">12</td>
+</tr>
+<tr>
+  <td align="left">Pipe</td>
+  <td align="right">1 USD</td>
+  <td align="center">234</td>
+</tr>
+</tbody></table>
+
+
+</div><div id="wmd-preview-section-9" class="wmd-preview-section preview-content">
+
+<h3 id="流程图">流程图</h3>
+
+</div><div id="wmd-preview-section-10" class="wmd-preview-section preview-content">
+
+<div class="flow-chart" rel="3948551bcb3e561fe9d24798793a46ce"><svg height="348.70703125" version="1.1" width="184.4140625" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; top: -0.875px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><marker id="raphael-marker-endblock33" markerHeight="3" markerWidth="3" orient="auto" refX="1.5" refY="1.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use href="#raphael-marker-block" transform="rotate(180 1.5 1.5) scale(0.6,0.6)" stroke-width="1.6667" fill="black" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="0" y="0" width="52" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" transform="matrix(1,0,0,1,53.707,2)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="#000000" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: sans-serif;" font-size="14px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,53.707,2)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Start</tspan></text><rect x="0" y="0" width="108" height="37" r="0" rx="0" ry="0" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" transform="matrix(1,0,0,1,25.707,91)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="#000000" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: sans-serif;" font-size="14px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,25.707,91)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">My Operation</tspan></text><path fill="#ffffff" stroke="#000000" d="M38.853515625,19.4267578125L0,38.853515625L77.70703125,77.70703125L155.4140625,38.853515625L77.70703125,0L0,38.853515625" stroke-width="2" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: sans-serif; font-weight: normal;" transform="matrix(1,0,0,1,2,180)"></path><text x="43.853515625" y="38.853515625" text-anchor="start" font="10px &quot;Arial&quot;" stroke="#000000" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: sans-serif;" font-size="14px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,2,180)"><tspan dy="5.509765625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Yes or No?</tspan><tspan dy="18" x="43.853515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><rect x="0" y="0" width="46" height="37" r="20" rx="20" ry="20" fill="#ffffff" stroke="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke-width="2" transform="matrix(1,0,0,1,56.707,309.707)"></rect><text x="10" y="18.5" text-anchor="start" font="10px &quot;Arial&quot;" stroke="#000000" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: sans-serif;" font-size="14px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,56.707,309.707)"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">End</tspan></text><path fill="none" stroke="#000000" d="M79.70703125,39C79.70703125,39,79.70703125,76.92477893829346,79.70703125,87.99851810093969" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: sans-serif; font-weight: normal;"></path><path fill="none" stroke="#000000" d="M79.70703125,128C79.70703125,128,79.70703125,165.92477893829346,79.70703125,176.9985181009397" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: sans-serif; font-weight: normal;"></path><path fill="none" stroke="#000000" d="M79.70703125,257.70703125C79.70703125,257.70703125,79.70703125,295.63181018829346,79.70703125,306.7055493509397" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: sans-serif; font-weight: normal;"></path><text x="84.70703125" y="267.70703125" text-anchor="start" font="10px &quot;Arial&quot;" stroke="#000000" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: sans-serif;" font-size="14px" font-family="sans-serif" font-weight="normal"><tspan dy="5.50390625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">yes</tspan></text><path fill="none" stroke="#000000" d="M157.4140625,218.853515625C157.4140625,218.853515625,182.4140625,218.853515625,182.4140625,218.853515625C182.4140625,218.853515625,182.4140625,66,182.4140625,66C182.4140625,66,79.70703125,66,79.70703125,66C79.70703125,66,79.70703125,81.37344455718994,79.70703125,88.00924777425826" stroke-width="2" marker-end="url(#raphael-marker-endblock33)" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: sans-serif; font-weight: normal;"></path><text x="162.4140625" y="208.853515625" text-anchor="start" font="10px &quot;Arial&quot;" stroke="#000000" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: sans-serif;" font-size="14px" font-family="sans-serif" font-weight="normal"><tspan dy="5.509765625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">no</tspan></text></svg></div>
+
+<p>以及时序图:</p>
+
+</div><div id="wmd-preview-section-11" class="wmd-preview-section preview-content">
+
+<div class="sequence-diagram" rel="9770c7c1a2318ca92066a6342c1a6b0c"><svg height="255" version="1.1" width="388.5" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.5px; top: -0.296875px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><marker id="raphael-marker-endblock55" markerHeight="5" markerWidth="5" orient="auto" refX="2.5" refY="2.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><use href="#raphael-marker-block" transform="rotate(180 2.5 2.5) scale(1,1)" stroke-width="1.0000" fill="#000" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></use></marker></defs><rect x="10" y="20" width="54" height="37" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="20" y="30" width="34" height="17" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="37" y="38.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: &quot;Andale Mono&quot;, monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Alice</tspan></text><rect x="10" y="198" width="54" height="37" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="20" y="208" width="34" height="17" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="37" y="216.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: &quot;Andale Mono&quot;, monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Alice</tspan></text><path fill="none" stroke="#000000" d="M37,57L37,198" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><rect x="192.5" y="20" width="47" height="37" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="203" y="30" width="27" height="17" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="216" y="38.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: &quot;Andale Mono&quot;, monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Bob</tspan></text><rect x="192.5" y="198" width="47" height="37" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="203" y="208" width="27" height="17" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="216" y="216.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: &quot;Andale Mono&quot;, monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Bob</tspan></text><path fill="none" stroke="#000000" d="M216,57L216,198" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><rect x="47" y="73.5" width="159" height="17" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="126.5" y="82" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: &quot;Andale Mono&quot;, monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Hello Bob, how are you?</tspan></text><path fill="none" stroke="#000000" d="M37,94C37,94,182.0372011065483,94,211.0021499603463,94" stroke-width="2" marker-end="url(#raphael-marker-endblock55)" stroke-dasharray="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><rect x="236" y="114" width="79" height="27" r="0" rx="0" ry="0" fill="none" stroke="#000000" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="241" y="119" width="69" height="17" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="275.5" y="127.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: &quot;Andale Mono&quot;, monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Bob thinks</tspan></text><rect x="68.5" y="157.5" width="116" height="17" r="0" rx="0" ry="0" fill="#ffffff" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><text x="126.5" y="166" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 16px; line-height: normal; font-family: &quot;Andale Mono&quot;, monospace;" font-size="16px" font-family="Andale Mono, monospace"><tspan dy="5.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">I am good thanks!</tspan></text><path fill="none" stroke="#000000" d="M216,178C216,178,70.96279889345169,178,41.99785003965371,178" stroke-width="2" marker-end="url(#raphael-marker-endblock55)" stroke-dasharray="6,2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path></svg></div>
+
+<blockquote>
+  <p><strong>提示：</strong>想了解更多，请查看<strong>流程图</strong><a href="http://adrai.github.io/flowchart.js/" target="_blank">语法</a>以及<strong>时序图</strong><a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank">语法</a>。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-12" class="wmd-preview-section preview-content">
+
+<h3 id="复选框">复选框</h3>
+
+<p>使用 <code>- [ ]</code> 和 <code>- [x]</code> 语法可以创建复选框，实现 todo-list 等功能。例如：</p>
+
+<div class="checklist"><div class="checklist-item"><input type="checkbox" checked="checked"> 已完成事项</div><div class="checklist-item"><input type="checkbox"> 待办事项1</div><div class="checklist-item"><input type="checkbox"> 待办事项2</div></div>
+
+<blockquote>
+  <p><strong>注意：</strong>目前支持尚不完全，在印象笔记中勾选复选框是无效、不能同步的，所以必须在<strong>马克飞象</strong>中修改 Markdown 原文才可生效。下个版本将会全面支持。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-13" class="wmd-preview-section preview-content">
+
+<h2 id="印象笔记相关">印象笔记相关</h2>
+
+</div><div id="wmd-preview-section-14" class="wmd-preview-section preview-content">
+
+<h3 id="笔记本和标签">笔记本和标签</h3>
+
+<p><strong>马克飞象</strong>增加了<code>@(笔记本)[标签A|标签B]</code>语法, 以选择笔记本和添加标签。 <strong>绑定账号后</strong>， 输入<code>(</code>自动会出现笔记本列表，请从中选择。</p>
+
+</div><div id="wmd-preview-section-15" class="wmd-preview-section preview-content">
+
+<h3 id="笔记标题">笔记标题</h3>
+
+<p><strong>马克飞象</strong>会自动使用文档内出现的第一个标题作为笔记标题。例如本文，就是第一行的 <code>欢迎使用马克飞象</code>。</p>
+
+</div><div id="wmd-preview-section-16" class="wmd-preview-section preview-content">
+
+<h3 id="快捷编辑">快捷编辑</h3>
+
+<p>保存在印象笔记中的笔记，右上角会有一个红色的编辑按钮，点击后会回到<strong>马克飞象</strong>中打开并编辑该笔记。</p>
+
+<blockquote>
+  <p><strong>注意：</strong>目前用户在印象笔记中单方面做的任何修改，马克飞象是无法自动感知和更新的。所以请务必回到马克飞象编辑。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-17" class="wmd-preview-section preview-content">
+
+<h3 id="数据同步">数据同步</h3>
+
+<p><strong>马克飞象</strong>通过<strong>将Markdown原文以隐藏内容保存在笔记中</strong>的精妙设计，实现了对Markdown的存储和再次编辑。既解决了其他产品只是单向导出HTML的单薄，又规避了服务端存储Markdown带来的隐私安全问题。这样，服务端仅作为对印象笔记 API调用和数据转换之用。</p>
+
+<blockquote>
+  <p><strong>隐私声明：用户所有的笔记数据，均保存在印象笔记中。马克飞象不存储用户的任何笔记数据。</strong></p>
+</blockquote>
+
+</div><div id="wmd-preview-section-18" class="wmd-preview-section preview-content">
+
+<h3 id="离线存储">离线存储</h3>
+
+<p><strong>马克飞象</strong>使用浏览器离线存储将内容实时保存在本地，不必担心网络断掉或浏览器崩溃。为了节省空间和避免冲突，已同步至印象笔记并且不再修改的笔记将删除部分本地缓存，不过依然可以随时通过<code>文档管理</code>打开。</p>
+
+<blockquote>
+  <p><strong>注意：</strong>虽然浏览器存储大部分时候都比较可靠，但印象笔记作为专业云存储，更值得信赖。以防万一，<strong>请务必经常及时同步到印象笔记</strong>。</p>
+</blockquote>
+
+</div><div id="wmd-preview-section-19" class="wmd-preview-section preview-content">
+
+<h2 id="编辑器相关">编辑器相关</h2>
+
+</div><div id="wmd-preview-section-20" class="wmd-preview-section preview-content">
+
+<h3 id="设置">设置</h3>
+
+<p>右侧系统菜单（快捷键<code>Ctrl + M</code>）的<code>设置</code>中，提供了界面字体、字号、自定义CSS、vim/emacs 键盘模式等高级选项。</p>
+
+</div><div id="wmd-preview-section-21" class="wmd-preview-section preview-content">
+
+<h3 id="快捷键">快捷键</h3>
+
+<p>帮助    <code>Ctrl + /</code> <br>
+同步文档    <code>Ctrl + S</code> <br>
+创建文档    <code>Ctrl + Alt + N</code> <br>
+最大化编辑器    <code>Ctrl + Enter</code> <br>
+预览文档 <code>Ctrl + Alt + Enter</code> <br>
+文档管理    <code>Ctrl + O</code> <br>
+系统菜单    <code>Ctrl + M</code> </p>
+
+<p>加粗    <code>Ctrl + B</code> <br>
+插入图片    <code>Ctrl + G</code> <br>
+插入链接    <code>Ctrl + L</code> <br>
+提升标题    <code>Ctrl + H</code></p>
+
+</div><div id="wmd-preview-section-22" class="wmd-preview-section preview-content">
+
+<h2 id="关于收费">关于收费</h2>
+
+<p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="http://maxiang.info/vip.html" target="_blank">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
+
+</div><div id="wmd-preview-section-23" class="wmd-preview-section preview-content">
+
+<h2 id="反馈与建议">反馈与建议</h2>
+
+<ul><li>微博：<a href="http://weibo.com/u/2788354117" target="_blank">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank">@GGock</a></li>
+<li>邮箱：<a href="mailto:hustgock@gmail.com" target="_blank">hustgock@gmail.com</a></li>
+</ul>
+
+<hr>
+
+<p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
+
+</div><div id="wmd-preview-section-footnotes" class="preview-content"><div class="footnotes"><hr><ol><li id="fn:demo">这是一个示例脚注。请查阅 <a href="https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide#footnotes" target="_blank">MultiMarkdown 文档</a> 关于脚注的说明。 <strong>限制：</strong> 印象笔记的笔记内容使用 <a href="https://dev.yinxiang.com/doc/articles/enml.php" target="_blank">ENML</a> 格式，基于 HTML，但是不支持某些标签和属性，例如id，这就导致<code>脚注</code>和<code>TOC</code>无法正常点击。 <a href="https://maxiang.io/#fnref:demo" title="Return to article" class="reversefootnote">↩</a></li></ol></div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="extension-preview-buttons animate closed" style="user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: pan-y; transform: translate(200px, -6px);">
+            <div class="btn-group drag-me dropup" title="" data-original-title="Drag me!">
+                <i class="icon-ellipsis-vert"></i>
+            </div>
+        <div class="btn-group dropup"><button class="btn btn-success dropdown-toggle button-markdown-syntax" title="" vine-click="SHOW_HELP" data-original-title="Markdown 语法">
+	<i class="icon-help-circled"></i>
+</button>
+
+</div><div class="btn-group dropup"><button id="toc-trigger" class="btn btn-success dropdown-toggle" title="" data-toggle="dropdown" data-original-title="内容目录">
+    <i class="icon-list"></i>
+</button>
+<div class="dropdown-menu pull-right">
+    <span id="pin-toc">
+    <i class="icon-lock-open-alt"></i>
+    <i class="icon-lock"></i>
+    </span>
+    <h3>内容目录</h3>
+    <hr>
+    <div class="table-of-contents"><div class="toc">
+<ul>
+<li><a href="https://maxiang.io/#欢迎使用马克飞象">欢迎使用马克飞象</a><ul>
+<li><a href="https://maxiang.io/#markdown简介">Markdown简介</a><ul>
+<li><a href="https://maxiang.io/#代码块">代码块</a></li>
+<li><a href="https://maxiang.io/#latex-公式">LaTeX 公式</a></li>
+<li><a href="https://maxiang.io/#表格">表格</a></li>
+<li><a href="https://maxiang.io/#流程图">流程图</a></li>
+<li><a href="https://maxiang.io/#复选框">复选框</a></li>
+</ul>
+</li>
+<li><a href="https://maxiang.io/#印象笔记相关">印象笔记相关</a><ul>
+<li><a href="https://maxiang.io/#笔记本和标签">笔记本和标签</a></li>
+<li><a href="https://maxiang.io/#笔记标题">笔记标题</a></li>
+<li><a href="https://maxiang.io/#快捷编辑">快捷编辑</a></li>
+<li><a href="https://maxiang.io/#数据同步">数据同步</a></li>
+<li><a href="https://maxiang.io/#离线存储">离线存储</a></li>
+</ul>
+</li>
+<li><a href="https://maxiang.io/#编辑器相关">编辑器相关</a><ul>
+<li><a href="https://maxiang.io/#设置">设置</a></li>
+<li><a href="https://maxiang.io/#快捷键">快捷键</a></li>
+</ul>
+</li>
+<li><a href="https://maxiang.io/#关于收费">关于收费</a></li>
+<li><a href="https://maxiang.io/#反馈与建议">反馈与建议</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+    <hr>
+</div>
+</div><div class="btn-group dropup"><button class="btn btn-success dropdown-toggle stat-button" title="" data-toggle="dropdown" data-original-title="信息统计">
+	<i class="icon-chart-bar"></i>
+	<span class="value">2096</span>
+</button>
+<div class="dropdown-menu pull-right stat-button-dropdown">
+    <h3> 统计</h3>
+    <hr>
+	<div class="stat">
+		<div>
+			字符: <span class="value1">2096</span>
+		</div>
+        
+		<div style="display:none;">
+			Words: <span class="value2">221</span>
+		</div>
+        
+		<div>
+            段落: <span class="value3">89</span>
+		</div>
+	</div>
+</div>
+</div><div class="btn-group dropup"><button class="btn btn-success dropdown-toggle button-markdown-syntax" title="" vine-click="PREVIEW_DOCUMENT:1" data-original-title="预览文档">
+	<i class="icon-desktop"></i>
+</button>
+
+</div></div>
+        <button class="btn btn-success" id="toggle-preview" vine-click="PREVIEW_DOCUMENT:0">
+            <i class="icon-direction" title="返回编辑"></i>
+        </button>
+    <div class="find-replace" style="display: none;"><button type="button" class="close button-find-replace-dismiss">×</button>
+<div class="form-inline">
+    <div class="form-group">
+        <label for="input-find-replace-search-for">Search for</label>
+        <input class="form-control" id="input-find-replace-search-for" placeholder="Search for">
+    </div>
+    <div class="form-group">
+        <label for="input-find-replace-replace-with">Replace with</label>
+        <input class="form-control" id="input-find-replace-replace-with" placeholder="Replace with">
+    </div>
+</div>
+<div class="pull-right">
+    <div class="help-block text-right">
+        <span class="found-counter">0</span> found
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary search-button">Search</button>
+        <button type="button" class="btn btn-default replace-button">Replace</button>
+        <button type="button" class="btn btn-default replace-all-button">All</button>
+    </div>
+</div>
+<div class="pull-left">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" class="checkbox-case-sensitive"> Case sensitive
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" class="checkbox-regexp"> Regular expression
+        </label>
+    </div>
+</div>
+</div></div>
+    <div id="wmd-button-bar" class="hide"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-button btn btn-success" id="wmd-italic-button" title="Emphasis &lt;em&gt; Ctrl/Cmd+I" style="left: 0px;"><span style="background-position: -20px 0px; display: none;"></span></li><li class="wmd-spacer wmd-spacer1 btn btn-success" id="wmd-spacer1" style="left: 0px;"></li><li class="wmd-spacer wmd-spacer2 btn btn-success" id="wmd-spacer2" style="left: 0px;"></li><li class="wmd-button btn btn-success" id="wmd-olist-button" title="Numbered List &lt;ol&gt; Ctrl/Cmd+O" style="left: 0px;"><span style="background-position: -120px 0px; display: none;"></span></li><li class="wmd-button btn btn-success" id="wmd-ulist-button" title="Bulleted List &lt;ul&gt; Ctrl/Cmd+U" style="left: 0px;"><span style="background-position: -140px 0px; display: none;"></span></li><li class="wmd-spacer wmd-spacer3 btn btn-success" id="wmd-spacer3" style="left: 0px;"></li><li class="wmd-button disabled btn btn-success" id="wmd-undo-button" title="Undo - Ctrl/Cmd+Z" style="left: 0px;"><span style="background-position: -200px -20px; display: none;"></span></li><li class="wmd-button disabled btn btn-success" id="wmd-redo-button" title="Redo - Ctrl/Cmd+Y" style="left: 0px;"><span style="background-position: -220px -20px; display: none;"></span></li><li class="wmd-button btn btn-success" id="wmd-table-button" title="Table" style="left: 0px;"><span style="background-position: -240px 0px; display: none;"></span></li></ul></div>
+
+    <div class="menu-panel" style="right: -325px;">
+        <!--<button class="btn toggle-button" title="Menu">
+            <img
+                data-stackedit-src="menu-icon.png" width="24" height="24" />
+        </button>-->
+
+        <div class="panel-content ">
+            <div vine-switch-on="IS_USER_AUTHED">
+                <custom switch-when="true" style="display: none;">
+                <div class="username" vine-bind="user"><span></span><a href="javascript:void(0)" vine-click="VIP_CHARGE" target="_blank"><span title="" class="vip-status " data-original-title=""><i class="icon icon-star"></i><span class="renew">续费</span></span></a></div>
+                <div class="list-group">
+                    <a href="javascript:void(0)" class="list-group-item" vine-click="LOG_OUT"><i class="icon-logout"></i>
+                        退出账号</a> 
+                </div>
+                </custom>
+                <custom switch-default="">
+                <div class="list-group">
+                    
+                    <a href="javascript:void(0)" class="list-group-item" vine-click="REDIRECT_AUTH:evernote"><i class="icon-login"></i>
+                        绑定 Evernote International 账号</a>
+                    <a href="javascript:void(0)" vine-click="REDIRECT_AUTH:yinxiang" class="list-group-item"><i class="icon-login"></i>
+                        绑定印象笔记账号</a>
+                    
+                </div>
+
+                </custom>
+            </div>
+            <div class="dropdown-header">当前文档</div>
+            <div class="list-group">
+                <a href="javascript:void(0)" class="list-group-item" vine-click="DISCARD_MODIFY"><i class="icon-reply"></i> 恢复至上次同步状态</a>
+                <a href="javascript:void(0)" class="list-group-item" vine-click="CONFIRM_DELETE_FILE"><i class="icon-trash"></i> 删除文档</a>
+                <!--<a href="javascript:void(0)"  class="list-group-item" vine-click='EXPORT_MD_FILE' ><i class="icon-download"></i> 导出 Markdown</a> -->
+                <!--<a href="javascript:void(0)"  class="list-group-item" data-toggle="modal" data-target=".modal-pdf-hint"><i class="icon-download"></i> 导出 PDF</a>-->
+                <a href="javascript:void(0)" data-toggle="collapse" data-target=".collapse-export" class="list-group-item"><i class="icon-download"></i> 导出...</a>
+                <div class="sub-menu collapse-export clearfix collapse">
+                    <ul class="nav">
+                        <li><a href="javascript:void(0)" vine-click="EXPORT_MD_FILE">Markdown</a></li>
+                        <li><a href="javascript:void(0)" vine-click="EXPORT_HTML_FILE">HTML</a></li>
+
+                        <li><a href="https://maxiang.io/#" data-toggle="modal" data-target=".modal-pdf-hint">PDF</a></li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0)" class="list-group-item" vine-click="PREVIEW_DOCUMENT:1"><i class="icon-desktop"></i> 预览文档</a>
+                <a href="javascript:void(0)" class="list-group-item" vine-click="SHARE_DOCUMENT"><i class="icon-share"></i> 分享链接</a>
+            </div>
+            <div class="dropdown-header">系统</div>
+            <ul class="list-group nav">
+
+                <li><a href="https://maxiang.io/#" class="list-group-item action-load-settings" data-toggle="modal" data-target=".modal-settings"><i class="icon-cog"></i> 设置</a></li>
+
+
+                
+                <li><a tabindex="-1" href="https://maxiang.io/client_zh" target="_blank" class="list-group-item"><i class="icon-rocket"></i> 下载桌面客户端</a></li>
+                <li><a tabindex="-1" href="https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop" target="_blank" class="list-group-item"><i class="icon-gift"></i> 下载离线Chrome App</a></li>
+                
+                <li><a href="https://maxiang.io/#" data-toggle="modal" vine-click="OPEN_FILE:readme:_blank" class="list-group-item"><i class="icon-doc-text"></i> 使用说明</a></li>
+                <li><a href="https://maxiang.io/#" data-toggle="modal" vine-click="SHOW_HELP" class="list-group-item"><i class="icon-help-circled"></i> 快捷帮助</a></li>
+
+                
+                <li><a href="https://www.evernote.com/shard/s21/sh/74d9e61d-2e12-4ee9-9d67-882f5d9474a4/8e6e04ad336df52156c5bf6965d8568f" class="list-group-item" target="_blank"><i class="icon-mail-alt"></i> 常见问题</a></li>
+                <!--<li><a tabindex="-1" href="/basic" class='list-group-item'><i class="icon-forward"></i> 切换至免费版</a></li>-->
+                
+                <li><a href="https://maxiang.io/#" data-toggle="modal" class="list-group-item" data-target=".modal-about"><i class="icon-attention-circled"></i> 关于</a></li>
+
+            </ul>
+        </div> 
+
+    </div>
+
+
+    <div class="document-panel">
+        <!--<button class="btn toggle-button" title="Select document Ctrl+[ Ctrl+]">
+            <i class="icon-folder-open"></i>
+        </button>
+        <div class="search-bar clearfix">
+            <ul class="nav">
+                <li><a href="#" class="action-create-file"><i
+                        class="icon-file"></i> New document</a></li>
+                <li><a href="#" class="action-remove-file-confirm"><i
+                        class="icon-trash"></i> Delete document</a></li>
+                <li><a href="#" data-toggle="modal" data-target=".modal-document-manager"><i
+                        class="icon-layers"></i> Manage documents</a></li>
+            </ul>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon-search"></i></span><input
+                    type="text" class="form-control" placeholder="Find document" />
+            </div>
+        </div>
+        <div class="panel-content">
+            <div class="list-group document-list"></div>
+            <div class="list-group document-list-filtered hide"></div>
+        </div>
+        -->
+        <div class="search-bar clearfix">
+            <div class="input-group" id="search-and-sync">
+                <input placeholder="搜索文件" type="text" class="form-control" vine-model="file_search">
+                <span class="input-group-addon btn sync-list" vine-click="FETCH_LATEST_NOTES" title="" data-original-title="从 Evernote 同步笔记列表"><i class="icon-arrows-cw"></i></span>
+            </div>
+        </div>
+        <div class="panel-content">
+            <div class="folder-top folder-wrapper active list-group">
+            </div>
+            <div class="list-group document-list">
+                <div class="nav" role="menu">
+                      
+
+                    <!-- searchlist | file_filter:file_search:notebook,status,title -->
+
+                    <div class="dropdown-header archive-splitter">归档</div>
+                    <!-- syncedfiles | file_filter:file_search:notebook,status,title -->
+                </div>
+            </div>
+            <div class="list-group document-list-filtered hide"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-document-manager">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="modal-title">Manage documents</h2>
+            </div>
+            <div class="modal-body">
+                <div></div>
+                <ul class="nav nav-pills document-list">
+                    <li class="pull-right dropdown"><a href="https://maxiang.io/#" data-toggle="dropdown"><i class="icon-check"></i> Selection <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://maxiang.io/#" class="action-select-all"><i class="icon-check"></i> Select all</a></li>
+                        <li><a href="https://maxiang.io/#" class="action-unselect-all"><i class="icon-check-empty"></i> Unselect all</a></li>
+                        <li class="divider"></li>
+                        <li><a href="https://maxiang.io/#" class="action-move-items"><i class="icon-forward"></i> Move to folder</a></li>
+                        <li><a href="https://maxiang.io/#" class="action-delete-items"><i class="icon-trash"></i> Delete</a></li>
+                    </ul></li>
+                    <li class="pull-right"><a href="https://maxiang.io/#" class="action-create-folder"> <i class="icon-folder"></i>
+                        Create folder
+                    </a></li>
+                    <li class="disabled"><a><i class="icon-file"></i> <span class="document-count"></span></a></li>
+                    <li class="disabled"><a><i class="icon-folder"></i> <span class="folder-count"></span></a></li>
+                </ul>
+                <div class="list-group document-list"></div>
+                <p class="confirm-delete hide">The following documents will be
+                deleted locally:</p>
+                <p class="choose-folder hide">Please choose a destination
+                folder:</p>
+                <div class="list-group selected-document-list hide"></div>
+                <div class="list-group select-folder-list hide"></div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default confirm-delete choose-folder action-cancel hide">Cancel</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary confirm-delete action-delete-items-confirm hide">OK</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary document-list" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="modal fade modal-non-unique">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title">Ooops...</h2>
+            </div>
+            <div class="modal-body">
+                <p>StackEdit has stopped because another instance was running in
+                the same browser.</p>
+                <blockquote>
+                    <p>If you want to reopen StackEdit, click on
+                    "Reload".</p>
+                </blockquote>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:window.location.reload();" class="btn btn-primary">Reload</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-app-reset">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title">清空笔记列表</h2>
+            </div>
+            <div class="modal-body">
+                <p>本操作将会清空文件列表。注意：本地笔记将会被删除，Evernote中的笔记不受影响。</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">取消</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary" data-dismiss="modal" vine-click="RESET_STORAGE">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-import-docs-settings">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title">Import documents and settings</h2>
+            </div>
+            <div class="modal-body">
+                <p>This will delete all existing local documents.</p>
+                <blockquote><b>Are you sure?</b></blockquote>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary action-import-docs-settings-confirm" data-dismiss="modal">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-generic" class="modal hide fade in">
+    <div class="modal-header">
+        <a href="https://maxiang.io/#" class="close" data-dismiss="modal">×</a>
+        <h3></h3>
+    </div>
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer">
+    </div>
+</div>
+
+
+<div class="modal modal-insert-link" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">插入链接</h3>
+            </div>
+            <div class="modal-body">
+                <p>请填写链接URL以及描述（可选）：</p>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon-globe"></i></span><input id="input-insert-link" type="text" class="col-lg-5 form-control" placeholder="http://example.com/ &quot;optional title&quot;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">取消</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary action-insert-link" data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal modal-insert-image" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">插入图片</h3>
+            </div>
+            <div class="modal-body">
+                <p>请填写图片URL：</p>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon-picture"></i></span><input id="input-insert-image" type="text" class="col-lg-5 form-control" placeholder="http://example.com/image.jpg">
+                </div>
+                <div class="help-block"><b>注意：</b> <span>马克飞象支持从剪切板直接复制图片，截屏粘贴试试。</span></div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default footer-left-btn"><input type="file" id="uploader" name="files[]" multiple="" onchange="" style="position:absolute; top:0; right:0; opacity:0; filter: alpha(opacity=0); font-size:23px; direction: ltr; cursor: pointer;"><i class="icon-hdd"></i>插入本地图片和附件...</a> <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">取消</a> <a href="https://maxiang.io/#" class="btn btn-primary action-insert-image" data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-save-error">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+
+            <div class="modal-header" style="color:#B90B0B;">
+                <h3 class="modal-title">同步文件失败</h3>
+            </div>
+            <div class="modal-body">
+                <p><b>错误码：</b><span class="error-code"></span></p>
+                <blockquote><pre class="error-message"></pre></blockquote>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-primary " data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-remove-file-confirm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">删除文件</h3>
+            </div>
+            <div class="modal-body">
+                <p id="remove-hint">确定删除<code id="remove-filename"></code>？</p>
+                <blockquote>
+                    <h5>注意：</h5> <p><code>删除文件</code>只删除本地文件。<code>彻底删除</code>不仅删除本地文件，而且会删除已经同步到 Evernote 的笔记。请慎重。</p><p>Evernote 客户端无法删除马克飞象的笔记是已知 bug，可以去 Evernote Web 端删除。</p> 
+                </blockquote>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-danger footer-left-btn action-remove-file" vine-click="DELETE_FILE2" data-dismiss="modal">彻底删除</a>                
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">取消</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary action-remove-file" data-dismiss="modal" vine-click="DELETE_FILE">删除文件</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal modal-file-conflict error" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3 class="modal-title">文件冲突</h3>
+            </div>
+            <div class="modal-body">
+                <p>检测到本地有尚未同步的修改，将打开本地版本。请仔细对比本地与Evernote中的内容，以决定同步或删除本地版本。操作前请做好备份。</p>
+                <blockquote>
+                    如果确认本地版本是过时的，想使用Evernote中的版本，请在右侧菜单中点击<code>删除文档</code>，然后在 Evernote 中找到笔记，点右上角的红标跳回到马克飞象即可。
+                </blockquote>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-primary " data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-version-conflict error" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3 class="modal-title">文件冲突</h3>
+            </div>
+            <div class="modal-body">
+                <p>检测到这篇笔记在Evernote中有较新的版本。请打开Evernote查看笔记，仔细对比本地与Evernote中的内容，以决定同步或删除本地版本。操作前请做好备份。</p>
+                <blockquote>
+                    如果确认本地版本是过时的，想使用Evernote中的版本，请在右侧菜单中点击<code>删除文档</code>，然后在 Evernote 中找到笔记，点右上角的红标跳回到马克飞象即可。
+                </blockquote>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-primary " data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal modal-help" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="markdown-syntax" platform-related="">
+            <table class="markdown-table">
+		<tbody><tr> <td>强调</td><td><pre>*斜体*	**粗体**</pre></td><td><kbd>Ctrl</kbd><kbd>I/B</kbd></td> </tr>
+		<tr> <td>链接</td><td><pre>[描述](http://example.com)</pre></td><td><kbd>Ctrl</kbd><kbd>L</kbd></td> </tr>
+		<tr> <td>图片</td><td><pre>![描述](example.jpg)</pre></td><td><kbd>Ctrl</kbd><kbd>G</kbd></td> </tr>
+		<tr> <td>笔记本</td><td><pre>@(笔记本)[标签1,标签2,标签3]</pre></td><td></td> </tr>
+		<tr> <td>标题</td><td>
+<pre>标题1		标题2
+========	--------
+
+## 标题2		###### 标题6
+</pre>	
+		</td><td><kbd>Ctrl</kbd><kbd>1~5</kbd></td> </tr>
+		<tr> <td>列表</td><td>
+<pre>1. 有序列表	- 无序列表      - [ ] 复选框
+2. 有序列表	- 无序列表      - [x] 复选框
+</pre>
+		</td><td></td> </tr>
+		<tr> <td>引用</td><td>
+<pre>&gt; 这是引用的文字
+&gt; 引用内可以嵌套标题、列表等
+</pre>		
+		</td><td></td> </tr>
+		<tr> <td>代码</td><td>
+<pre><i>这是一句行内代码</i> `var a=1` , <i>以下是代码区块</i>：
+```ruby
+print 'Hello world'
+```
+</pre>	
+		</td><td><kbd>Ctrl</kbd><kbd>K</kbd></td> </tr>
+		<tr> <td>LaTex 公式</td><td>
+<pre><i>这是一句行内公式</i> $ y = x + 1 $ , <i>以下是整行公式</i>：
+$$ a^2 + b^2 = c^2 $$
+</pre>	
+		</td><td></td> </tr>
+		<tr> <td>表格</td><td>
+<pre>| Item      |    Value | Qty  |
+| :-------- | --------:| :--: |
+| Computer  | 1600 USD |  5   |
+</pre>
+
+		</td><td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>T</kbd></td> </tr>
+		</tbody></table>
+
+<table class="key-table">
+<tbody><tr><td>文档管理</td>
+<td><kbd>Ctrl</kbd><kbd>O</kbd></td>
+</tr>
+<tr>
+<td>帮助</td>
+<td><kbd>Ctrl</kbd><kbd>/</kbd></td>
+</tr>
+<tr>
+</tr><tr>
+<td>最大化编辑器</td>
+<td><kbd>Ctrl</kbd><kbd>Enter</kbd></td>
+</tr>
+<tr>
+</tr><tr>
+<td>预览文档
+</td><td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Enter</kbd></td>
+</tr>
+<tr>
+<td>同步文档</td>
+<td><kbd>Ctrl</kbd><kbd>S</kbd></td>
+</tr>
+<tr>
+</tr><tr>
+<td>创建文档</td>
+<td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>N</kbd></td>
+</tr>
+<tr>
+<td>系统菜单</td>
+<td><kbd>Ctrl</kbd><kbd>M</kbd></td>
+</tr>
+<!--
+<tr>
+<td>放大 / 缩小字体</td>
+<td><kbd>Ctrl</kbd><kbd>+/-</kbd></td>
+</tr>
+-->
+</tbody></table>
+
+
+<table class="key-table">
+<tbody><tr><td>图片管道指令</td>
+<td><pre style="padding:0">![@描述 | left | 300x0](a.jpg)</pre></td>
+</tr>
+<tr>
+<td>@描述</td>
+<td>@会将描述显示在图片下方</td>
+</tr>
+<tr>
+<td>left</td>
+<td>左侧对齐</td>
+</tr>
+<tr>
+</tr><tr>
+<td>right</td>
+<td>右侧对齐</td></tr><tr>
+</tr><tr>
+<td>center</td>
+<td>居中</td>
+</tr>
+<tr>
+<td>300x200</td>
+<td>宽x高, 0代表自适应</td>
+</tr>
+</tbody></table>
+
+        </div>
+    </div>
+</div>
+<div class="modal modal-notify slim" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal modal-auto-sync " role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3 class="modal-title">提示</h3>
+            </div>
+            <div class="modal-body">
+                <p>当前笔记已经有一段时间未同步到 Evernote，是否立即同步？</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-primary " data-dismiss="modal" vine-click="SYNC_FILE">确定</a>
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-missing-images " role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3 class="modal-title">同步文件失败</h3>
+            </div>
+            <div class="modal-body">
+                <p>文档中有图片插入失败，请更正后再保存。有任何问题，请先备份好相关内容，反馈至 hustgock@gmail.com。</p><blockquote>注：马克飞象从 Evernote 中打开笔记有一定概率载入图片失败，如果是这种情况，请不用着急，删除本地缓存，再次从 Evernote 打开即可。</blockquote><p></p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-primary " data-dismiss="modal">确定</a>
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-wait-pay slim" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">感谢支持！</h3>
+            </div>
+            <div class="modal-body">
+                <p>请确认刚才的支付结果：</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0)" vine-click="CHECK_PAY_STATUS" class="btn btn-primary" data-dismiss="modal" target="_blank">支付成功</a>
+                <a href="javascript:void(0)" vine-click="HINT_PAY_FAIL" class="btn btn-warning" data-dismiss="modal" target="_blank">不，我遇到了问题</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-pay-success slim" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">支付成功</h3>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <thead><tr><td>订单号</td><td>到期时间</td></tr></thead>
+                    <tbody><!-- SUCCESS_ORDERS -->
+                </tbody></table>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-pay-fail slim" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">支付不成功？</h3>
+            </div>
+            <div class="modal-body">
+                <p>如果支付遇到了问题，或者支付成功后但状态没有更新，请不要着急，可以随时联系 hustgock@gmail.com 人工处理。</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-order-not-found slim" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">抱歉，未找到订单信息</h3>
+            </div>
+            <div class="modal-body">
+                <p>如果支付遇到了问题，或者支付成功后但状态没有更新，请不要着急，可以随时联系 hustgock@gmail.com 人工处理。</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal modal-share-link" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">分享链接</h3>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <a href="https://maxiang.io/" target="_blank" id="share-link" style="word-break: break-all;"></a>
+                    <div class="help-block">公开链接可以让你轻松分享笔记给其他人。</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default footer-left-btn" vine-click="STOP_SHARE_DOCUMENT"><i class="icon-unlink"></i> 停止分享</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary" data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-china-jump slim" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Are you from China?</h3>
+            </div>
+            <div class="modal-body">
+                <p>If yes, the app would change to Chinese language and link to faster server.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0)" vine-click="CHANGE_LANGUAGE:zh" class="btn btn-primary" data-dismiss="modal" target="_blank">Yes, I am</a>
+                <a href="javascript:void(0)" class="btn btn-warning" data-dismiss="modal" target="_blank">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal modal-fast-redirect " role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3 class="modal-title">浏览器跳转</h3>
+            </div>
+            <div class="modal-body">
+                <p>为了实现从浏览器跳到马克飞象客户端编辑，请开启浏览器跳转。（或者稍后去“设置”中操作）</p>
+                <div><a href="https://maxiang.io/batch_settings_zh.html?key=fast_redirect" target="_blank" vine-click="ENABLED_FAST_REDIRECT">开启浏览器跳转</a></div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-settings" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">设置</h3>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a class="action-load-settings" href="https://maxiang.io/#tabpane-settings-basic" data-toggle="tab">常规</a></li>
+                    <li><a class="action-load-settings" href="https://maxiang.io/#tabpane-settings-style" data-toggle="tab">样式</a></li>
+                    <li><a class="action-load-settings" href="https://maxiang.io/#tabpane-settings-utils" data-toggle="tab">系统</a></li>
+                    <!--<li><a class="action-load-settings"
+						href="#tabpane-settings-extensions" data-toggle="tab">Extensions</a></li>-->
+					<!--<li><a class="action-load-settings"
+						href="#tabpane-settings-utils" data-toggle="tab">Utils</a></li>-->
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form id="settings">
+                    <div class="tab-content clearfix">
+                        <div class="tab-pane active" id="tabpane-settings-basic">
+                            <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label">编辑器</label>
+                                <div class="col-lg-7">
+                                <select name="editor" class="form-control"><option value="light">Lite（简约）</option><option value="ace">Ace（旧版）</option></select>
+                                <div class="help-block">通常推荐使用 Lite 编辑器，视觉效果好，但在某些机器上有卡顿现象。旧版的 Ace 编辑器支持 Vim 和 Emacs 键盘模式以及行号，打字更流畅些。</div>
+                                </div>
+                            </div>
+                            <div class="form-group only-ace editor-related" platform-related="" style="display: none;">
+                                    <label class="col-lg-4 control-label">键盘模式</label>
+                                    <div class="col-lg-7">
+                                        <div class="radio">
+                                            <label> <input type="radio" name="key_bindings" value="">
+                                                Normal
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label> <input type="radio" name="key_bindings" value="ace/keyboard/vim">
+                                                Vim <!--<div class='radio-hint'>（部分 Markdown 快捷键将变为 Ctrl + Alt + *）</div>-->
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label> <input type="radio" name="key_bindings" value="ace/keyboard/emacs">
+                                                Emacs<!--<div class='radio-hint'>（所有 Markdown 快捷键将变为 Ctrl + Alt + *）</div>-->
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group only-ace editor-related" style="display: none;">
+                                    <label class="col-lg-4 control-label">显示行号</label>
+                                    <div class="col-lg-7">
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="line_number">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">默认布局</label>
+                                    <div class="col-lg-7">
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="layout.editor" checked="checked" disabled>
+                                                编辑器
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="layout.preview" checked="checked">
+                                                预览区
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="layout.toolbar" checked="checked">
+                                                工具栏
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                -->
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">Evernote 中的笔记正文</label>
+                                    <div class="col-lg-7">
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="publish.title" checked="checked">
+                                                带标题
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="publish.tags" checked="checked">
+                                                带标签
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="evernote_readonly" checked="checked">
+                                                只读
+                                            </label>
+
+                                            <div class="help-block">强烈推荐。由马克飞象创建的笔记，如果不慎使用 Evernote 编辑，可能会造成信息丢失。</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">自动同步</label>
+                                    <div class="col-lg-7">
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="auto_sync2">
+                                                每10分钟自动同步至 Evernote
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabpane-settings-style">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">代码高亮</label>
+                                    <div class="col-lg-7">
+                                        <select name="code_highlight" class="form-control"><option value="hljs-dark">Dark</option><option value="hljs-light">Light</option><option value="">无</option></select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label"></label>
+                                    <div class="col-lg-7">
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="code_line_number"> 显示代码块行号
+                                            </label> 
+                                            <!-- <div class="help-block">Evernote 默认字号 14px，一般适合大段纯文字。&lt;br&gt;&lt;br&gt;如果笔记中有很多 LaTex 公式，16px 以上会更好。</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">LaTex 输出格式<a href="https://maxiang.io/#" title="" data-original-title="PNG 通用性较好，但放大会失真。&lt;br&gt;&lt;br&gt; SVG为矢量图形，缩放不会失真，但体积较大，且 Android 4.3 以下无法显示。">(?)</a></label>
+                                    <div class="col-lg-7">
+                                        <select name="latex_output" class="form-control"><option value="png">PNG</option><option value="svg">SVG</option></select>
+
+                                        <!-- <div class="help-block">PNG 通用性较好，但放大会失真。&lt;br&gt;&lt;br&gt; SVG为矢量图形，缩放不会失真，但体积较大，且 Android 4.3 以下无法显示。</div> -->
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">字号</label>
+                                    <div class="col-lg-7">
+                                        <input type="text" id="input-settings-font-size" name="font_ratio" class="form-control col-lg-7">
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label"></label>
+                                    <div class="col-lg-7">
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox" name="font_size_to_evernote"> 字号应用到 Evernote 文档<a href="https://maxiang.io/#" title="" data-original-title="Evernote 默认字号 14px，一般适合大段纯文字。&lt;br&gt;&lt;br&gt;如果笔记中有很多 LaTex 公式，16px 以上会更好。">(?)</a>
+                                            </label> 
+                                            <!-- <div class="help-block">Evernote 默认字号 14px，一般适合大段纯文字。&lt;br&gt;&lt;br&gt;如果笔记中有很多 LaTex 公式，16px 以上会更好。</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">文档字体</label>
+                                    <div class="col-lg-7 form-inline">
+                                        <input type="text" name="preview_font" class="form-control col-lg-7" placeholder="正在使用默认字体">
+                                        <div class="help-block">示例：Arial, 微软雅黑</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">编辑器字体</label>
+                                    <div class="col-lg-7 form-inline ">
+                                        <input type="text" name="editor_font" class="form-control col-lg-7" placeholder="正在使用默认字体">
+                                        <div class="help-block">请使用<a href="http://zh.wikipedia.org/zh/%E7%AD%89%E5%AE%BD%E5%AD%97%E4%BD%93" target="_blank">等宽字体</a>，否则可能导致光标错位。</div>
+                                        <div class="help-block">示例: "Courier New", 宋体</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label">自定义渲染CSS</label>
+                                    <div class="col-lg-7 form-inline ">
+                                        <textarea name="custom_css" class="form-control" spellcheck="false">/**
+设置你自己的CSS。例如：
+h1 {
+  border-bottom: 1px solid #ccc;
+  line-height:1.6;
+}
+body {
+  background:#FDFFD0
+}
+**/
+</textarea>	
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabpane-settings-extensions" style="display:none;">
+						<div class="panel-group accordion-extensions"></div>
+						<span class="help-block pull-right"><a target="_blank" href="https://github.com/benweet/stackedit/blob/master/doc/developer-guide.md#developer-guide">Create
+								your own extension...</a></span>
+					</div>
+					<div class="tab-pane" id="tabpane-settings-utils">
+						<div class="tab-pane-button-container">
+							<a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target=".modal-app-reset"><i class="icon-fire"></i> 清空笔记列表</a>
+                            </div>
+                    </div>
+                
+            </div></form>
+            <div class="modal-footer">
+                <a href="https://maxiang.io/#" class="btn btn-default" data-dismiss="modal">取消</a>
+                <a href="https://maxiang.io/#" class="btn btn-primary action-apply-settings" data-dismiss="modal">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+    <div class="modal modal-changelog slim" role="dialog">
+    <div class="modal-dialog slim">
+        <div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title">已更新到最新版！</h3>
+			</div>
+			<div class="modal-body">
+				<ul>
+				<li>支持图片缩放和对齐功能<br>示例 <code>![描述 | left | 300x0](a.jpg)</code></li>
+				<li>修复桌面客户端白屏和导出空白PDF的问题<div id="redownload"><b style="color:red">遇到过该问题的用户请重新<a href="https://maxiang.io/client_zh" target="_blank">下载安装</a></b></div></li>
+				<li>初步支持 Evernote 提醒</li>	
+				<li>优化视图同步滚动</li>
+				<li>Bug 修复</li>
+			</ul></div>
+			<style>
+			#redownload { display : none }
+			body.client #redownload { display: block }
+			</style>
+			<div class="modal-footer">
+				<a href="https://www.evernote.com/shard/s21/sh/b24b23b9-49c8-463a-80e5-157c99d80810/6e89dffac9065f088fc9dc445b3b12b0" class="btn btn-primary" target="_blank">查看更多</a>
+				<a class="btn btn-success" href="javascript:void(0)" data-dismiss="modal">知道了</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <div class="modal modal-pdf-hint error" role="dialog">
+	<div class="modal-dialog slim">
+		<div class="modal-content">
+
+			<!--<div class="modal-header" >
+				<h3 class="modal-title">文件冲突</h3>
+			</div>
+			-->
+			<div class="modal-body">
+				<p>Chrome在`打印`中提供了`另存为PDF`的功能，非常方便。具体步骤：</p>
+				<ol>
+					<li>点击本页下方的`导出PDF`按钮，将打开`打印`界面。（或者通过其他方式，比如空白处右键选择`打印`按钮）。</li>
+					<li>在弹出的界面中进行如下设置
+					<p><img lazy-src="http://maxiang.qiniudn.com/images/pdf.jpg"></p>
+					</li>
+
+					<li>点击保存即可。</li>
+				</ol>
+
+			</div>
+			<div class="modal-footer">
+				<a href="https://maxiang.io/#" class="btn btn-primary " vine-click="EXPORT_PDF" data-dismiss="modal">导出 PDF</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <div class="modal modal-about" role="dialog">
+	<div class="modal-dialog slim">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h3 class="modal-title">马克飞象</h3>
+			</div>
+			<div class="modal-body">
+            <dl>
+                <dt>版本</dt>
+                <dd>1.7.3</dd>
+                <dd><a href="https://www.evernote.com/shard/s21/sh/b24b23b9-49c8-463a-80e5-157c99d80810/6e89dffac9065f088fc9dc445b3b12b0" target="_blank">更新日志</a></dd><dd>
+                </dd><dt>反馈</dt>
+                <dd>
+                邮箱：hustgock@gmail.com
+                <br>
+                微博：<a href="http://weibo.com/u/2788354117" target="_blank">@马克飞象</a>
+                </dd>
+            <dl>
+			</dl></dl></div>
+			<div class="modal-footer">
+				<a href="https://maxiang.io/#" class="btn btn-primary" data-dismiss="modal">确定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="edit-conflict-container">
+    <div class="message-content">
+        <i class="icon-attention-alt"></i> <span class="message">hustgock and john123 are editing this note</span>
+    </div>
+</div>
+
+
+    <script src="./欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器_files/lib.js.下载"></script>
+
+
+    <script src="./欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器_files/main_zh.js.下载"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-43559825-2', 'maxiang.io');
+    ga('send', 'pageview');
+    </script>
+    
+
+    
+    <div id="fast-redirect-hint" style="position: fixed; z-index: 1000000; bottom: 0px; width: 100%; text-align: center; padding: 4px; background: rgb(255, 231, 75);"><a href="javascript:never_show()" style="float:right">没有安装，不再显示</a>如果安装了桌面端（非ChromeApp），点击<a href="javascript:enable_fast_redirect()">开启快速跳转</a>。</div>
+    <style>
+    #fast-redirect-hint{
+        display:none;
+    }
+    @media (max-width: 450px) {
+    .wmd-button-group1 {
+        display:none;
+        }
+    }
+    
+
+    </style>
+
+      <script>
+
+    var docCookies = {
+    getItem: function (sKey) {
+        if (!sKey) { return null; }
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+    },
+    setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+        if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+        var sExpires = "";
+        if (vEnd) {
+        switch (vEnd.constructor) {
+            case Number:
+            sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+            break;
+            case String:
+            sExpires = "; expires=" + vEnd;
+            break;
+            case Date:
+            sExpires = "; expires=" + vEnd.toUTCString();
+            break;
+        }
+        }
+        document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires +  (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+        return true;
+    },
+    removeItem: function (sKey, sPath, sDomain) {
+        if (!this.hasItem(sKey)) { return false; }
+        document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "");
+        return true;
+                },
+    hasItem: function (sKey) {
+        if (!sKey) { return false; }
+        return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+    },
+    keys: function () {
+        var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+        for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) { aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]); }
+        return aKeys;
+    }
+    };
+        </script>
+    <script>
+    if (/maxiang\.io/.test(location.href) && /guid/.test(location.hash) && !docCookies.hasItem('never_fast_redirect') && !docCookies.hasItem('fast_redirect')){
+    //if (  !docCookies.hasItem('never_fast_redirect') && !docCookies.hasItem('fast_redirect')){
+        document.querySelector("#fast-redirect-hint").style.display = "block";
+    }
+function enable_fast_redirect(){
+    docCookies.setItem("fast_redirect", 1, Infinity);
+    window.open(window.location.href.replace(/^\w*:/, "mxdown:"))
+    document.querySelector('#fast-redirect-hint').style.display='none'
+}
+function never_show(){
+    docCookies.setItem('never_fast_redirect', 1, Infinity);
+    document.querySelector('#fast-redirect-hint').style.display='none'
+}
+    </script>
+
+    
+    
+
+<div id="atwho-container"><div id="atwho-ground-0dacfe6e1494395945282"><div class="atwho-view" id="at-view-notebook"><ul class="atwho-view-ul"></ul></div></div><div id="atwho-ground-611f3aad1494395945283"><div class="atwho-view" id="at-view-notebook"><ul class="atwho-view-ul"></ul></div></div><div id="atwho-ground-635946651494395945284"><div class="atwho-view" id="at-view-tag"><ul class="atwho-view-ul"></ul></div></div><div id="atwho-ground-093a5e6d1494395945284"><div class="atwho-view" id="at-view-tag"><ul class="atwho-view-ul"></ul></div></div><div id="atwho-ground-e810d57e1494395945284"><div class="atwho-view" id="at-view-lang"><ul class="atwho-view-ul"></ul></div></div><div id="atwho-ground-0c6171591494395945284"><div class="atwho-view" id="at-view-lang"><ul class="atwho-view-ul"></ul></div></div></div><script src="./欢迎使用马克飞象 - 马克飞象 - 专为印象笔记打造的Markdown编辑器_files/theme-earthsong.js.下载"></script><style type="text/css" id="font_size">@media (min-width: 0px) {
+#wmd-input, #wmd-input.ace_editor {
+   font-size: 14.222222222222221px;
+}
+#preview-contents {
+   font-size: 14.222222222222221px;
+}
+}@media (min-width: 600px) {
+#wmd-input, #wmd-input.ace_editor {
+   font-size: 15.11111111111111px;
+}
+#preview-contents {
+   font-size: 15.11111111111111px;
+}
+}@media (min-width: 1200px) {
+#wmd-input, #wmd-input.ace_editor {
+   font-size: 16px;
+}
+#preview-contents {
+   font-size: 16px;
+}
+}</style><style type="text/css" id="content-font_size" class="custom-content-style"></style><i title="Raphaël Colour Picker" style="display: none; color: white;"></i></body><input style="width:1px;height:1px;border:none;margin:0;padding:0;" tabindex="-1"></html>

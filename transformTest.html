@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+      .test{
+        height: 50px;
+        border: 1px solid #000;
+      }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="test test1">test1</div>
+    <div class="test test2">test2</div>
+    <div class="test test3">test3</div>
+    <div class="test test4">test4</div>
+    <div class="test test5">test5</div>
+    <div class="test test6">test6</div>
+
+  </div>
+  <script type="text/javascript">
+  window.onload=function(){
+
+      var test6 = document.querySelector('.test6')
+      var test5 = document.querySelector('.test5')
+      test6.addEventListener('click',function(){
+          test5.click();
+      },false);
+
+       var tests = document.querySelectorAll('.test');
+       tests.forEach(function(value,index,arr){
+          value.addEventListener('click',function(){
+             var text = this.innerText;
+             console.log(text);
+          },false)
+       });
+  }
+
+
+
+
+
+  </script>
+</body>
+</html>

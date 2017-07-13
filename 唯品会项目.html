@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style type="text/css">
+            /*超出部分显示省略号*/
+        .ellipsis {
+         /*width: 98%;  */ /*或是一固定宽度*/
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display:inline-block;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    var clickFlag = true; //拖动时变为false,
+    checkMove('.len3-wrap');
+    function checkMove(select) {
+        var obj = $(select);
+        var x1, y1, x2, y2, _x, _y;
+
+        $(document).on('mousedown', obj, function (e) {
+            x1 = e.pageX;
+            y1 = e.pageY;
+            clickFlag = true;
+        })
+
+        $(document).on('mouseup', obj, function (e) {
+            x2 = e.pageX;
+            y2 = e.pageY;
+            _x = Math.abs(x1 - x2);
+            _y = Math.abs(y1 - y2);
+            if (_x < 7 && _y < 7) {
+                clickFlag = true;
+            } else {
+                clickFlag = false;
+            }
+        })
+    }
+
+
+
+
+    /*截取字符串*/
+		function len1() {
+			for (var i in json2.children) {
+				json2.children[i].children = []
+			}
+
+			return json2
+		}
+		function len2() {
+
+			for (var i in json3.children) {
+				for (var j in json3.children[i].children) {
+					json3.children[i].children[j].children = []
+				}
+			}
+
+			return json3;
+
+		}
+		/*复制json*/
+		function clone(obj) {
+			var o, i, j, k;
+			if (typeof (obj) != "object" || obj === null) return obj;
+			if (obj instanceof (Array)) {
+				o = [];
+				i = 0; j = obj.length;
+				for (; i < j; i++) {
+					if (typeof (obj[i]) == "object" && obj[i] != null) {
+						o[i] = arguments.callee(obj[i]);
+					}
+					else {
+						o[i] = obj[i];
+					}
+				}
+			}
+			else {
+				o = {};
+				for (i in obj) {
+					if (typeof (obj[i]) == "object" && obj[i] != null) {
+						o[i] = arguments.callee(obj[i]);
+					}
+					else {
+						o[i] = obj[i];
+					}
+				}
+			}
+
+			return o;
+		}
+</script>
+</body>
+</html>

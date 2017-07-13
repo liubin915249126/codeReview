@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body id="text">
+  <div id="time" v-text="count"></div>
+    <input type="button" value="start" v-on:click="start"/>
+    <input type="button" value="end" v-on:click="stop"/>
+   <script type="text/javascript" src="vue.min.js"></script>
+   <script type="text/javascript">
+     var t =null;
+     var ti = null;
+     var textVM = new Vue({
+        el:'#text',
+        data:{
+          'count':''
+        },
+        methods:{
+          start:function(){
+            var $this = this;
+            t = 0;
+            function timeFunc(){
+              t++;
+              $this.count  = t;
+              // document.getElementById('time').innerText = t;
+            }
+            ti = setInterval(timeFunc,1000)
+          },
+          stop:function(){
+            clearInterval(ti)
+          }
+        }
+      })
+   </script>
+</body>
+</html>

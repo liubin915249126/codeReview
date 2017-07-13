@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>各种选框</title>
+</head>
+<body>
+<!--单选框-->
+<div class="wrap radio">
+    <form name="sex" >
+        <input type="radio" name="sex" value="man">
+        <input type="radio" name="sex" value="woman">
+    </form>
+
+    <form action="" method="get">
+        您最喜欢水果？<br /><br />
+        <label><input name="Fruit" type="radio" value="" />苹果 </label>
+        <label><input name="Fruit" type="radio" value="" />桃子 </label>
+        <label><input name="Fruit" type="radio" value="" />香蕉 </label>
+        <label><input name="Fruit" type="radio" value="" />梨   </label>
+        <label><input name="Fruit" type="radio" value="" />其它 </label>
+    </form>
+
+</div>
+
+<!--下拉框-->
+<div class="wrap select">
+    <select name="provience">
+        <optgroup label="请选择">
+            <option value="man">男</option>
+            <option value="woman" selected="selected">女</option>
+        </optgroup>
+        <optgroup label="请选择">
+            <option value="man">男</option>
+            <option value="woman">女</option>
+        </optgroup>
+    </select>
+</div>
+<!--多选框-->
+<div class="wrap">
+    <form method="get" action="">
+        <input type="checkbox" name="test"  checked="checked"/>圣诞节
+        <input type="checkbox" name="test" />股市
+        <input type="checkbox" name="test" />阿凡达
+        <input type="checkbox" name="test" />十月围城
+        <input type="checkbox" name="test" />水价上调
+        <input type="button" value="反选" id="btn" />
+    </form>
+</div>
+<script type="text/javascript"  src="jquery.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        radioClick();
+        selectClick();
+        checkboxClick();
+    }
+    function radioClick() {
+        var sex = document.sex.sex;
+        var sexs = document.getElementsByName('sex');
+
+        sex.forEach(function (value,index,array) {
+            value.onchange=function () {
+              console.log(this.value)
+            }
+
+
+        })
+    }
+
+    function selectClick() {
+        var pro = document.querySelector('[name=provience]');
+        pro.onchange=function(){
+            console.log(this.value)
+        }
+
+    }
+// 复选框反选
+    function checkboxClick(){
+        var btn = document.querySelector('#btn');
+        var checkbox = document.getElementsByName('test');
+        btn.onclick=function () {
+            for(var i=0;i<checkbox.length;i+=1){
+                if(checkbox[i].checked){
+                    checkbox[i].checked=false;
+                }else{
+                    checkbox[i].checked=true;
+                }
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

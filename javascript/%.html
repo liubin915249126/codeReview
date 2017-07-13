@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>取余</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // var  num = 5
+    // var  len = 3
+    //console.log(parseInt(5/3))//除数
+    //console.log(5%3)//余数
+    function isOdd(num){
+      return num%2==1
+    }
+    function isEven(num){
+      return num%2==0
+    }
+    function isSane(num){
+      return isEven(num)||isOdd(num)
+    }
+    var values = [7,4,'13',-9,Infinity]
+    var newArr = values.map(isSane)
+    console.log(newArr)
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>居中浮动元素</title>
+    <style type="text/css">
+        .wrap{
+            width: 400px;
+            height:100px;
+            border:1px solid #000000;
+            margin:30px auto 0;
+        }
+        .wrap0{
+            position: relative;
+        }
+        .wrap0 .inner{
+            position: relative;
+            left:50%;
+            display: inline-block;
+            float: left;
+            transform: translate(-50%);
+        }
+    </style>
+</head>
+<body>
+   <div class='wrap wrap0'>
+       <div class="inner">浮动元素</div>
+   </div>
+</body>
+</html>

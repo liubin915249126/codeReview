@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>监听鼠标滚动事件</title>
+  <style type="text/css">
+   .initial{
+     width: 200px;
+     height:200px;
+     border:1px solid #979797;
+   }
+  </style>
+</head>
+<body>
+  <div>
+    <label for="wheelDelta">滚动值:</label>(IE/Opera)<input type="text" id="wheelDelta"/>
+    <label for="detail">滚动值:(Firefox)</label><input type="text" id="detail"/>
+  </div>
+  <div class="initial"></div>
+   <script type="text/javascript">
+       //事件绑定
+       function addEvent (type,elem,fun){
+         if(document.addEventListener){
+           elem.addEventListener(type,fun,false)
+         }else{
+           elem.attachEvent(type,fun)
+         }
+       };
+       var initial = 1.0;
+       var scrollFunc=function(e){
+              e=e || window.event;
+              var t1=document.getElementById("wheelDelta");
+              var t2=document.getElementById("detail");
+              if(e.wheelDelta){//IE/Opera/Chrome
+                  t1.value=e.wheelDelta;
+                  scale(e.wheelDelta)
+                  console.log(e.wheelDelta);
+              }else if(e.detail){//Firefox
+                  t2.value=e.detail;
+                  console.log(e.detail);
+              }
+          }
+          var scale = function(flag){
+             if(flag>0){
+               initial+=0.2
+             }else{
+               initial-=0.2
+             }
+           var scaleDiv = document.getElementsByClassName('initial')[0]
+           scaleDiv.style.transform = 'scale('+initial+')';
+          }
+
+      addEvent('DOMMouseScroll',document,scrollFunc);//w3c
+      window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome
+   </script>
+</body>
+</html>

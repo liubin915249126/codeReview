@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css3制作饼图</title>
+  <style type="text/css">
+      .pie{
+       width:140px;
+       height: 140px;
+       background: #8BC34A;
+       border-radius: 50%;
+       background-image: linear-gradient(to right,transparent 50%,#655 0);
+      }
+      .pie::before{
+       content: '';
+       display: block;
+       margin-left: 50%;
+       height: 100%;
+       border-radius: 0 100% 100% 0 / 50%;
+       background-color: inherit;
+       transform-origin: left;
+       transform: rotate(.1turn);/*10%*/
+       transform: rotate(.2turn);/*20%*/
+       transform: rotate(.3turn);/*30%*/
+      }
+
+      /*pie2*/
+      .pie2{
+        width:140px;
+        height: 140px;
+        background: #8BC34A;
+        border-radius: 50%;
+        background-image: linear-gradient(to right,transparent 50%,#655 0);
+      }
+      .pie2::before{
+          content: '';
+          display: block;
+          margin-left: 50%;
+          height: 100%;
+          border-radius: 0 100% 100% 0 / 50%;
+          background: #655;/*当范围大于50%时,需要改变伪元素的背景颜色为#655;*/
+          transform-origin: left;
+          transform: rotate(.1turn);
+      }
+
+      /*pie3*/
+      .pie3 {
+    width:140px;
+    height: 140px;
+    border-radius: 50%;
+    background: yellowgreen;
+    background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+    color: #655;
+}
+
+.pie3::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    animation: spin 3s linear infinite, bg 6s step-end infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+    50% { background: currentColor; }
+}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+     <div class="pie"></div>
+     <div class="pie2"></div>
+     <div class="pie3"></div>
+  </div>
+</body>
+</html>

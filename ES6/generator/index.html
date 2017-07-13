@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>generator</title>
+</head>
+<body>
+   <script type="text/javascript">
+   function* g() {
+      yield 'a';
+      yield 'b';
+      yield 'c';
+      return 'ending';
+    }
+
+    var gen = g();
+    gen.next(); // 返回Object {value: "a", done: false}
+    console.log(gen.next());
+
+    // 斐波那契数列
+    function* fibonacci() {
+  let [prev, curr] = [0, 1];
+  for (;;) { // 这里请思考：为什么这个循环不设定结束条件？
+    [prev, curr] = [curr, prev + curr];
+    yield curr;
+  }
+}
+
+for (let n of fibonacci()) {
+  if (n > 1000) {
+    break;
+  }
+  console.log(n);
+}
+   </script>
+</body>
+</html>

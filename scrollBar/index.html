@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .wrap{
+       width: 200px;
+       height:200px;
+       overflow:scroll;
+    }
+    .wrap .inner{
+      width: 300px;
+      height:300px;
+    }
+    /*滚动条样式*/
+.wrap::-webkit-scrollbar-track{
+  border: 1px solid #fff;
+  display: none;
+  background: #fff;
+}
+.wrap::-webkit-scrollbar{
+  border: 1px solid #fff;
+  background: #fff;
+  border: none;
+}
+.wrap::-webkit-scrollbar-thumb{
+  background: #000;
+}
+  </style>
+</head>
+<body>
+    <div class="wrap">
+      <div class="inner">
+        11232323
+      </div>
+    </div>
+</body>
+</html>

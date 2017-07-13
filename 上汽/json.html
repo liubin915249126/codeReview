@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>json测试</title>
+</head>
+<body>
+   <script type="text/javascript">
+      var json = {id:001,children:[10,20,30,40,50,60,70]}
+      var arr = [2,5]
+      arr1 = [];
+
+      arr.forEach(function(item,index,arr){
+         arr1.push(json.children[item-index])
+         json.children.splice(item-index,1)
+      })
+      console.log(arr1)
+      console.log(json)
+   </script>
+</body>
+</html>

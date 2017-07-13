@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>下拉刷新，滚动翻页</title>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<style>
+	li{border:1px solid #dfdfdf;height:50px;position:relative;width:140%}
+	li div{width:30%;height:30px;float:right}
+</style>
+</head>
+<body>
+		<div style="height:1000px;overflow-x:hidden;">
+				<p class="sdf">x:,y:</p>
+				<p class="sf">x:,y:</p>
+				<div class="2">
+						<li id="1"><div style="background-color:red;"></div></li>
+						<li id="2"><div style="background-color:blue;"></div></li>
+						<li id="3"><div style="background-color:green;"></div></li>
+						<li id="4"><div style="background-color:black;"></div></li>
+						<li id="5"><div style="background-color:gray;"></div></li>
+				</div>
+		</div>
+		<script>
+				$(document).ready(function(){
+						$(window).scroll(function(){
+					　 	 var scrollTop = $(this).scrollTop();             	//滚动条距离顶部的高度
+					　　	var scrollHeight = $(document).height();           		//当前页面的总高度
+					　　	var windowHeight = $(this).height();              		//当前可视的页面高度
+					　	 	 if(scrollTop + windowHeight >= scrollHeight){        //距离顶部+当前高度 >=文档总高度 即代表滑动到底部
+								alert("上拉加载，要在这调用啥方法？");
+							 }else if(scrollTop<=0){			//滚动条距离顶部的高度小于等于0
+								alert("下拉刷新，要在这调用啥方法？");
+							 }
+						});
+						var obj;
+						var startx;
+						var starty;
+						var overx;
+						var overy;
+						for(var i=1;i<=$("li").length;i++){			//为每个li标签添加事件
+							obj = document.getElementById(i);		//获取this元素
+							evenlistener(obj);		//调用evenlistener函数并将dom元素传入，为该元素绑定事件
+						}
+
+						function evenlistener(obj){
+							obj.addEventListener('touchstart', function(event) { 		//touchstart事件,当鼠标点击屏幕时触发
+								startx = event.touches[0].clientX;				//获取当前点击位置x坐标
+								starty = event.touches[0].clientY;				//获取当前点击位置y坐标
+								$(".sdf").text("x:"+startx+",y:"+starty+"")		//赋值到页面显示
+							} , false);			//false参数,设置事件处理机制的优先顺序，具体不多说，true优先false
+							obj.addEventListener('touchmove', function(event) { 		//touchmove事件,当鼠标在屏幕移动时触发
+										overx = event.touches[0].clientX;			//获取当前点击位置x坐标
+										overy = event.touches[0].clientY;			//获取当前点击位置y坐标
+										var $this = $(this);			//将dom对象转化为jq对象，由于项目用到jquery，直接使用其animate方法
+
+										if(startx-overx>10){			//左滑动判断，当左滑动的距离大于开始的距离10进入
+												$($this).animate({marginLeft:"-55px"},150);			//实现左滑动效果
+										}else if(overx-startx>10){		//右滑动判断，当右滑动的距离大于开始的距离10进入
+												$($this).animate({marginLeft:"0px"},150);			//恢复
+										}
+							} , false);
+							obj.addEventListener('touchend', function(event) {			//touchend事件,当鼠标离开屏幕时触发，项目中无用到，举例
+									$(".sf").text("x:"+overx+",y:"+overy+"")
+							} , false);
+						}
+				});
+		</script>
+
+</body>
+</html>

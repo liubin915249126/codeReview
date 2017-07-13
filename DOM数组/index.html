@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM数组</title>
+</head>
+<body>
+   <div class="wrap">
+       <li>112111</li>
+       <li>112111</li>
+       <li>112111</li>
+       <li>112111</li>
+       <li>112111</li>
+       <li>112111</li>
+   </div>
+<script type="text/javascript">
+    let liArr = document.getElementsByClassName('wrap')[0].getElementsByTagName('li');
+    //let liArr =[1,2,3,4]
+    console.log(liArr)
+    for(let i=0;i<liArr.length;i++){
+          //console.log(liArr[i].innerHTML)
+    }
+
+    Array.prototype.forEach.call(liArr,function(li){
+       console.log(li.innerText);
+    })
+</script>
+</body>
+</html>

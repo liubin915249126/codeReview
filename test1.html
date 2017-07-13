@@ -1,0 +1,24 @@
+]<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="test" contenteditable="true">123</div>
+  <script type="text/javascript">
+   window.onload=function(){
+      var testDiv = document.querySelector('.test');
+      var testStyle = window.getComputedStyle(testDiv,null)["width"];
+
+      console.log(testDiv);
+      console.log(testStyle);
+   }
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,885 @@
+/*old len*//*
+*//*len.css*//*
+html, body
+{
+    overflow: hidden;
+}
+
+i
+{
+    font-style: normal;
+}
+
+.len .inner
+{
+    height: auto!important;
+    position: relative;
+    font-size: 12px;
+    font-family: arial;
+    background: #fff!important;
+}
+
+.len .inner i.left, .len .inner i.right
+{
+    font-style: normal;
+    position: absolute;
+    top: 0;
+    border: 1px solid #000000;
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+}
+
+.len .inner .left
+{
+    left: 0;
+}
+
+.len .inner .right
+{
+    right: 0;
+}
+
+.len .inner i.left > i
+{
+}
+
+.len .inner i.right > i
+{
+    text-align: center;
+    width: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.len .inner i.right > i:nth-child(2)
+{
+    border-left: 1px solid #204d74;
+}
+
+.len .inner .middle
+{
+    margin-top: 20px;
+}
+
+.len .inner .middle div
+{
+    margin-bottom: 10px;
+}
+
+.len .inner .bottom div
+{
+    border-top: 1px dotted #080808;
+    background: #38de29;
+}
+*//*第二层*//*
+.level > span.lvl-b
+{
+    background: #fff;
+    position: relative;
+    padding: 0;
+}
+
+.level > span.lvl-b .left, .level > span.lvl-b .right
+{
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    border: 1px dotted #080808;
+    text-align: center;
+    color: #000;
+}
+
+.level > span.lvl-b .left
+{
+    left: 0;
+    width: 40px;
+}
+
+.level > span.lvl-b .right
+{
+    right: 0;
+}
+
+.level > span.lvl-b .left i, .level > span.lvl-b .right i
+{
+    font-style: normal;
+    text-align: center;
+    display: inline-block;
+}
+
+.level > span.lvl-b .right i
+{
+    width: 29px;
+}
+
+.level > span.lvl-b .right i:nth-child(2)
+{
+    border-left: 1px dotted #080808;
+}
+
+.level > span.lvl-b .middle
+{
+    margin-top: 20px;
+    color: #000;
+}
+
+.level > span.lvl-b .middle div
+{
+    margin-bottom: 10px;
+}
+
+.level > span.lvl-b .bottom
+{
+    *//* border-top: 1px dotted #080808;*//*
+    color: #000;
+    background: #38de29;
+}
+
+.level > span.lvl-b .bottom > div
+{
+    border-top: 1px dotted #080808;
+}
+
+.level2 .yellow
+{
+    background: rgb(59,166,191)!important;
+}
+*//*头部下拉线*//*
+.columnOne .level1:after
+{
+    content: '';
+    height: 100px;
+    position: relative;
+    left: calc(50% + 1px);
+    top: -8px;
+    display: block;
+    border-left: 1px solid #000;
+}
+*//*清楚头部下划线过长*//*
+.org-chart .departments
+{
+    background: #EDF1F2;
+    position: relative;
+}
+*//*.board::after {
+     content: '';
+      height:31px;
+      position: relative;
+      left: calc(50% + 1px);
+      top:0;
+      display: block;
+      border-left: 1px solid orange;
+}*//*
+figure
+{
+    text-align: center;
+}
+
+.departments
+{
+}
+
+.departments .department
+{
+    display: inline-block;
+}
+*//*调整整体及第一层位置*//*
+.content
+{
+    top: 70px;
+}
+
+.org-chart ul.columnOne li
+{
+    top: -33px;
+    float: none;
+}
+
+.org-chart .level > span.lvl-b
+{
+    height: auto!important;
+}
+
+.org-chart .sections li
+{
+    float: none;
+}
+
+.org-chart .sections li > span.lvl-b
+{
+    height: auto!important;
+}
+
+.org-chart .department li span.inner
+{
+    background: #fff;
+}
+*//*查看按钮*//*
+.org-chart .lvl-b .check
+{
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+}
+
+.org-chart .level1 .lvl-b, .org-chart .level2 > .lvl-b
+{
+    width: 196px!important;
+}
+
+.org-chart .level1 .lvl-b
+{
+    margin: 0 auto;
+    top: -8px;
+}
+
+.org-chart
+{
+    margin: 0 auto;
+}
+*//*二级节点只有一个或两个的情况*//*
+#one .departments::before
+{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    position: static;
+}
+
+#one .org-chart .level1 .lvl-b
+{
+    left: -56px;
+}
+
+#two .org-chart .level1 .lvl-b
+{
+    left: -5px;
+    position: relative;
+}
+
+.org-chart i
+{
+    color: #000;
+    margin: 0;
+    font-style: normal;
+}
+
+.org-chart .department
+{
+    width: 205px!important;
+    box-sizing: border-box;
+}
+
+.org-chart
+{
+    top: 1px;
+    left: 1px;
+}
+
+#one .org-chart .departments:before
+{
+    height: 0;
+}
+
+#lTen .org-chart .departments:before
+{
+    width: 94%;
+}
+
+#lwTen .org-chart .departments:before
+{
+    width: 96%;
+}
+*//**防止文字选中*//*
+.content
+{
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none; *//* you could also put this in a class *//*
+    -webkit-user-select: none; *//* and add the CSS class here instead *//*
+    -ms-user-select: none;
+    user-select: none; *//**禁止选中文字*//*
+}
+*//*第二层折行*//*
+.content .org-chart
+{
+    position: relative;
+    left: 50%;
+    z-index: 0;
+}
+
+.pull-right.btn
+{
+    z-index: 2;
+    position: relative;
+}
+
+#infovis
+{
+    margin-top: -38px;
+}
+
+
+*//*缩放按钮*//*
+.mark
+{
+    z-index: 2;
+    position: relative;
+    float: right;
+    background: #EDF1F1!important;
+    display: inline-block;
+}
+
+.mark .minus
+{
+    border-left: 1px solid #a9a9a9;
+    padding-left: 5px;
+}
+
+#infovis
+{
+    left: -9px;
+}
+
+.content
+{
+    left: 1px;
+}
+
+#infovis .org-chart .yellow
+{
+    background: rgb(59,166,191)!important;
+}
+.yellow .bottom {
+    *//*background: rgb(59,166,191)!important;*//*
+}
+#dvModel {
+    *//*transform: scale(0.7);
+    transform-origin: 100% 0;*//*
+    *//*transform-origin: 0 100%;
+    position: fixed;
+    width: auto;
+    left: 10px;
+    bottom: 20px;*//*
+}
+#info {
+    position:fixed;
+    left:20px;
+    top:20px;
+    z-index:2;
+}
+#info .left, #info .right {
+    display:inline-block;
+    border: 1px solid #000;
+    padding: 5px;
+}
+#info .left {
+    background: rgb(59,166,191)!important;
+}
+*//*#infovis {
+    width:1518px;
+}*//*
+table {
+    color:#333;
+    text-align:center;
+    font-size:12px;
+    font-family:arial;
+}
+.org-chart {
+    font-size:12px;
+    font-family:arial;
+}*/
+
+.tree {
+    min-height:20px;
+    padding:19px;
+    margin-bottom:20px;
+    background-color:#fbfbfb;
+    border:1px solid #999;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+.tree li {
+    list-style-type:none;
+    margin:0;
+    padding:10px 5px 0 5px;
+    position:relative
+}
+.tree li::before, .tree li::after {
+    content:'';
+    left:-20px;
+    position:absolute;
+    right:auto
+}
+.tree li::before {
+    border-left:1px solid #000;
+    bottom:50px;
+    height:100%;
+    top:-1px;
+    width:1px
+}
+.tree li::after {
+    border-top:1px solid #000;
+    height:20px;
+    top:28px;
+    width:25px
+}
+.tree li span {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
+}
+.tree li.parent_li>span {
+    cursor:pointer
+}
+.tree>ul>li::before, .tree>ul>li::after {
+    border:0
+}
+.tree li:last-child::before {
+    height:30px
+}
+.tree li.parent_li>span:hover, .tree li.parent_li>span:hover+ul li span {
+    background:#eee;
+    border:1px solid #94a0b4;
+    color:#000
+}
+
+/*len 竖直样式*/
+body,html,div{
+    margin: 0;
+}
+body{
+    overflow: hidden;
+
+}
+.orgWrap{
+    margin: 0 auto;
+    position: relative;
+    left:50%;
+    top:0;
+    -webkit-user-select:none;-moz-user-select:none;-o-user-select:none;user-select:none;
+}
+/*第一层*/
+.level1s .level1{
+    width: 100%;
+  
+    margin: 0 auto;
+    /* border:1px solid #a9a9a9;*/
+   
+    position: relative;
+    z-index: 0;
+    left:-5px;
+    
+}
+ .level1s .level1 .content {
+            margin:0 auto;
+            min-height: 74px;
+            margin-bottom:30px;
+    }
+ 
+
+.level1s .level1 .content::after{
+    content: '';
+    display: block;
+    border-left: 1px solid #000;
+    height: 33px;
+    position: absolute;
+    top:100%;
+    left:50%;
+    z-index: 0;
+}
+.orgWrap .level1 .content {
+    /*top:35px;*/
+}
+ /*/
+
+/*第二层*/
+.level2s{
+    position: relative;
+    z-index: 2;
+    /*background: #EDF1F4;*/
+}
+.divider{
+    height: 20px;
+    margin-left: 25px;
+    border-top:1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    z-index: 2;
+    position: relative;
+    background: #EDF1F4;
+}
+.level2s .level2{
+    display: inline-block;
+    position:absolute ;
+    list-style: none;
+}
+.level2s .level2 .content{
+    width: 170px;
+    border: 2px solid #000;
+    position: relative;
+}
+.level2s .level2.noneChild{
+    padding-right: 40px;
+}
+.level2s .level2>.content::before{
+    content: '';
+    display: block;
+    position: absolute;
+    border-left: 1px solid #000;
+    left:50%;
+    height:20px;
+    top:-21px;
+    z-index:2;
+}
+.level2s .level2:first-child .content::before, .level2s .level2:last-child .content::before{
+    content: '';
+    border-left: none;
+}
+.tree{
+    display: inline-block;
+    border: none;
+    padding: 0;
+    background: #EDF1F4;
+}
+.tree span{
+    width: 250px;
+    height: 100px;
+}
+/*icon样式*/
+.level1>.icon,.noneChild .icon{
+    display: none;
+}
+.content{
+    position: relative;
+}
+.content .icon{
+    position: absolute;
+    left:10px;
+   
+}
+/*第二层只有一个*/
+#oneChild .divider{
+    border: none;
+
+}
+#oneChild .level1{
+    margin-left:0;
+    top:20px;/**devider高度*/
+    left:0;
+}
+    #oneChild .level1 .content {
+         margin-left:0;
+    }
+
+/**第二层两个*/
+#twoChild .level1 {
+    /*transform: translateX(-35px);
+    -webkit-transform: translateX(-35px);
+    -o-transform: translateX(-35px);
+    -ms-transform: translateX(-35px);
+    -moz-transform: translateX(-35px);*/
+   
+}
+/**没有第二层*/
+#noneLevel2  .divider{
+    border: none;
+}
+#noneLevel2 .level1s .level1 .content::after {
+    content:'';
+    border:none;
+}
+
+/*内部样式*/
+
+ .orgWrap .content{
+    border: 3px solid #000;
+    text-align: center;
+    font-size:12px;
+    font-family: Arial;
+}
+ .orgWrap .content .left,.content .right{
+    position: absolute;
+    top:0;
+    border: 1px solid #000;
+   
+    color:#000;
+    font-style: normal;
+}
+ .orgWrap .content .right{
+    right:0;
+   border-top:none;
+   border-right:none;
+    text-align: center;
+}
+  .orgWrap .content .right .dv1,.orgWrap .content .right .dv2{
+    min-width: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-style: normal;
+    margin:0;
+    color:#000;
+    font-size:12px;
+}
+ .orgWrap .content .right .dv2{
+    border-left:1px solid #000;
+}
+ .orgWrap .content .left{
+    left:0;
+    min-width: 20px;
+    border-top:none;
+    border-left:none;
+    width:auto;
+}
+ .orgWrap .content .middle{
+    margin:17px 0;
+}
+.orgWrap .content .middle .up {
+    margin-bottom:5px;
+    }
+ .orgWrap .content .bottom{
+     
+}
+ .orgWrap .content .bottom>div{
+    border-top: 1px dotted #a9a9a9 ;
+    background: rgb(102,221,100)!important;
+    height:22px;
+    line-height:22px;
+}
+.content .bottom>div{
+    background: #38de29;
+}
+/*修正**/
+.orgWrap ul {
+    padding-left:21px;
+}
+    .orgWrap ul li {
+        float:none;
+    }
+
+.orgWrap .yellow {
+     background: rgb(80,147,225)!important;
+}
+.orgWrap .content {
+    background:#fff;
+    width:170px;
+}
+
+
+.orgWrap {
+    padding-left:0;
+}
+
+.orgWrap .content #icon {
+    position:absolute;
+    left:1px;
+    bottom:1px;
+    color:#045244;
+}
+/*第一层icon不显示*/
+.orgWrap .level1 .content #icon {
+    visibility:hidden;
+}
+
+    /**审批样式*/
+    .approval {
+      position:relative;
+      left:1px;
+      top:1px;
+      cursor:pointer;
+      visibility:hidden;
+    }
+    /**jiagou名字*/
+    .approval>div {
+      margin-top:35px;
+      min-width:40px;
+    }
+  .jiagou {
+        position:absolute;
+        top:90px;
+        left:50%;
+        font-size:20px;
+        transform:translateX(-50%);
+        -o-transform:translateX(-50%);
+        -moz-transform:translateX(-50%);
+        -ms-transform:translateX(-50%);
+        -webkit-transform:translateX(-50%);
+        display:none;
+    }
+
+
+.approval3 {
+    
+    display:none;
+}
+
+/*虚线框*/
+    #dvData {
+           
+            width: 500mm;
+            height: 340mm;
+            top:0;
+            left:0;
+            
+    }
+
+    .pagewrap {
+        width:540mm;
+        height:340mm;
+        border:1px dotted #000;
+       
+    }
+
+ @media print {
+
+    .pagewrap {
+        border:none;
+    }
+    .mark,.pull-right.btn {
+        visibility:hidden;
+    }
+   #dvright .btnWrap {
+      visibility:hidden;
+      display:none;
+    }
+
+    #dvModel,.approval3{
+        margin-top:75px
+    }
+
+    /*.approval {
+         z-index: 3;
+    position:absolute;
+    right:200px;
+    bottom:50px;
+    font-size:18px;
+         display:block;
+    }*/
+
+    .approval>div {
+      margin-top:25px;
+    }
+
+
+    .orgWrap #icon {
+        display:none;
+    }
+    .orgWrap .level2 .smallContent #icon {
+          display:block;
+    } 
+
+
+    #info {
+        visibility:hidden;
+    }
+    #infovis .smallContent.iconHidden #icon {
+        display:inline-block;
+        border:1px solid #000;
+    }
+    /*copy消失*/
+    #AssemblyVersionDiv {
+        display:none;
+    }
+    #dvData,.approval{
+        display:block;
+    }
+
+    .jiagou {
+        display:block;
+        z-index:4;
+    }
+    .orgWrap .content {
+        background:none;
+    }
+    .orgWrap .content .bottom > div {
+        background: #38de29;
+    }
+    .orgWrap .yellow {
+        /*background:none;*/
+    }
+
+    /*.approval3 {
+        visibility:visible;
+    }*/
+    /*页眉*/
+    nav, aside {   
+      display: none;   
+   } 
+    /*分页*/
+    .level2 {
+         page-break-inside:avoid;
+         page-break-before:avoid;
+         page-break-after:avoid;
+    }
+   /*ul,li{
+      page-break-inside:avoid;
+    }
+   .orgWrap{
+       
+       page-break-before:avoid;
+       page-break-after:avoid;
+    }*/
+    /**尺寸*/
+    @page {   
+      /*size: A3 landscape;*/ 
+      margin:0;
+      
+   } 
+
+    /*打印按钮*/
+    #lenPrint {
+        display:none;
+    }
+    /*虚线框*/
+    #dvData {
+        border:none;
+    }
+    #dvModel table td {
+        font-size:9px!important;
+    }
+
+
+}
+
+
+
+#lenPrint .printShow{
+      display:none;
+ }
+
+#lenPrint .print{
+      display:block;
+    }
+
+/**ie11*/
+@media all and (-ms-high-contrast:none) { 
+*::-ms-backdrop,  .hasSmallContent > .level3s {
+       margin-top:-16px;
+    }
+
+    *::-ms-backdrop, #lenPrint .printShow{
+      display:block;
+    }
+     *::-ms-backdrop, #lenPrint .print{
+      display:none;
+    }
+} 
+
+/**彩色打印*/
+
+@media print and (color) {
+   * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      -o-print-color-adjust: exact;
+      -ms-print-color-adjust: exact;
+      -moz-print-color-adjust: exact;
+
+   }
+}

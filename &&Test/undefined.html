@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>undefined测试</title>
+  <style type="text/css">
+   .move{
+     position: relative;
+     left: 0;
+     top:0;
+   }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="move">1135463135</div>
+  </div>
+  <script type="text/javascript" src="../jquery.js"></script>
+  <script type="text/javascript">
+  //检测鼠标拖动
+     function checkMove(select) {
+         var  clickFlag;
+         var obj = $(select);
+         var x1, y1, x2, y2, _x, _y;
+         $(document).on('mousedown', obj, function (e) {
+             x1 = e.pageX;
+             y1 = e.pageY;
+             clickFlag = true;
+             console.log('clickFlag',clickFlag)
+         })
+         $(document).on('mouseup', obj, function (e) {
+             x2 = e.pageX;
+             y2 = e.pageY;
+             _x = Math.abs(x1 - x2);
+             _y = Math.abs(y1 - y2);
+             if (_x < 7 && _y < 7) {
+                 clickFlag = true;
+                 console.log('clickFlag',clickFlag)
+             } else {
+                 clickFlag = false;
+                 console.log('clickFlag',clickFlag)
+             }
+         })
+         console.log('inner',clickFlag)
+         return clickFlag;
+      }
+
+      $('.wrap').on('click','.move',function(){
+        var flag = checkMove('.move')!==undefined?checkMove('.move'):true
+        console.log('ffff',flag==undefined)
+        if()
+      })
+
+     /*网页拖拽*/
+     function drag(select) {
+           var dragEle = $(select);
+            var _x,_y,_move=false;
+            dragEle.on('click',function () {
+                 //点击事件
+            }).on('mousedown',function (e) {
+                _x = e.pageX - parseInt(dragEle.css('left'));
+                _y = e.pageY - parseInt(dragEle.css('top'));
+                _move = true;
+            })
+            $(document).on('mousemove',function (e) {
+                if(_move){
+                    var x =e.pageX-_x;
+                    var y =e.pageY-_y;
+                    dragEle.css({'left':x,'top':y})
+                }
+            }).on('mouseup',function () {
+                _move=false;
+            })
+        }
+     drag('.move')
+  </script>
+  </body>
+  </html>

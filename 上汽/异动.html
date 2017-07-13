@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>异动流程</title>
+  <style type="text/css">
+       html,body,div{
+         padding: 0;
+         margin:0;
+       }
+      .section{
+        height: 200px;
+        border:1px solid #000;
+        position: relative;
+        margin-top: 50px;
+      }
+      .section::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        background: #555;
+        height: 20px;
+        left: 20px;
+        top:-20px;
+      }
+      .section .updot{
+        position: absolute;
+        left:10px;
+        top: -50px;
+        width:30px;
+        height:30px;
+      }
+      .section .updot .outdot{
+        border:1px solid #666;
+        width:30px;
+        height:30px;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left:50%;top:50%;transform: translate(-50%,-50%);
+      }
+      .section .updot .innerdot{
+        background: #666;
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left:50%;top:50%;transform: translate(-50%,-50%);
+      }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+     <div class="section">
+       <div class="updot">
+         <span class="outdot"></span>
+         <span class="innerdot"></span>
+       </div>
+       <p>jfjfgjfgjfgjf<p>
+     </div>
+     <div class="section">
+       <div class="updot">
+         <span class="outdot"></span>
+         <span class="innerdot"></span>
+       </div>
+       <p>jfjfgjfgjfgjf<p>
+     </div>
+     <div class="section">
+       <div class="updot">
+         <span class="outdot"></span>
+         <span class="innerdot"></span>
+       </div>
+       <p>jfjfgjfgjfgjf<p>
+     </div>
+  </div>
+</body>
+</html>

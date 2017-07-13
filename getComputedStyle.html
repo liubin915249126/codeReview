@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生js</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*js获取元素属性兼容*/
+    function getStyle(obj, attr){
+        if(obj.currentStyle){
+            return obj.currentStyle[attr];
+        }else{
+            return getComputedStyle(obj, false)[attr];
+        }
+    }
+    $(function () {
+        console.log($('.test').css('width'));/**/
+        console.log($('.test').width());/*content*/
+        console.log($('.test').innerWidth());/*padding*/
+        console.log($('.test').innerWidth(true));/*padding*/
+        console.log($('.test').outerWidth());/*border*/
+        console.log($('.test').outerWidth(true));/*margin*/
+        console.log(window.getComputedStyle($('.test')[0],null).width)/*css*/
+        console.log(window.getComputedStyle($('.test')[0],null).paddingLeft)
+    })
+</script>
+
+<!--原生js事件绑定事件代理-->
+<script type="text/javascript">
+    /*事件绑定*/
+    function addEvents(target, type, func) {
+        if (target.addEventListener)    //非ie 和ie9
+            target.addEventListener(type, func, false);
+        else if (target.attachEvent)   //ie6到ie8
+            target.attachEvent("on" + type, func);
+        else target["on" + type] = func;   //ie5
+    };
+
+/*事件委托*/
+    var delegateEvent =function (target,event,fn) {
+        addEvents(document,event,function (e) {
+
+            if(e.target.nodeName==target.toUpperCase()){
+                fn.call(e.target);
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+     html,body,div{
+       margin:0;
+       padding:0;
+     }
+     .test{
+       height: 100px;
+       border: 1px solid #000;
+     }
+
+     .wrap{
+       border: 1px solid #000;
+       position: relative;
+     }
+     .wrap .inner{
+       position: absolute;
+     }
+     .wrap .item{
+       width: 50px;
+       border: 1px solid #000;
+       display: inline-block;
+     }
+  </style>
+</head>
+<body>
+  <!-- <div class="test show">showtest</div>
+  <div class="test hide">hidetest</div>
+  <div class="test up">slidUptest</div>
+  <div class="test down">slidDowntest</div>
+  <div class="test in">fadeIntest</div>
+  <div class="test out">fadeOuttest</div> -->
+  <button class="btn">动画</button>
+
+  <div class="wrap">
+    <div class="inner">
+      <span class="item">123</span><span class="item">123</span><span class="item">123</span>
+    <div>
+
+  </div>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+     $(function () {
+         $('.btn').on('click',function(){
+            // $('.show').show('slow',function () {//三者都变、、最后display：none；
+            //      $(this).hide('slow');
+            // })
+            //
+            // $('.up').slideUp(600,function(){//只变height，最后display:none;
+            //     $(this).slideDown('normal');
+            // });
+            //
+            // $('.in').fadeIn('slow',function(){
+            //   $(this).fadeOut('slow');//质变opacity,最后display：none；
+            // })
+
+            $('.inner').animate({'left':'-=50px'},300);
+         })
+     })
+  </script>
+</body>
+</html>

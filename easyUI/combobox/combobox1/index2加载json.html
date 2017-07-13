@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.net/Public/js/easyui/demo/demo.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="http://www.jeasyui.net/Public/js/easyui/jquery.easyui.min.js"></script>
+    <style type="text/css">
+        .test{
+            height: 100px;
+            width: 100px;
+            margin: 0 auto;
+            border: 1px solid #a9a9a9;
+        }
+        @media screen and (min-width: 1517px){
+
+            .test{
+                line-height: 100px;
+                text-align: center;
+            }
+        }
+        @media screen and (max-width: 600px){
+
+            .test{
+               background: #a9a9a9;
+            }
+        }
+    </style>
+</head>
+<body>
+<input class="easyui-combobox"
+       name="language"
+       data-options="
+					url:'combobox_data1.json',
+					method:'get',
+					valueField:'id',
+					textField:'text',
+					panelHeight:'auto'
+			">
+
+
+<div class="test">
+    1234
+</div>
+<script type="text/javascript">
+    $(function(){
+
+    })
+</script>
+</body>
+</html>

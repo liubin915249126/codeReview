@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <div class="copyToclip">1</div>
+   <div class="copyToclip">12</div>
+   <div class="copyToclip">1234</div>
+   <div class="copyToclip">8685648685</div>
+   <div class="copyToclip">6856586356</div>
+   <script type="text/javascript" src="../jquery.js"></script>
+   <script type="text/javascript">
+   function ellipsesFun(){
+          $('.copyToclip').each(function(index,item){
+          var text = $(this).text();
+          console.log(text);
+          var newText = '';
+          if(text==null||text==''){
+            return
+           }
+          if(true){
+           var length = text.length;
+
+           if(length==1){
+             newText = '*';
+           }else if(length>4){
+             console.log(length)
+             var random = Math.random();
+             var random4 = parseInt(random*2)+2;
+             newText = text.slice(0,random4)+'*'*(length - random4)
+
+           }else if(1<length<=4){
+             var random = Math.random();
+             var random3 = parseInt(random*2)+1;
+             var textArr = text.split('');
+             for(var i=0;i<random3;i++){
+               var randomArr = parseInt(random*textArr.length);
+               textArr[randomArr] = '*';
+             }
+             newText = textArr.join('');
+             }
+
+             $(this).text(newText);
+          }else{
+
+          }
+          })
+          }
+          ellipsesFun();
+   </script>
+</body>
+</html>

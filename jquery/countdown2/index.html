@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="countDownWrapper"></div>
+  <script type="text/javascript" src="../../jquery.js"></script>
+  <script type="text/javascript" src="jquery.countdown.js"></script>
+  <script>$j = jQuery.noConflict();</script>
+  <script type="text/javascript">
+     $j(function(){
+
+       $j('#countDownWrapper').countdown({
+//                      date: new Date(endDate),
+    date:(new Date()).getTime() + 60*1000,
+    render: function(data) {
+        data.countDownDatetime = this.leadingZeros(data.min, 2) + ':' + this.leadingZeros(data.sec, 2);
+        //ticketDetailVM.ticketDetailInfo.countDownDatetime = data.countDownDatetime;
+        $j('#countDownWrapper').text(data.countDownDatetime)
+    },
+    onEnd: function(){
+                         alert('已过期');
+        //ticketDetailVM.ticketDetailInfo.receiveExpired = true;
+        //$j("#grapOrder").css({'background':'#aaa'});
+        //crapeFlag = false;
+        //return;
+    }
+});
+     })
+  </script>
+</body>
+</html>

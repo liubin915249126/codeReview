@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象</title>
+</head>
+<body>
+  <script type="text/javascript">
+    let obj = {}
+    let arr = [{type:'*',name:'1'},{type:'*',name:'2'},{type:'A',name:'3'},{type:'*',name:'4'},
+               {type:'B',name:'1'},{type:'A',name:'2'},{type:'A',name:'3'},{type:'A',name:'4'},
+               {type:'B',name:'1'},{type:'B',name:'2'},{type:'*',name:'3'},{type:'B',name:'4'}
+              ]
+  
+    arr.map((item,index,arr)=>{
+
+          if(!obj[item.type]){
+            obj[item.type]=[];
+            obj[item.type].push(item)
+          }else{
+            obj[item.type].push(item);
+          }
+
+
+
+    })
+    for(var item in obj){
+      console.log(item);
+    }
+    console.log(obj);
+  </script>
+</body>
+</html>

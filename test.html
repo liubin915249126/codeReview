@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+    <link rel="stylesheet" href="">
+ </head>
+ <body>
+  <div class="wrap">
+
+    <div class="test">test1</div>
+    <div class="test">test2</div>
+    <div class="test">test3</div>
+    <div class="test">test4</div
+    <div class="test">test5</div>
+
+  </div>
+
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript">
+     $(function() {
+       var size = $('.test').length;
+       console.log(size);
+       $('.wrap :nth-child(2)').text('123');
+
+       var text =$('.wrap').find('.test:nth-child(3)').text();
+       console.log(text);
+     })
+   </script>
+
+   <script type="text/javascript">
+      var obj1 = []
+
+
+      if(obj1){
+        console.log("yes")
+
+      }
+   </script>
+ </body>
+ </html>

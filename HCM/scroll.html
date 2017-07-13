@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .wrap{
+      height:100px;
+      box-sizing: border-box;
+      overflow: scroll;
+      border: 1px solid #000;
+
+    }
+    .wrap .content li{
+       height:50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <ul class="content">
+      <li>content</li>
+      <li>content</li>
+      <li>content</li>
+      <li>content</li>
+      <li>content</li>
+      <li>content</li>
+      <li>content</li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+   window.onload = function(){
+     handleScroll();
+   }
+   function handleScroll(){
+      var wrap = document.querySelector('.wrap')
+      var content = document.querySelector('.content')
+      wrap.addEventListener('scroll',function(){
+        var scrollTop = wrap.scrollTop//滚动高度
+        var clientHeight = wrap.clientHeight//可视区域高度
+        var scrollHeight = wrap.scrollHeight//总高度
+        if(parseInt(scrollTop)+parseInt(clientHeight) == parseInt(scrollHeight)){
+          alert('到底了')
+        }
+      },false)
+
+   }
+  </script>
+</body>
+</html>

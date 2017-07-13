@@ -1,0 +1,92 @@
+.aliyun-individuation-xiaoyun-95187 .module-wrap .yun95187 {
+  display: block;
+  position: relative;
+  margin-bottom: 5px;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .yun95187 .white {
+  display: block;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .yun95187 .blue {
+  display: none;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .yun95187:hover .white {
+  display: none;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .yun95187:hover .blue {
+  display: block;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap #force-box {
+  right: 550px !important;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel {
+  width: 360px;
+  height: 157px;
+  background: #fff;
+  border: 1px solid #c5d8db;
+  padding: 0 20px;
+  border-top: 5px solid #00C1DE;
+  text-align: left;
+  -webkit-box-shadow: 0 0 7.5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 7.5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 7.5px rgba(0, 0, 0, 0.15);
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .top-area {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: .5px solid #DEDEDE;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .top-area .top-left-icon {
+  width: 50px;
+  float: left;
+  padding-top: 10px;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .top-area .top-right-text {
+  padding-left: 70px;
+  height: 54px;
+  color: #373D41;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .top-area .top-right-text .desc {
+  font-size: 14px !important;
+  line-height: 22px;
+  margin-bottom: 4px;
+  color: #5F6367;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .top-area .top-right-text .phone {
+  font-size: 18px !important;
+  line-height: 28px;
+  color: #00C1DE;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .top-area .panel-close {
+  color: #D0D0D0;
+  position: absolute;
+  right: 0;
+  top: 17px;
+  font-size: 14px !important;
+  cursor: pointer;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .bottom-area {
+  width: 100%;
+  font-size: 12px;
+  color: #9B9EA0;
+  padding-top: 16px;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .bottom-area a {
+  font-size: 14px;
+  color: #A9B0B4;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .bottom-area a:hover {
+  color: #00C1DE;
+  text-decoration: none;
+}
+.aliyun-individuation-xiaoyun-95187 .module-wrap .showTel .tel-hover-panel .bottom-area .bottom-li li {
+  float: left;
+  width: 40%;
+  list-style-type: circle;
+  margin-left: 10%;
+}

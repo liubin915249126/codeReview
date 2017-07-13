@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <a class="test" href="http:/www.bing.com">bing</a>
+    <input class="btn" type="button" value="点击"/>
+
+    <div class="out">
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(function(){
+       $('.btn').on('click',function(){
+            $('.test1')[0].click();
+            $('.test')[0].click();
+       })
+
+
+     $(document).on('click','.inner',function(){
+
+       alert('1')
+     })
+
+    })
+  </script>
+</body>
+</html>

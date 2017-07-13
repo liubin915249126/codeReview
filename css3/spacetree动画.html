@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .wrap .inner{
+       width:220px;
+       height:125px;
+       border:1px solid #000;
+    }
+    .animate{
+      animation:fade 0.3s ease-in;
+    }
+    @keyframes fade {
+      from{
+        transform: scale3d(0.3,0.3,0.3) translate(0,-25px);
+      }
+      to{
+        transform: scale3d(1,1,1) translate(0,0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="inner">
+
+    </div>
+    <input type="button" value="切换"/>
+  </div>
+   <script type="text/javascript" src="../jquery.js"></script>
+   <script type="text/javascript">
+     $(function(){
+       $(document).on('click','input',function(e){
+         if($('.inner').hasClass('animate')){
+            $('.inner').removeClass('animate')
+         }else{
+            $('.inner').addClass('animate')
+         }
+
+       })
+     })
+   </script>
+</body>
+</html>

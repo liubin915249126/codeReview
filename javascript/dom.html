@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dom 增删改</title>
+</head>
+<body>
+    <div class="wrap">
+      <div class="inner inner1">inner1</div>
+      <div class="inner inner2">inner2</div>
+    </div>
+    <input type="button" value="add" onclick="append()"/>
+    <input type="button" value="delete" onclick="remove()"/>
+    <input type="button" value="insert" onclick="insert()"/>
+    <input type="button" value="replace" onclick="replace()"/>
+
+    <ul class="wrap1">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>
+          <ul>
+            <li>31</li>
+            <li>32</li>
+            <li>
+              <ul>
+                <li>331</li>
+                <li>332</li>
+                <li>333</li>
+              </ul>
+            </li>
+          </ul>
+      </li>
+    </ul>
+
+<script type="text/javascript">
+   window.onload=function(){
+   }
+  let wrap = document.querySelector('.wrap');
+  let inner1 = document.querySelector('.inner1');
+  function append(){
+     let newDiv = document.createElement('div')
+     newDiv.innerText='new';
+     wrap.appendChild(newDiv);
+  };
+  function remove(){
+    if(inner1){
+      wrap.removeChild(inner1)
+    }
+  }
+  function insert(){
+    let newDiv = document.createElement('div')
+    newDiv.innerText='new';
+    wrap.insertBefore(newDiv,wrap.firstChild)
+  }
+  function replace(){
+    let newDiv = document.createElement('div')
+    newDiv.innerText='new';
+    //replaceChild(newDiv,oldDiv);
+    inner1.parentNode.replaceChild(newDiv,inner1)
+  }
+</script>
+<script type="text/javascript">
+   let wrap1 = document.querySelector('.wrap1');
+   let li3 = wrap1.querySelectorAll(':scope li');
+   console.log(li3);
+</script>
+</body>
+</html>

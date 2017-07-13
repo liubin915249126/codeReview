@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>圆形路径</title>
+  <style type="text/css">
+     body,html,div{
+       margin: 0;
+       padding: 0;
+     }
+     .wrap{
+        margin: 100px auto 0;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        /* background: #2196f3; */
+        padding: 28px;
+        border: 1px solid #000;
+     }
+     .inner{
+       width: 20px;
+       height: 20px;
+       background: #FF5722;
+       animation: rotate 10s linear infinite;
+       transform-origin: 100px 100px;
+       /*transform: translate(100px,100px);*/
+     }
+     @keyframes rotate {
+        to{
+          transform: rotate(1turn)
+        }
+     }
+
+     .avatar{
+        animation:avatar 10s linear infinite;
+     }
+     @keyframes avatar {
+        to{
+          transform: rotate(-1turn)
+        }
+     }
+  </style>
+</head>
+<body>
+    <div class="wrap">
+      <div class="inner">
+        <div class="avatar">avatar</div>
+      </div>
+    </div>
+</body>
+</html>

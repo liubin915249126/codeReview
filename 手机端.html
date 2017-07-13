@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机端</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.7">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <!-- 移动端适配 -->
+    <script type="text/javascript">
+        var s = parseInt(window.screen.width) / 750;
+        var vp = '<meta name="viewport" content="width=750, minimum-scale = ' + s + ', maximum-scale = ' + s + ', target-densitydpi=device-dpi">';
+        document.write(vp);
+    </script>
+
+</head>
+<body>
+<script type="text/javascript">
+
+    //时间格式转换
+    function GetFormatDate(myDate) {
+        if (myDate != null) {
+            if (myDate.indexOf("/Date(") > -1)
+                return parseInt(myDate.substr(6)) == -62135596800000 ? "" : new Date(parseInt(myDate.substr(6))).Format("yyyy-MM-dd");
+            else
+                return new Date(myDate).Format("yyyy-MM-dd");
+        }
+        return "";
+    }
+
+/*手机上滑，下拉刷新*/
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() == -10) {
+            $('.list_loading-1').css({ 'margin-top': 0 });
+            setTimeout(function () {
+                window.location.reload();
+            }, 500)
+        }
+
+        if (($('.list_loading').offset().top < ($(window).scrollTop() + $(window).height() - 20)) && document.getElementsByClassName('desc')[0]) {
+            //$('.list_loading span').text('数据加载中...');
+            $('.list_loading span').html(insertHtml1);
+        }
+    });
+</script>
+</body>
+</html>

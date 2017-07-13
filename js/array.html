@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>数组遍历</div>
+  <script type="text/javascript">
+    let arr1 = ['a','b','c','d'];
+    let arr0 = [];
+    let newArr0 = arr0.map(function(item,index){
+      if(!item){
+        return index;
+      }
+    })
+    //let newArr1 = mapArr(arr1);
+    //let newArr0 = mapArr(arr0);
+    console.log(newArr0);
+    //console.log(newArr1);
+  </script>
+</body>
+</html>

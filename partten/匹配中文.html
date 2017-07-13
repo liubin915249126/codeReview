@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      var pattern1 = /[\u4e00-\u9fa5]+/g;
+      var pattern2 = /\[[\u4e00-\u9fa5]+\]/g;
+      var contents = "[微笑][撇嘴][发呆][得意][流泪]";
+      content = contents.match(pattern1);
+      console.log(content.join(''));
+      content = contents.match(pattern2);
+      console.log(content);
+  </script>
+</body>
+</html>
