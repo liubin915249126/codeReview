@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="test"></div>
+  <script type="text/javascript" src="../jquery.js"></script>
+  <!--插件-->
+  <script type="text/javascript">
+  'use strict';
+
+    (function(factory) {
+      debugger;
+      if (typeof module === 'object' && typeof module.exports === 'object') {
+        factory(require('jquery'), window, document);
+      } else {
+        factory(jQuery, window, document);
+      }
+    })(function($, window, document, undefined) {
+      $.fn.plugin = function(options){
+        var defaults = {color:'#000'}
+        var opts = $.extend({},defaults,options)
+        return this;
+      }
+    })
+
+
+
+    $('.test').plugin({color:'#333'}).text('123')
+  </script>
+</body>
+</html>

@@ -84,8 +84,8 @@
             CenterPosition = getCenterPosition($('.layer img'))
             //e.clientX鼠标相对于网页的位置
             //e.screenX鼠标相对于屏幕的位置
-            moveY = (CenterPosition.x - e.clientX)/180
-            moveX = (CenterPosition.y - e.clientY)/180
+            moveY = (CenterPosition.x - e.clientX)/90
+            moveX = (CenterPosition.y - e.clientY)/90
             //console.log(moveX,moveY)
             $('.layerWrap').css('transform','rotateX('+moveX+'deg)'+''+'rotateY('+moveY+'deg)')
             $('.layerWrap').css('webKitTransform','rotateX('+moveX+'deg)'+''+'rotateY('+moveY+'deg)')
