@@ -1,0 +1,613 @@
+﻿@{
+    ViewBag.Title = ViewData["ViewBagTitle"];
+    Layout = "~/Views/Shared/_LayoutMastPage.cshtml";
+    var main = ViewBag.Main;
+}
+@section H
+{
+    <style type="text/css">
+        body
+        {
+             font-family: 'Microsoft Yahei';
+         }
+        .contextMenuTd
+        {
+            width: 100%;
+            border: 1px solid #gray;
+            background-color: #f2f2f2;
+        }
+        .contextMenuTd td
+        {
+            height: 30px;
+            border: 1px solid #FCFCFA;
+           
+        }
+        
+        .contextMenuTd td:hover
+        {
+            background-color: #FCFCFA;
+        }
+        
+        
+        .contextMenuDiv
+        {
+            width: 150px;
+            border: 1px solid gray;
+            background-color: #f2f2f2;
+            display: none;
+            position: fixed;
+        }
+    </style>
+}
+@Styles.Render("~/s/plumb")
+@Scripts.Render("~/j/plumb_1.5")
+
+<!--弹出层-->
+<div id="FlowSetDialog" style="display: none">
+
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div>
+            <table class="table table-bordered table-hover table-striped">
+                <tr>
+                    <td>
+                       @Html.Translate("str_FlowCode")@*流程代码*@
+                    </td>
+                    <td>
+                        @main.Code
+                    </td>
+                    <td>
+                        @Html.Translate("str_FlowName")@*流程名称*@
+                    </td>
+                    <td>
+                        @main.Name.String
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <input type="button" onclick="AddNode()" value="@Html.Translate("str_AddNode")" class="btn btn-default" />@*添加节点*@
+            <input type="button" onclick="AddBranchNode()" value="@Html.Translate("增加分支节点")" class="btn btn-default" />@*添加节点*@
+            <input type="button" onclick="Save()" value="@Html.Translate("str_Save")" class="btn btn-default" />@*保存*@
+        </div>
+         <div class="demo statemachine-demo" id="statemachine-demo">
+       
+         </div>
+      
+    </div>
+</div>
+<div class="contextMenuDiv" id="NodeJumpMenu" style="z-index: 50;">
+    <table class="contextMenuTd">
+        <tr>
+            <td rowspan="2" style="width:30px">
+            </td>
+            <td id="SetNodeJump" onclick="OpenNodeJump()">
+                @Html.Translate("str_NodeJumpSet")@*节点跳转设置*@
+            </td>
+        </tr>
+        <tr>
+            <td ="DeleteNodeJump" onclick="DeleteNodeJump()">
+                @Html.Translate("str_Delete") @*删除*@
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+  <div class="contextMenuDiv" id="NodeSetMenu" style="z-index: 51; ">
+    <table class="contextMenuTd">
+        <tr>
+            <td rowspan="5" style="width:30px">
+            </td>
+            <td id="SetNodeInfo">
+                @Html.Translate("str_NodeInfo")@*节点信息*@
+            </td>
+        </tr>
+        <tr>
+            <td id="DeleteNode">
+                @Html.Translate("str_DeleteNode")@*删除节点*@
+            </td>
+        </tr>
+
+        <tr>
+            <td id="SetNodeForm">
+                @Html.Translate("str_NodeSet")@*节点设置*@
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--页面初始化信息，加载流程设置信息-->
+<script type="text/javascript">
+    var parameterId = GetHrefParameter("ParameterID");
+    var instance;
+    var isLoad = true; //是否是加载，连线的时候，触发connection事件，用此字段来区分是窗体加载的连线还是手动连线，决定是否增加Jump记录
+    var currJumpGuid = ""; //记录右键点击的Jump
+    var currentConnection; //当前选择的连线,右键删除的时候使用
+    var currNodeGuid; //右键菜单选择的节点Guid
+    $(document).ready(function () {
+        var li = "<li>@Html.Translate("str_FlowSet")</li>";  //流程设置
+        $("#Navbreadcrumb .breadcrumb").append(li);
+
+        LoadWorkflowInfo();
+
+        //绑定右键菜单的Click事件
+        BindMenuClick()
+
+    });
+
+    //右键信息
+    function ContextmenuInfo() {
+        //绑定节点的右键
+        $(".w").bind("contextmenu", function (e) {
+            e = e || event;
+            ShowMenu("#NodeSetMenu",e);
+            currNodeGuid = $(this).attr("id");
+        });
+
+        //点击页面，右键菜单隐藏
+        //document.onclick
+        document.body.onclick = function () {
+            $("#NodeSetMenu").css({ "display": "none" });
+            $("#NodeJumpMenu").css({ "display": "none" });
+        };
+
+        //显示流程图的Div屏蔽右键菜单
+        $("#statemachine-demo").bind("contextmenu", function (e) {
+            return false;
+        });
+    }
+
+
+    //绑定右键菜单的Click事件
+    function BindMenuClick() {
+        //ContextmenuInfo();
+        $("#NodeSetMenu tr td").bind("click", function () {
+            //alert($(this).attr("id"));
+            var id = $(this).attr("id");
+            switch (id) {
+                case "SetNodeInfo":
+                    OpenNodeLink(currNodeGuid);
+                    break;
+                case "DeleteNode":
+                    DeleteNode();
+                    break;
+//                case "SetExecutor":
+//                    OpenExecutor();
+//                    break;
+                case "SetNodeForm":
+                    SetNodeForm();
+                    break;
+//                case "SetOperate":
+//                    OpenOperate();
+//                    break;
+            }
+        });
+    }
+
+
+    //加载流程设置的节点信息
+    function LoadWorkflowInfo() {
+        // $("#statemachine-demo").empty();
+
+
+
+        $.ajax({
+            type: "Post",
+            url: '@Url.Action("SelectFlowNodes", "Flow")',
+            dataType: "Json",
+            data: { flowGuid: "@main.Guid" },
+            success: function (data) {
+                debugger;
+                isLoad = true;
+                var nodes = data.Nodes;
+                var jumps = data.Jumps;
+                AppendNodesAndJumps(nodes, jumps);
+                isLoad = false;
+
+                ContextmenuInfo();
+
+            },
+            error: function (data) {
+                alert('@Html.Translate("str_FlowLoadFail")'); //流程图加载失败   
+            }
+        });
+    }
+
+    //显示右键菜单
+    function ShowMenu(menuID, event) {
+      
+
+        var oMenu = $(menuID);
+        $(menuID).css({ "display": "block" });
+        
+        oMenu.css({ "top": event.clientY + "px", "left": event.clientX + "px" });
+    }
+
+</script>
+<!--流程图用到的JS-->
+<script type="text/javascript">
+
+    function AppendNodesAndJumps(nodes, jumps) {
+        //添加节点
+        for (var i = 0; i < nodes.length; i++) {
+            AddNodeDiv(nodes[i]);
+        }
+        //加载流程图的JS
+        LoadFlow();
+
+        //添加连接
+        for (var i = 0; i < jumps.length; i++) {
+            AddConnection(jumps[i]);
+        }
+    }
+
+
+   
+
+    //加载流程图
+    function LoadFlow() {
+        instance = jsPlumb.getInstance({
+            Endpoint: ["Dot", { radius: 2}],
+            HoverPaintStyle: { strokeStyle: "#1e8151", lineWidth: 2 },
+            ConnectionOverlays: [
+				["Arrow", {
+				    location: 1,
+				    id: "arrow",
+				    length: 14,
+				    foldback: 0.8
+				}]
+            //                , ["Label", { label: "FOO", id: "label", cssClass: "aLabel"}]
+			],
+            Container: "statemachine-demo"
+        });
+
+        //单击事件
+        instance.bind("click", function (c) {
+            //alert(c.getParameter("JumpGuid"));
+            //instance.detach(c); 
+        });
+
+        //连线的右键菜单
+        instance.bind("contextmenu", function (c, e) {
+            debugger;
+            currJumpGuid = c.getParameter("JumpGuid");
+            currentConnection = c;
+
+            e = e || event;
+            //显示右键菜单
+            ShowMenu("#NodeJumpMenu",e);
+
+            //            instance.detach(c); 
+        });
+
+        //连接事件，连线后触发
+        instance.bind("connection", function (info) {
+            if (!isLoad) {
+                //连线的时候，添加NodeJump信息到数据库
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("AddNodeJump", "Flow")',
+                    dataType: "Json",
+                    data: { flowGuid: "@main.Guid", sourceId: info.sourceId, targetId: info.targetId },
+                    success: function (jump) {
+                        debugger;
+                        info.connection.setParameter("JumpGuid", jump.JumpId);
+                        info.connection.id = jump.Text;
+                        info.connection.setPaintStyle({ strokeStyle: "#5c9600", lineWidth: 2, outlineColor: "transparent", outlineWidth: 4 });
+                        info.connection.setLabel = "NodeJump"; //测试
+                    },
+                    error: function (data) {
+                        alert('@Html.Translate("str_AddNodeFail")');   //添加节点失败！
+                    }
+                });
+            }
+        });
+
+        RefreshFlow();
+    }
+
+
+
+
+    //刷新
+    function RefreshFlow() {
+        var windows = jsPlumb.getSelector(".statemachine-demo .w");
+        //初始化所有连接元素为可拖动  
+        instance.draggable(windows);
+
+        // suspend drawing and initialise.
+        instance.doWhileSuspended(function () {
+            //设置连接的源元素
+            instance.makeSource(windows, {
+                filter: ".ep", 			// only supported by jquery
+                anchor: "Continuous",
+                connector: ["StateMachine", { curviness: 20}],
+                connectorStyle: { strokeStyle: "#5c96bc", lineWidth: 2, outlineColor: "transparent", outlineWidth: 4 },
+                //maxConnections: 5,
+                onMaxConnections: function (info, e) {
+                    alert("Maximum connections (" + info.maxConnections + ") reached");
+                }
+            });
+
+            //设置连接目标
+            instance.makeTarget(windows, {
+                dropOptions: { hoverClass: "dragHover" },
+                anchor: "Continuous"
+            });
+
+
+        });
+    }
+
+    //添加节点的Div
+    function AddNodeDiv(node) {
+        var flow = $("#statemachine-demo");
+        flow.append("<div class=\"w\" id=\"" + node.Guid + "\" style=\"" + node.Style + "\" ondblclick=\"OpenNodeLink('" + node.Guid + "')\">"
+                    + node.Name.Chinese
+                    + "&nbsp;<div class=\"ep\"></div></div>");
+    }
+
+    //添加连线
+    function AddConnection(jump) {
+        var con1 = instance.connect(
+            {
+                source: jump.SourceId,
+                target: jump.TargetId,
+                overlays: [
+                        [
+                            "Label",
+                            {
+                                cssClass: "l1 component label",
+                                label: jump.Text,
+                                id: jump.JumpId
+                            }
+                        ]
+                ]
+            });
+        con1.setPaintStyle({ strokeStyle: "#5c9600", lineWidth: 2, outlineColor: "transparent", outlineWidth: 4 });
+        con1.setParameter("JumpGuid", jump.JumpId);
+    }
+
+</script>
+<!--操作的JS-->
+<script type="text/javascript">
+
+    //保存节点位置和连线
+    function Save() {
+        var connections = new Array();
+        var localtions = new Array();
+
+        var conns = instance.getAllConnections();
+        var windows = jsPlumb.getSelector(".statemachine-demo .w");
+
+        $.each(windows, function (scopeName, node) {
+            var left = node.offsetLeft;
+            var top = node.offsetTop;
+            var id = node.id;
+            var style = "left: " + left + "px; top: " + top + "px;"
+            localtions.push(new LocaltionObj(id, style));
+
+        });
+
+
+        $.each(conns, function (scopeName, conn) {
+
+            connections.push(new ConnectionObj(conn.getParameter("JumpGuid"), conn.sourceId, conn.targetId, ""));
+        });
+
+
+        $.ajax({
+            type: "Post",
+            url: '@Url.Action("Save", "Flow")',
+            dataType: "text",
+            data: { localtions: String.toSerialize(ko.mapping.toJS(localtions)) },
+            success: function (data) {
+                ps_alert('@Html.Translate("str_Success")'); //成功 
+            },
+            error: function (data) {
+                ps_alert(error.responseJSON.message);
+            }
+        });
+
+    }
+
+
+    //添加节点
+    function AddNode() {
+        $.ajax({
+            type: "Post",
+            url: '@Url.Action("AddNode", "Flow")',
+            dataType: "Json",
+            data: { flowGuid: "@main.Guid" },
+            success: function (data) {
+                AddNodeDiv(data);
+
+                //绑定节点的右键
+                $("#" + data.Guid).bind("contextmenu", function (e) {
+                    e = e || event;
+                    ShowMenu("#NodeSetMenu",e);
+                    currNodeGuid = $(this).attr("id");
+                });
+                RefreshFlow();
+            },
+            error: function (data) {
+                alert('@Html.Translate("str_AddNodeFail")' +" Message:"+ error.responseJSON.message); //添加节点失败！
+            }
+        });
+    }
+
+
+    function AddBranchNode() {
+        $.ajax({
+            type: "Post",
+            url: '@Url.Action("AddBranchNode", "Flow")',
+            dataType: "Json",
+            data: { flowGuid: "@main.Guid" },
+            success: function (nodes) {
+                for (var i = 0; i < nodes.length; i++) {
+                    AddNodeDiv(nodes[i]);
+
+                    //绑定节点的右键
+                    $("#" + nodes[i].Guid).bind("contextmenu", function (e) {
+                        e = e || event;
+                        ShowMenu("#NodeSetMenu", e);
+                        currNodeGuid = $(this).attr("id");
+                    });
+                }
+               
+                RefreshFlow();
+            },
+            error: function (data) {
+                alert('@Html.Translate("str_AddNodeFail")' + " Message:" + error.responseJSON.message); //添加节点失败！
+            }
+        });
+    }
+
+
+
+
+    //删除NodeJump
+    function DeleteNodeJump() {
+        ps_confirm('@Html.Translate("str_IsDelete")', function () {
+            $.ajax({
+                type: "Post",
+                url: '@Url.Action("DeleteNodeJump", "Flow")',
+                dataType: "text",
+                data: { nodeJumpGuid: currJumpGuid },
+                success: function (data) {
+                    instance.detach(currentConnection); //删除连线
+                },
+                error: function (data) {
+                    
+                    ps_alert(error.responseJSON.message);
+                }
+            });
+        });
+
+    }
+
+    function OpenNodeJump() {
+        $("#FlowSetDialog").empty();
+        var mainGuid = "@main.Guid";
+        var nodeGuid = currentConnection.sourceId;
+        //alert("main:"+mainGuid+"  Node:"+nodeGuid+"   Jump:"+currJumpGuid);
+
+        var mainGuid = "@main.Guid";
+        $.ajax({
+            url: '@Url.Action("Index", "FlowNodeJumpDialog", new { Area = "WorkflowSettings" })',
+            type: "POST",
+            dataType: "html",
+            data: { jumpGuid: currJumpGuid, nodesGuid: nodeGuid, mainGuid: mainGuid },
+            success: function (data) {
+                $("#FlowSetDialog").html(data);
+            },
+            error: function (data) {
+                alert('@Html.Translate("str_Fail")');//失败
+            }
+        });
+        var dialog = new DialogInfo("FlowSetDialog",650,350,'@Html.Translate("str_NodeJumpSet")');
+        dialog.Open();
+    }
+
+
+
+    function OpenNodeLink(nodeGuid) {
+        $("#FlowSetDialog").empty();
+        var mainGuid = "@main.Guid";
+        $.ajax({
+            url: '@Url.Action("Index", "FlowNodesDialog", new { Area = "WorkflowSettings" })',
+            type: "POST",
+            dataType: "html",
+            data: { nodesGuid: nodeGuid, mainGuid: mainGuid },
+            success: function (data) {
+                $("#FlowSetDialog").html(data);
+            },
+            error: function (data) {
+                alert('@Html.Translate("str_Fail")');//失败
+            }
+        });
+
+        var dialog = new DialogInfo("FlowSetDialog",800,600,'@Html.Translate("str_NodeSet")');
+        dialog.Open();
+    }
+
+
+
+
+    function DeleteNode() {
+
+        ps_confirm('@Html.Translate("str_DeleteNodeConfirm")', function () {//删除该节点，也将删除该节点的所有关联信息，是否删除?
+           // $("#" + currNodeGuid).fadeOut(function () {
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("DeleteNode", "Flow")',
+                    dataType: "Json",
+                    data: { nodeGuid: currNodeGuid },
+                    success: function (data) {
+                        if (data.message != "") {
+                            ps_alert(data.message);
+                        }
+                        else {
+
+                            var guids = data.deleteGuid;
+                            for (var i = 0; i < guids.length; i++) {
+                                //隐藏节点
+                                $("#" + guids[i]).fadeOut();
+
+                                //获得当前节点的源数据连接，并删除该连线
+                                var sourceConn = instance.getConnections({ source: guids[i] });
+                                $.each(sourceConn, function (scopeName, conn) {
+                                    instance.detach(conn);
+                                });
+
+                                //获得当前节点的目标数据连接，并删除该连接
+                                var targetConn = instance.getConnections({ target: guids[i] });
+                                $.each(targetConn, function (scopeName, conn) {
+                                    instance.detach(conn);
+                                });
+
+                                //删除节点
+                                $("statemachine-demo").remove("." + guids[i]);
+                            }
+
+                        }
+                    },
+                    error: function (error) {
+                        ps_alert(error.responseJSON.message);
+                    }
+                });
+            //});
+        });
+
+    }
+
+  
+
+    function SetNodeForm() {
+        var url = "/WorkflowSettings/NodeSet/Index?NodeGuid=" + currNodeGuid+"&ParameterID="+parameterId;
+        window.open(url);
+
+    }
+
+
+
+
+    function LocaltionObj(id, style) {
+        var self = this;
+        self.Id = id;
+        self.Style = style
+    }
+
+    function ConnectionObj(jumpId, sourceId, targetId, text) {
+        var self = this;
+        self.JumpId = jumpId;
+        self.SourceId = sourceId;
+        self.TargetId = targetId;
+        self.Text = text
+    }
+
+</script>
