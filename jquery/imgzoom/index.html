@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片放大镜效果</title>
+    <style type="text/css">
+      .magnify{
+          position: relative;
+          width:fit-content;
+      }
+      .magnify .large{
+          position: absolute;
+          width:100%;
+          height:500px;
+          background:url('jay.jpg');
+      }
+    </style>
+</head>
+<body>
+    <div class="magnify">
+        <div class="large"></div>
+        <img class="small" src="jay.jpg" width="700"/>
+    </div>
+
+    <script type="text/javascript" src="../../jquery.min.js"></script>
+    <script type="text/javascript" src="imgzoom.js"></script>
+    <script type="text/javascript">
+      $(function(){
+         $('.magnify').imageZoom({})
+      })
+    </script>
+</body>
+</html>
