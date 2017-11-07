@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js控制animation</title>
+    <style type="text/css">
+      .test{
+          width:100px;
+          height:100px;
+          background:#000;
+          animation: test 3s ease-in-out infinite;
+      }
+      @keyframes test{
+          from{
+             width:200px; 
+          }
+          to{
+            width:100px; 
+          }
+      }
+    </style>
+</head>
+<body>
+    <div class="test">
+       
+    </div>
+    <script type="text/javascript">
+      var test = document.getElementsByClassName('test')[0];
+      test.addEventListener('click',function(){
+          this.style.animationPlayState= "paused";
+          this.style.webkitAnimationPlayState ="paused";
+      },false)
+    </script>
+</body>
+</html>
