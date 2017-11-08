@@ -42,7 +42,7 @@
        -webkit-transform: translate(-50%,-50%);
     }
     /*线条*/
-    .compareModal .workcontent .workitem::before{
+    .compareModal .workcontent .workitem:not(:last-child):before{
       content: '';
       display: block;
       height:calc(100% - 11px);
@@ -76,6 +76,34 @@
        </div>
        <div class="dot"></div>
      </li>
+    <li class="workitem">
+      <div class="itemleft">
+        2017/5/10
+      </div>
+      <div class="itemright">
+        <div>公司：
+          <span>本公司</span>
+        </div>
+        <div>岗位：
+          <span>总经办主任</span>
+        </div>
+      </div>
+      <div class="dot"></div>
+    </li>
+    <li class="workitem">
+      <div class="itemleft">
+        2017/5/10
+      </div>
+      <div class="itemright">
+        <div>公司：
+          <span>本公司</span>
+        </div>
+        <div>岗位：
+          <span>总经办主任</span>
+        </div>
+      </div>
+      <div class="dot"></div>
+    </li>
    </div>
 </body>
 </html>
