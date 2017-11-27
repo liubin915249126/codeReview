@@ -12,9 +12,15 @@
    var arr=['l','i','u','b','i','n'];
    var arr1=[1,2,3,4,5]
    var newArr=arr1.map(function(value,index,arr){
-      return value*value;   //必须有返回值，返回新数组
+       debugger;
+      if(1<index<3){
+        return value * value;   //必须有返回值，返回新数组    
+      }else{
+          return null
+      } 
+      
    });
-
+   console.log(newArr)
 </script>
 
 <!--forEach-->
