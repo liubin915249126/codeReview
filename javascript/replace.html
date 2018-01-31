@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script type="text/javascript">
+        var str = "Nama ektp, no ektp, tanggal lahir, alamat email, foto e-ktp, alamat rumah \r\nAlamat tempat tinggal, kota, kelurahan, kecamatan, Rt/Rw\r\nKota, kode undangan"   
+        str = str.replace(/\n|\r/g,'1111')
+        console.log(str)
+        var div = document.querySelector('div')
+        div.innerHTML = str
+    </script>
+</body>
+</html>
