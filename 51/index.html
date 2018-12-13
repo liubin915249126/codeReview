@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var arr1 = [ 
+                    { dictCode: '11', dictName: '结算方式', parentCode: 0 },
+                    { dictCode: '12', dictName: '付款方式', parentCode: 0 },
+                    { dictCode: '13', dictName: '开票方式', parentCode: 0 },
+                    { dictCode: '1101', dictName: '款到发货', parentCode: 11 },
+                    { dictCode: '1102', dictName: '货到不卸车付款', parentCode: 11 },
+                    { dictCode: '1103', dictName: '货到付款', parentCode: 11 },
+                    { dictCode: '1104', dictName: '保证金+货到不卸车付款', parentCode: 11 },
+                    { dictCode: '1105', dictName: '保证金+货到当日付款', parentCode: 11 },
+                    { dictCode: '1201', dictName: '电汇', parentCode: 12 },
+                    { dictCode: '1202', dictName: '银行承兑', parentCode: 12 },
+                    { dictCode: '1203', dictName: '其他', parentCode: 12 },
+                    { dictCode: '1301', dictName: '款到开票', parentCode: 13 },
+                    { dictCode: '1302', dictName: '25日前开', parentCode: 13 },
+                    { dictCode: '1303', dictName: '一单一开', parentCode: 13 },
+                    { dictCode: '1304', dictName: '合并开票', parentCode: 13 },
+                    { dictCode: '1106', dictName: '账期10天', parentCode: 11 },
+                    { dictCode: '1107', dictName: '账期2天', parentCode: 11 } 
+                ]
+                var arr2 = [ 
+                    { dictCode: '11', dictName: '结算方式', parentCode: 0 },
+                    { dictCode: '12', dictName: '付款方式', parentCode: 0 },
+                    { dictCode: '13', dictName: '开票方式', parentCode: 0 },
+                    { dictCode: '1101', dictName: '款到发货', parentCode: 11 },
+                    { dictCode: '1102', dictName: '货到不卸车付款', parentCode: 11 },
+                    { dictCode: '1103', dictName: '货到付款', parentCode: 11 },
+                    { dictCode: '1104', dictName: '保证金+货到不卸车付款', parentCode: 11 },
+                    { dictCode: '1105', dictName: '保证金+货到当日付款', parentCode: 11 },
+                    { dictCode: '1201', dictName: '电汇', parentCode: 12 },
+                    { dictCode: '1202', dictName: '银行承兑', parentCode: 12 },
+                    { dictCode: '1203', dictName: '其他', parentCode: 12 },
+                    { dictCode: '1301', dictName: '款到开票', parentCode: 13 },
+                    { dictCode: '1302', dictName: '25日前开', parentCode: 13 },
+                    { dictCode: '1303', dictName: '一单一开', parentCode: 13 },
+                    { dictCode: '1304', dictName: '合并开票', parentCode: 13 },
+                    { dictCode: '1106', dictName: '账期10天', parentCode: 11 },
+                    { dictCode: '1107', dictName: '账期2天', parentCode: 11 } 
+                ]          
+        Array.isArray(arr1)&&arr1.forEach((item)=>{
+            arr2.forEach((item1)=>{
+          if(item.dictCode==item1.parentCode&&item.dictCode==12){
+              debugger
+            item.children = (Array.isArray(item.children))?[...item.children,item1]:[]
+            const currentIndex = arr1.findIndex(item2=>item2.dictCode == item1.dictCode)
+            arr1.splice(currentIndex,1)
+          }
+        })
+      })    
+      console.log(arr1)          
+    </script>
+</body>
+</html>
